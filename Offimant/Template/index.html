@@ -1,0 +1,103 @@
+<html>
+<title></title>
+
+{% load static %}
+
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'jquery-3.7.1.min.js.js' %}"></script>
+    <script src="{% static 'popper.min.js.js' %}"></script> 
+
+<body>
+
+    
+<div class="container mt-1 ">
+    
+ {%include "barra.html"%}
+</div>
+
+<div class="container mt-2">
+  
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-custom overflow-hidden text-center bg-body-tertiary border rounded-3">
+      <li class="breadcrumb-item">
+        <a class="link-body-emphasis fw-semibold text-decoration-none" href="#">Demo</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a class="link-body-emphasis fw-semibold text-decoration-none" href="#">Library</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Data
+      </li>
+    </ol>
+  </nav>
+ 
+
+
+
+ <div class="container mt-2 ">
+ <div class="row">
+     
+    <div class="col-md-3 bg-warning">
+    
+    
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar cambios</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+    <li role="presentation" class="divider"></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+  </ul>
+</div>
+
+
+
+    
+  </div>
+
+  <div class="col-md-9">
+   
+        <div class="card-body">Area de trabajo</div>
+    
+   </div>
+
+ </div>   
+ </div>
+</div>
+</body>
+
+
+</html>

@@ -1,0 +1,250 @@
+<html>
+<title></title>
+
+{% load static %}
+
+<link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+<link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'jquery-3.6.3.min.js' %}"></script>
+<script src="{% static 'popper.min.js' %}"></script> 
+
+
+<body>
+
+    
+<div class="container mt-1 ">
+    
+ {%include "barra.html"%}
+</div>
+ <div class="container mt-2">
+
+  
+  
+    
+   
+
+  <div class="container mt-2 ">
+   <div class="container">
+    <div class="row">
+    <div class="col-8">
+    
+    <form  action="/codmaterialadd/{{valessw.id}}/{{pagesw}}" method="get">
+     <div class="row">
+      
+       <div class="col-9 ml-4 mt-4 "> 
+         Descripción: {{form.Material}}
+       </div>
+       
+       <div class="col-2">
+        <div class="row mt-4" ></div>
+        <div class="col-1"></div> 
+        <div class="row">
+ 
+        <input type="submit"  class="btn btn-success btn-sm float-rigth" value="Adicionar">
+         
+        </div>
+       </div>
+     </div>
+
+   <div class="row mt-4">
+    <div class="col-3 ml-4 "> 
+        Unidad: {{form.Unidad}}
+    </div>
+    <div class="col-6 ">     
+        Cantidad: {{form.Cantidad}}
+    </div>
+     
+   <!-- <div class="col-1"></div>
+
+    <div class="col-3  ">
+      <div class="row mt-2" ></div>
+      <div class="col-3"></div> 
+      <div class="row">
+       <div class="col-3">
+        <a href="/codvales/index/0" button type="button" class="btn btn-danger btn-sm">Cancelar  </a>
+       </div>
+      </div>
+     </div> -->
+
+
+   </div>
+   
+   
+
+    </form> 
+    
+   
+<!--
+    
+    <form  action="/codvalesupdate/{{dato}}/{{listpsw.number}}" method="get">
+      <div class="row">
+        <div class="col-3 ml-4 "> 
+          
+        </div>
+        <div class="col-3"> 
+          
+        </div>
+        <div class="col-3">     
+         
+        </div>
+        <div class="col-2">
+         <div class="row mt-4" ></div>
+         <div class="col-1"></div> 
+         <div class="row">
+  
+         <input type="submit"  class="btn btn-success btn-sm float-rigth" value="Actualizar">
+          
+         </div>
+        </div>
+      </div>
+ 
+    <div class="row mt-2 mb-2">
+     <div class="col-4 ml-4 "> 
+         
+     </div>
+     <div class="col-3 ">     
+        
+     </div>
+
+     <div class="col-2"></div>
+ 
+     <div class="col-1">
+       <div class="row mt-2" ></div>
+       <div class="col-1"></div> 
+       <div class="row">
+        <a href="/codvales/index/0/?page={{listpsw.number}}" button type="button" class="btn btn-danger btn-sm"> Cancelar  </a>
+       </div>
+      </div>
+ 
+ 
+    </div>
+    
+    
+ 
+     </form> 
+
+     
+
+-->
+
+    </div>
+    <div class="col-4">
+     <div class="row mt-1">
+      <div class="col-4"></div>
+     </div>
+     <table class="table table-striped table-hover table-sm">
+     <tr>   
+     <td class="col-6">Vale codigo:</td> <td>{{valessw.codigo}}</td>
+    </tr>
+    <tr> 
+      <td class="col-6">Almacen:</td> <td>{{valessw.almacen}}</td>
+    </tr>
+    <tr>
+     <td class="col-6">Centro de Costo:</td> <td>{{valessw.costo}}</td>   
+    </tr>
+    <tr> 
+     <td class="col-6">Solicitante:</td> <td>{{valessw.entregado}}</td>
+    </tr>
+    <tr>
+     <td class="col-6">Fecha:</td> <td>{{valessw.fecha}}</td> 
+    </tr>
+    </table>
+    </div>
+  </div> 
+    </div>
+
+
+
+    
+    
+    <div class="row">
+
+
+      <div class="container">
+        <div class="row">
+        <div class="col-md-6">{%include "paginador.html"%}</div>
+        <div class="col-md-1"></div> 
+        <div class="col-md-3"> 
+         <a href="/codvales/index/0?page={{pagesw}}" button type="button" class="btn btn-primary btn-sm float-right"><i class="bi bi-backspace-fill"> Vale codigo:  {{valessw.codigo}}</i> <span class="badge badge-light">{{materialbot|length}}</span></a>
+        </div>
+      </div>
+    </div>
+       
+    
+        
+      <!--  <div class="col-md-4">
+        {%if vistasw == 'index'%} 
+         <form  action="/codvalesadd" method="get">
+           <div class="imput-group mb-3 mt-1">
+            <table>
+             {{form.as_table}}  
+            </table>
+           </div>
+   
+           <div class="row">
+             <div class="col-md-7">
+              </div>
+              <div class="col-md-1">
+              <input type="submit"  class="btn btn-success btn-sm" value="Adicionar">
+             </div>
+           </div>
+             
+   
+         </form>  
+        {%else%}
+         <form  action="/codvalesupdate/{{dato}}" method="get">
+          <div class="imput-group mb-3 mt-1">
+           <table>
+            {{form.as_table}}  
+           </table>
+          </div>
+  
+          <div class="row">
+           <div class="col-md-4">
+           </div>
+           <div class="col-md-3">    
+             <a href="/codvales/index/0" button type="button" class="btn btn-danger btn-sm">Cancelar</a>
+           </div>
+           <div class="col-md-1">
+            <input type="submit"  class="btn btn-success btn-sm" value="Actualizar">
+           </div>
+         </div>
+        </form>
+        {%endif%}
+       
+     </div> -->
+   
+ 
+   <div class="col-md-10 mt-1">
+    
+    <table class="table table-striped table-hover table-sm"> 
+      <thead class="thead-dark">
+       <tr>  
+        <th class="col-sm-8">Descripción</th>
+        <th class="col-sm-1 text-center">Unidad</th>
+        <th class="col-sm-1 text-center">Cantidad</th>
+        <th></th>
+      </tr>
+      </thead>
+ 
+      <tbody>
+      {%for materialsw in materialsw%} 
+       <tr> 
+       <td class="col-sm-6">{{materialsw.material}}</td>
+       <td class="col-sm-2 text-center">{{materialsw.unidad}}</td>
+       <td class="col-sm-2 text-center">{{materialsw.cantidad}}</td>
+       <td class="text-center"><a href="/codmaterialdel/{{materialsw.id}}/{{valessw.id}}/{{pagesw}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>
+      </tr>
+      {%endfor%}
+     </tbody>
+     </table>
+     
+     
+    </div>
+  </div>   
+  </div>
+ </div>
+ </div>
+ </body>
+ </html>

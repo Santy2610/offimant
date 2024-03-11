@@ -1,0 +1,53 @@
+<http>
+    <title></title>
+    
+    {% load static %}
+    
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'jquery-3.7.1.min.js.js' %}"></script>
+    <script src="{% static 'popper.min.js.js' %}"></script> 
+    
+    
+
+<body>  
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+ <!--Brand--> 
+   <a class="navbar-brand" href="/">Offimant</a>
+ <!--Toggler/collapsibe Button--> 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+  <!--Navbar links--> 
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+     <ul class="navbar-nav">
+     <li class="nav-item">
+     <a class="nav-link" href="/codvales/index/0">Materiales</a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="/ordenes">Ordendes de trabajo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/indexprod/index/0">Producciones</a>
+       </li> 
+     <li class="nav-item">
+      <a class="nav-link" href="#">Tiempo perdido</a>
+     </li> 
+     <li class="nav-item">
+      <a class="nav-link" href="/codunidad/index/0">Codificadores</a>
+     </li>  
+    
+    </ul>
+    
+   </div>
+    <form class="form-inline my-2 my-md-0">
+      <input class="form-control mr-sm-2" type="text"placeholder="Elemento a buscar" name="">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+
+</nav> 
+
+
+
+</body>  
+</http>
