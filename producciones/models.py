@@ -15,4 +15,5 @@ class materiales(models.Model):
     costo=models.CharField(max_length=50)
     entregado=models.CharField(max_length=100)
     fecha=models.DateField()
+    # aqui termina en codigo
     
