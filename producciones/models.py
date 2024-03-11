@@ -16,7 +16,3 @@ class materiales(models.Model):
     entregado=models.CharField(max_length=100)
     fecha=models.DateField()
     
-
-
-
-# Create your models here.
