@@ -26,28 +26,32 @@
          <div class="col-3"> 
            Producción: {{form.descripcion}} 
          </div>
-         <div class="col-2">
-          <div class="row mt-4" ></div>
-          <div class="col-1"></div> 
-          <div class="row">
-   
-          <input type="submit"  class="btn btn-success btn-sm float-rigth" value="Adicionar">
-           
-          </div>
-         </div>
+         
        </div>
   
      <div class="row mt-2 mb-2">
       <div class="col-2 ml-4 "> 
           Unidad: {{form.unidad}}
       </div>
-      <div class="col-3 ">     
+      <div class="col-2 ">     
           Cantidad: {{form.cantidad}}
       </div>
        
       <div class="col-1"></div>
-         
+           
      </div>
+
+     <div class="row mt-2">
+      <div class="col-4 ml-4 "> 
+        Fecha: {{form.fechafab}}
+      </div> 
+      <div class="col-5 mt-4"> 
+      <input type="submit"  class="btn btn-success btn-sm float-rigth" value="Adicionar">
+      </div>
+      <div class="col-2 mt-2">
+      {%include "paginador.html"%} 
+      </div>
+      </div>
     </form> 
      
       {%else%} 
@@ -65,7 +69,7 @@
            <div class="col-1"></div> 
            <div class="row">
     
-           <input type="submit"  class="btn btn-success btn-sm float-rigth" value="Actualizar">
+          
             
            </div>
           </div>
@@ -79,44 +83,52 @@
         Cantidad: {{form.cantidad}}
        </div>
   
-       <div class="col-2"></div>
+       <div class="col-2">
+        
+       </div>
    
        <div class="col-1">
          <div class="row mt-2" ></div>
          <div class="col-1"></div> 
          <div class="row">
-          <a href="/indexprod/index/0/?page={{listpsw.number}}" button type="button" class="btn btn-danger btn-sm"> Cancelar  </a>
+          
          </div>
         </div>
    
    
       </div>
       
-      
+      <div class="row mt-2 mb-2">
+        <div class="col-4 ml-4 "> 
+          Fecha: {{form.fechafab}}
+        </div>
+        <div class="col-5 mt-4"> 
+          <input type="submit"  class="btn btn-success btn-sm float-rigth" value="Actualizar">  <a href="/indexprod/index/0/?page={{listpsw.number}}" button type="button" class="btn btn-danger btn-sm"> Cancelar  </a>
+        </div>
+        <div class="col-2 mt-2">
+          {%include "paginador.html"%} 
+        </div>  
+       </div>
    
        </form> 
   
        {%endif%}
       </div>
-      <div class="col-4">
-       <div class="row mt-5 mb-5">
-        <div class="col-4"></div>
+      
        </div>
-        {%include "paginador.html"%}  
+         
       </div>
       </div> 
-      </div>
-   
-   
-   
-      <div class="row mt-2">
-        <div class="col-md-10">
+      
+      <div class="row">
+        <div class="col-md-9">
           <table class="table table-striped table-hover table-sm"> 
             <thead class="thead-dark">
              <tr>  
               <th class="col-sm-2 text-center">Orden prod.</th>
-              <th class="col-sm-5">Producción</th>
-              <th class="col-sm-2 text-center">Unidad</th>
+              <th class="col-sm-3">Producción</th>
+              <th class="col-sm-3">Fecha de producción</th>
+              <th class="col-sm-1 text-center">Unidad</th>
               <th class="col-sm-2">Cantidad</th>
               <th ></th>
               <th ></th>
@@ -129,8 +141,9 @@
            <tr>
             <td class="col-sm-1 text-center">{{prosw.codigo}}</td>
             <td class="col-sm-1">{{prosw.descripcion}}</td>
-            <td class="col-sm-3 text-center">{{prosw.unidad}}</td>
-            <td class="col-sm-2 text-left">{{prosw.cantidad}}</td>
+            <td class="col-sm-1">{{prosw.fechaf}}</td>
+            <td class="col-sm-1 text-center">{{prosw.unidad}}</td>
+            <td class="col-sm-2 text-rigth">{{prosw.cantidad}}</td>
             {%if vistasw == 'index'%} 
             <td><a href="#" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-table"></i></a></td>
             <td><a href="/indexprod/edit/{{prosw.id}}/?page={{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>

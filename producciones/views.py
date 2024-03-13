@@ -13,7 +13,7 @@ def indexprod(request, vista, dato):
       formprod=formulariopro()
     else:
       prolubica=producciones.objects.get(pk=dato)
-      formprod=formulariopro(initial={'codigo':prolubica.codigo, 'unidad':prolubica.unidad, 'descripcion':prolubica.descripcion, 'cantidad':prolubica.cantidad})
+      formprod=formulariopro(initial={'codigo':prolubica.codigo, 'unidad':prolubica.unidad, 'descripcion':prolubica.descripcion, 'cantidad':prolubica.cantidad, 'fechafab':prolubica.fechaf})
     return render(request, "listaprod.html",{"form":formprod, "prosw":prolist, "vistasw":vista, "listpsw":prolist, "paginador":paginador, "dato":dato})
 
 
@@ -22,7 +22,8 @@ def codprodadd(request):
       descripcion=request.GET["descripcion"]
       unidad=request.GET["unidad"]
       cantidad=request.GET["cantidad"]
-      prolist=producciones.objects.create(codigo=codigo, descripcion=descripcion, unidad=unidad, cantidad=cantidad)
+      fechaf=request.GET["fechafab"]
+      prolist=producciones.objects.create(codigo=codigo, descripcion=descripcion, unidad=unidad, cantidad=cantidad, fechaf=fechaf)
       return redirect(indexprod, vista='index', dato=0)
 
 
@@ -31,11 +32,13 @@ def codprodupdate(request, dato, page):
       descripcion=request.GET["descripcion"]
       unidad=request.GET["unidad"]
       cantidad=request.GET["cantidad"]
+      fechaf=request.GET["fechafab"]
       prolist=producciones.objects.get(pk=dato)
       prolist.codigo=codigo
       prolist.descripcion=descripcion
       prolist.unidad=unidad
       prolist.cantidad=cantidad
+      prolist.fechaf=fechaf
       prolist.save()
       return redirect("/indexprod/index/0/?page=%s" %page)
 
