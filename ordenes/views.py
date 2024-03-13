@@ -10,7 +10,7 @@ def ordenes(request):
      ordenlist=paginador.page(page)
      return render(request,"listadoordenes.html",{"ordensw":ordenlist, "paginador":paginador,"listpsw":ordenlist})
 
-def ordenesnew(request, vista, dato):
+def ordenesnew(request, vista, dato, page):
       if vista == 'index':
        formorden=fomularioorden()
        return render(request,"adicionarordenes.html",{"form":formorden, "vistasw":vista, "datosw":dato})
@@ -20,10 +20,11 @@ def ordenesnew(request, vista, dato):
        'fechaRep':ordenubica.fechaRep,'prioridad':ordenubica.prioridad,'fechaEje':ordenubica.fechaEje,'Destino':ordenubica.Destino,
        'valecod':ordenubica.valecodigo, 'Departamento':ordenubica.departamento, 'idequipo':ordenubica.idequipo,
        'motivosolic':ordenubica.motivosolic, 'solicitante':ordenubica.solicitante, 'afectacion':ordenubica.Afectacion,
-       'prioridad':ordenubica.prioridad, 'reparado':ordenubica.Reparado, 'Destino':ordenubica.Destino,'Culminada':ordenubica.culminada })
+       'prioridad':ordenubica.prioridad, 'reparado':ordenubica.Reparado, 'Destino':ordenubica.Destino,'Culminada':ordenubica.culminada,
+       'Campa':ordenubica.campa})
        result=ordenubica.Resumen
        falla=ordenubica.falla
-       return render(request,"adicionarordenes.html",{"form":formorden, "resultsw":result,"fallasw":falla, "vistasw":vista, "datosw":dato})
+       return render(request,"adicionarordenes.html",{"form":formorden, "resultsw":result,"fallasw":falla, "vistasw":vista, "datosw":dato, "pagesw":page})
 
 
 
@@ -46,15 +47,16 @@ def ordenesadd(request):
       fechaejef=request.GET["fechaEje"]
       destinof=request.GET["Destino"]
       culminadaf=request.GET["Culminada"]
+      campa=request.GET["Campa"]
       ordenlist=orden.objects.create(codigo=Codigof, departamento=Departamentof, area=areaf,
                                       equipo=equipof, idequipo=idequipof, fechaRep=fechaRepf,
                                       motivosolic=motivosolicf, falla=fallaf, solicitante=solicitantef,
                                       Afectacion=afectacionf, prioridad=prioridadf, Resumen=Resultadof,
                                       Reparado=reparadof,valecodigo=valef, Destino=destinof, fechaEje=fechaejef,
-                                      culminada=culminadaf)
+                                      culminada=culminadaf, campa=campa)
       return redirect(ordenes)
 
-def ordenesupdate(request, dato):
+def ordenesupdate(request, dato, page):
       Codigof=request.GET["Codigo"]
       Departamentof=request.GET["Departamento"]
       areaf=request.GET["area"]
@@ -72,6 +74,7 @@ def ordenesupdate(request, dato):
       Destinof=request.GET["Destino"]
       fechaejef=request.GET["fechaEje"]
       culminadaf=request.GET["Culminada"]
+      campa=request.GET["Campa"]
       ordenlist=orden.objects.get(pk=dato)
       ordenlist.codigo=Codigof
       ordenlist.departamento=Departamentof
@@ -90,8 +93,9 @@ def ordenesupdate(request, dato):
       ordenlist.Destino=Destinof
       ordenlist.valecodigo=valef
       ordenlist.culminada=culminadaf
+      ordenlist.campa=campa
       ordenlist.save()
-      return redirect(ordenes)
+      return redirect("/ordenes/?page=%s" %page)
 
 def ordenesdel(request, dato, page):
       ordenlist=orden.objects.get(pk=dato)

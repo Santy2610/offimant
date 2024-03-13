@@ -40,8 +40,10 @@
         <table border="0">
       
           <tr>
-            <th class="col-10 text-right">Codígo de orden de trabajo:</th>
+            <th class="col-4 text-right">Codígo de orden de trabajo:</th>
             <th>{{form.Codigo}}</th>
+            <th class="col-3 text-right">Codígo cambio de campaña:</th>
+            <th>{{form.Campa}}</th>
           </tr>
          
         </table> 
@@ -151,7 +153,7 @@
         </div>
         </form>
       {%else%}  
-      <form action="/ordenesupdate/{{datosw}}" method="get">
+      <form action="/ordenesupdate/{{datosw}}/{{pagesw}}" method="get">
 
         <div class="row mt-2">
           <div class="col-md-9">
@@ -168,8 +170,10 @@
         <table border="0">
       
           <tr>
-            <th class="col-10 text-right">Codígo de orden de trabajo:</th>
+            <th class="col-4 text-right">Codígo de orden de trabajo:</th>
             <th>{{form.Codigo}}</th>
+            <th class="col-3 text-right">Codígo cambio de campaña:</th>
+            <th>{{form.Campa}}</th>
           </tr>
          
         </table> 

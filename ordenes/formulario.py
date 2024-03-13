@@ -2,11 +2,6 @@ from django import forms
 from codificadores.models import areas, equipos, trabajadores
 from vales.models import vale
 
-
-   
-
-
-
 class fomularioorden(forms.Form):
  Codigo=forms.CharField()
  Departamento=forms.CharField()
@@ -68,6 +63,7 @@ class fomularioorden(forms.Form):
         (obc_1, u"Si"),
         (obc_2, u"No"))
  Culminada=forms.ChoiceField(choices=culmina)
+ Campa=forms.CharField(required=False)
 
  
  

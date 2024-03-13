@@ -19,3 +19,4 @@ class orden(models.Model):
     Destino=models.CharField(max_length=100)
     valecodigo=models.CharField(max_length=5, null=True)
     culminada=models.CharField(max_length=2)
+    campa=models.CharField(max_length=7, null=True)

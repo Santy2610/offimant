@@ -32,11 +32,11 @@ urlpatterns = [
     path('', principal),
     
     path('ordenes/', ordenes),
-    path('ordenesnew/<vista>/<dato>', ordenesnew),
+    path('ordenesnew/<vista>/<dato>/<page>', ordenesnew),
     path('ordenesadd', ordenesadd),
     path('ordenesdel/<dato>/<page>', ordenesdel),
     path('ordenesvista/<dato>',ordenesvista),
-    path('ordenesupdate/<dato>/',ordenesupdate),
+    path('ordenesupdate/<dato>/<page>',ordenesupdate),
     
     path('codunidad/<vista>/<dato>/', codunidad),
     path('codunidadadd', codunidadadd),

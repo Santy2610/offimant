@@ -18,7 +18,7 @@
     <div class="container mt-3">
       <div class="row">
         <div class="col-3">
-          <a href="/ordenesnew/index/0" button type="button" class="btn btn-primary">Nueva orden de trabajo</a>
+          <a href="/ordenesnew/index/0/1" button type="button" class="btn btn-primary">Nueva orden de trabajo</a>
         </div>
         <div class="col-6">
           {%include "paginador.html"%} 
@@ -37,6 +37,7 @@
               <th class="col-sm-1 text-center">Prioridad</th>
               <th class="col-sm-1 text-center">Ejecutada</th>
               <th class="col-sm-1 text-center">Culminada</th>
+              <th class="col-sm-1">Campaña</th>
               <th class="col-sm-1">Cod.Vale</th>
               <th></th>
               <th></th>
@@ -53,9 +54,10 @@
              <td class="col-sm-1 text-center">{{ordensw.prioridad}}</td>
              <td class="col-sm-2 text-center">{{ordensw.fechaEje}}</td>
              <td class="col-sm-2 text-center">{{ordensw.culminada}}</td>
+             <td class="col-sm-2 text-center">{{ordensw.campa}}</td>
              <td class="text-center"><a href="/codmaterialorden/{{ordensw.valecodigo}}/{{listpsw.number}}">{{ordensw.valecodigo}}</a></td>
              <td class="text-center"><a href="/ordenesvista/{{ordensw.id}}" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-binoculars"></i></a></td>
-             <td class="text-center"><a href="/ordenesnew/edit/{{ordensw.id}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
+             <td class="text-center"><a href="/ordenesnew/edit/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
              <td class="text-center"><a href="/ordenesdel/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>
             </tr>
            {%endfor%}
