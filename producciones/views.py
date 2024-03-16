@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from producciones.models import producciones, materiales
 from django.core.paginator import Paginator
-from producciones.formulario import formulariopro
+from producciones.formulario import formulariopro,formulariomate
 
 # Create your views here.
 def indexprod(request, vista, dato):
@@ -16,7 +16,6 @@ def indexprod(request, vista, dato):
       formprod=formulariopro(initial={'codigo':prolubica.codigo, 'unidad':prolubica.unidad, 'descripcion':prolubica.descripcion, 'cantidad':prolubica.cantidad, 'fechafab':prolubica.fechaf})
     return render(request, "listaprod.html",{"form":formprod, "prosw":prolist, "vistasw":vista, "listpsw":prolist, "paginador":paginador, "dato":dato})
 
-
 def codprodadd(request):
       codigo=request.GET["codigo"]
       descripcion=request.GET["descripcion"]
@@ -25,7 +24,6 @@ def codprodadd(request):
       fechaf=request.GET["fechafab"]
       prolist=producciones.objects.create(codigo=codigo, descripcion=descripcion, unidad=unidad, cantidad=cantidad, fechaf=fechaf)
       return redirect(indexprod, vista='index', dato=0)
-
 
 def codprodupdate(request, dato, page):
       codigo=request.GET["codigo"]
@@ -46,4 +44,19 @@ def codproddel(request, dato, page):
       prolist=producciones.objects.get(pk=dato)
       prolist.delete()
       return redirect("/indexprod/index/0/?page=%s" %page)
+
+def indexmate(request, vista, dato):
+      prodlist=producciones.objects.get(pk=dato)
+      page=request.GET.get('page',1)
+      matelist=materiales.objects.filter(idprod=prodlist).order_by('novale')
+      paginador=Paginator(matelist, 10)
+      matelist=paginador.page(page)
+      matebot=materiales.objects.filter(idprod=prodlist).order_by('novale')
+      if vista == 'index':
+       formate=formulariomate()
+      else:
+       matedg=materiales.objects.get(pk=dato)
+       formate=formulariomate(initial={'novale':matedg.novale})
+      return render(request,"listavale.html",{"form":formate, "prodsw":prodlist, "matesw":matelist, "dato":dato, "matebot":matebot, "paginador":paginador,"listpsw":matelist})
+
    

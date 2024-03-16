@@ -26,9 +26,6 @@ def ordenesnew(request, vista, dato, page):
        falla=ordenubica.falla
        return render(request,"adicionarordenes.html",{"form":formorden, "resultsw":result,"fallasw":falla, "vistasw":vista, "datosw":dato, "pagesw":page})
 
-
-
-
 def ordenesadd(request):
       Codigof=request.GET["Codigo"]
       Departamentof=request.GET["Departamento"]

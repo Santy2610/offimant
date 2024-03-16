@@ -1,6 +1,7 @@
 from django import forms
 from producciones.models import producciones, materiales
 from codificadores.models import centrocosto, unidadm
+from vales.models import vale
 
 
 class formulariopro(forms.Form):
@@ -9,3 +10,6 @@ class formulariopro(forms.Form):
     unidad=forms.ModelChoiceField(queryset=unidadm.objects.values_list('unid', flat=True).order_by('unid')) # type: ignore
     cantidad=forms.FloatField()
     fechafab=forms.DateField(widget=forms.TextInput(attrs={'class': 'form-control', 'type':'date'}))
+
+class formulariomate(forms.Form):
+    Novale=forms.ModelChoiceField(queryset=vale.objects.values_list('codigo', flat=True)) # type: ignore
