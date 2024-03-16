@@ -10,7 +10,7 @@ class almacenAdmin(admin.ModelAdmin):
     list_display=("descripcion","codigo")    
 
 class centrocostoAdmin(admin.ModelAdmin):
-    list_display=("descripcion","codigo")
+    list_display=("descripcion","codigo", "prod")
 
 class areasAdmin(admin.ModelAdmin):
     list_display=("codigo","descripcion")

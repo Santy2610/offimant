@@ -123,6 +123,8 @@
        <tr>  
         <th class="col-sm-2 text-center">Codigo</th>
         <th class="col-sm-7">Descripción</th>
+        <th class="col-sm-2 text-center">Permisos</th>
+        <th class="col-sm-2">Ubicación</th>
         <th></th>
         <th class="col-sm-1 text-center">Editar</th>
         <th class="col-sm-1 text-center">Eliminar</th>
@@ -134,6 +136,8 @@
        <tr> 
        <td class="text-center">{{trabsw.codigo}}</td>
        <td>{{trabsw.nombre}}</td>
+       <td class="text-center">{{trabsw.solic}}</td>
+       <td>{{trabsw.person}}</td>
        <td></td>
        {%if vistasw == 'index'%} 
        <td class="text-center"><a href="/codtraba/edit/{{trabsw.id}}?page={{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>

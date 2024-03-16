@@ -37,7 +37,7 @@ class fomularioorden(forms.Form):
         (obc_3, u"baja"))
  prioridad=forms.ChoiceField(choices=prioridad)
  Resultado=forms.Textarea()
- reparado=forms.ModelChoiceField(queryset=trabajadores.objects.values_list('nombre', flat=True).order_by('codigo')) # type: ignore
+ reparado=forms.ModelChoiceField(queryset=trabajadores.objects.filter(person="Mantenimiento").values_list('nombre', flat=True).order_by('codigo')) # type: ignore
  valecod=forms.ModelChoiceField(queryset=vale.objects.values_list('codigo', flat=True).order_by('codigo'), required=False) # type: ignore
  fechaEje=forms.DateField(widget=forms.TextInput(attrs={'class': 'form-control', 'type':'date'}))
  obc_0 = '----'

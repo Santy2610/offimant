@@ -93,21 +93,24 @@ def codcosto(request, vista, dato):
        formcosto=formulariocosto()
       else:
        costong=centrocosto.objects.get(pk=dato)
-       formcosto=formulariocosto(initial={'Codigo':costong.codigo, 'Descripcion':costong.descripcion})
+       formcosto=formulariocosto(initial={'Codigo':costong.codigo, 'Descripcion':costong.descripcion, 'Produccion':costong.prod})
       return render(request,"costoindex.html",{"form":formcosto, "costosw":costolist, "vistasw":vista, "dato":dato, "paginador":paginador,"listpsw":costolist})
 
 def codcostoadd(request):
       codigo=request.GET["Codigo"]
       descripcion=request.GET["Descripcion"]
-      costolist=centrocosto.objects.create(codigo=codigo, descripcion=descripcion)
+      prod=request.GET["Produccion"]
+      costolist=centrocosto.objects.create(codigo=codigo, descripcion=descripcion, prod=prod)
       return redirect(codcosto, vista='index', dato=0)
 
 def codcostoupdate(request, dato, page):
     codigo=request.GET["Codigo"]
     descripcion=request.GET["Descripcion"]
+    prod=request.GET["Produccion"]
     costodg=centrocosto.objects.get(pk=dato)
     costodg.codigo=codigo
     costodg.descripcion=descripcion
+    costodg.prod=prod
     costodg.save()
     return redirect("/codcosto/index/0/?page=%s" %page)    
 
@@ -253,22 +256,28 @@ def codtraba(request, vista, dato):
        formtrab=formulariotrab()
       else:
        trabdg=trabajadores.objects.get(pk=dato)
-       formtrab=formulariotrab(initial={'codigo':trabdg.codigo, 'nombre':trabdg.nombre})
+       formtrab=formulariotrab(initial={'codigo':trabdg.codigo, 'nombre':trabdg.nombre, 'Solic':trabdg.solic, 'Person':trabdg.person})
       return render(request,"trabajadoresindex.html",{"form":formtrab, "trabsw":trablist, "vistasw":vista, "dato":dato, "paginador":paginador,"listpsw":trablist})
     
 
 def codtrabaadd(request):
       codigo=request.GET["codigo"]
       nombre=request.GET["nombre"]
-      trablist=trabajadores.objects.create(codigo=codigo, nombre=nombre)
+      solic=request.GET["Solic"]
+      person=request.GET["Person"]
+      trablist=trabajadores.objects.create(codigo=codigo, nombre=nombre, solic=solic, person=person)
       return redirect(codtraba, vista='index', dato=0)
 
 def codtrabaupdate(request, dato, page):
     codigo=request.GET["codigo"]
     nombre=request.GET["nombre"]
+    solic=request.GET["Solic"]
+    person=request.GET["Person"]
     trabdg=trabajadores.objects.get(pk=dato)
     trabdg.codigo=codigo
     trabdg.nombre=nombre
+    trabdg.solic=solic
+    trabdg.person=person
     trabdg.save()
     return redirect("/codtraba/index/0/?page=%s" %page) 
 

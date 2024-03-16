@@ -122,6 +122,7 @@
        <tr>  
         <th class="col-sm-2 text-center">Codigo</th>
         <th class="col-sm-7">Descripción</th>
+        <th class="col-sm-7 text-center">Producción</th>
         <th></th>
         <th class="col-sm-1 text-center">Editar</th>
         <th class="col-sm-1 text-center">Eliminar</th>
@@ -133,6 +134,7 @@
        <tr> 
        <td class="text-center">{{costosw.codigo}}</td>
        <td>{{costosw.descripcion}}</td>
+       <td class="text-center">{{costosw.prod}}</td>
        <td></td>
        {%if vistasw == 'index'%} 
        <td class="text-center"><a href="/codcosto/edit/{{costosw.id}}?page={{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>

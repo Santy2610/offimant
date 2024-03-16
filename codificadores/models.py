@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 class unidadm(models.Model):
@@ -11,6 +12,7 @@ class almacen(models.Model):
 class centrocosto(models.Model):
      descripcion=models.CharField(max_length=50)
      codigo=models.CharField(max_length=20)
+     prod=models.CharField(max_length=2, default="No")
 
 class areas(models.Model):
      codigo=models.CharField(max_length=1)
@@ -28,5 +30,7 @@ class causas(models.Model):
 class trabajadores(models.Model):
      codigo=models.CharField(max_length=5)
      nombre=models.CharField(max_length=150)
+     solic=models.CharField(max_length=8, default="Solicita")
+     person=models.CharField(max_length=13, default="Mantenimiento")
 
 

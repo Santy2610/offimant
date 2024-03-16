@@ -12,4 +12,4 @@ class formulariovales(forms.Form):
 class formulariomaterial(forms.Form):
     Material=forms.CharField(label="Descripción")
     Unidad=forms.ModelChoiceField(queryset=unidadm.objects.values_list('unid', flat=True).order_by('unid')) # type: ignore    
-    Cantidad=forms.FloatField()
+    Cantidad=forms.FloatField(widget=forms.TextInput(attrs={'size': '7'}))
