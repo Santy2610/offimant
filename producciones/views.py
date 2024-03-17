@@ -45,18 +45,14 @@ def codproddel(request, dato, page):
       prolist.delete()
       return redirect("/indexprod/index/0/?page=%s" %page)
 
-def indexmate(request, vista, dato):
+def indexmate(request, dato, pagina):
       prodlist=producciones.objects.get(pk=dato)
       page=request.GET.get('page',1)
       matelist=materiales.objects.filter(idprod=prodlist).order_by('novale')
       paginador=Paginator(matelist, 10)
       matelist=paginador.page(page)
       matebot=materiales.objects.filter(idprod=prodlist).order_by('novale')
-      if vista == 'index':
-       formate=formulariomate()
-      else:
-       matedg=materiales.objects.get(pk=dato)
-       formate=formulariomate(initial={'novale':matedg.novale})
-      return render(request,"listavale.html",{"form":formate, "prodsw":prodlist, "matesw":matelist, "dato":dato, "matebot":matebot, "paginador":paginador,"listpsw":matelist})
+      formate=formulariomate()
+      return render(request,"listavale.html",{"form":formate, "prodsw":prodlist, "matesw":matelist, "pagesw":pagina, "dato":dato, "matebot":matebot, "paginador":paginador,"listpsw":matelist})
 
    

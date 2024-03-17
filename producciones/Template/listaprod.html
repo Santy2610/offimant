@@ -12,6 +12,9 @@
     
     {%include "barra.html"%}
 
+
+    
+
   <div class="container mt-2">
     <div class="container">
       <div class="row">
@@ -121,7 +124,7 @@
             <td class="col-sm-1 text-center">{{prosw.unidad}}</td>
             <td class="col-sm-2 text-rigth">{{prosw.cantidad}}</td>
             {%if vistasw == 'index'%} 
-            <td><a href="#" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-table"></i></a></td>
+            <td><a href="/indexmate/{{prosw.id}}/{{listpsw.number}}" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-table"></i></a></td>
             <td><a href="/indexprod/edit/{{prosw.id}}/?page={{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
             <td><a href="/codproddel/{{prosw.id}}/{{listpsw.number}}" button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>
             {%else%}

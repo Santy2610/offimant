@@ -25,7 +25,7 @@ from codificadores.views import codequipos, codequiposadd, codequiposdel, codequ
 from codificadores.views import codcausas, codcausasadd, codcausasdel, codcausasupdate
 from codificadores.views import codtraba, codtrabaadd, codtrabadel, codtrabaupdate
 from vales.views import codvales, codvalesadd, codvalesdel, codvalesupdate, codmaterial, codmaterialadd, codmaterialdel, codmaterialorden
-from producciones.views import indexprod, codproddel, codprodadd, codprodupdate
+from producciones.views import indexmate, indexprod, codproddel, codprodadd, codprodupdate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -89,8 +89,8 @@ urlpatterns = [
     path('indexprod/<vista>/<dato>/', indexprod),
     path('codprodadd', codprodadd),
     path('codproddel/<dato>/<page>', codproddel),
-    path('codprodupdate/<dato>/<page>', codprodupdate)
+    path('codprodupdate/<dato>/<page>', codprodupdate),
 
-
+    path('indexmate/<dato>/<pagina>', indexmate)
     
 ]
