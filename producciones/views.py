@@ -57,9 +57,14 @@ def indexmate(request, dato, pagina):
       return render(request,"listavale.html",{"form":formate, "prodsw":prodlist, "matesw":matelist, "pagesw":pagina, "datosw":dato, "matebot":matebot, "paginador":paginador,"listpsw":matelist})
 
 def codmateadd(request, dato, pagina):
+    matelist=producciones.objects.get(pk=dato)
     codigo=request.GET["Novale"] 
     valer=vale.objects.get(codigo=codigo)
-    valelist=materiales.objects.create(novale=valer.codigo, almacen=valer.almacen, costo=valer.costo, entregado=valer.entregado, fecha=valer.fecha)
+    valelist=materiales.objects.create(idprod=matelist, novale=valer.codigo, almacen=valer.almacen, costo=valer.costo, entregado=valer.entregado, fecha=valer.fecha)
     valelist.save()
     return redirect(indexmate, dato, pagina)
    
+def codmatedel(request, dato, ubica, pagina):
+      valelist=materiales.objects.get(pk=dato)
+      valelist.delete()
+      return redirect(indexmate, ubica, pagina)   

@@ -47,10 +47,10 @@
           <table class="table table-striped table-hover table-sm"> 
             <thead class="thead-dark">
              <tr>  
-              <th class="col-sm-2 text-center">Vale</th>
+              <th class="col-sm-1 text-center">Vale</th>
               <th class="col-sm-3">Almacen</th>
-              <th class="col-sm-3">Costo</th>
-              <th class="col-sm-1 text-center">Entregado</th>
+              <th class="col-sm-2">Costo</th>
+              <th class="col-sm-3">Entregado</th>
               <th class="col-sm-2">Fecha</th>
               <th ></th>
             </tr>
@@ -60,13 +60,12 @@
            {%for matesw in matesw%}
            <tr>
             <td class="col-sm-1 text-center">{{matesw.novale}}</td>
-            <td class="col-sm-1">{{matesw.almacen}}</td>
-            <td class="col-sm-1">{{matesw.costo}}</td>
-            <td class="col-sm-1 text-center">{{matesw.entregado}}</td>
+            <td class="col-sm-3">{{matesw.almacen}}</td>
+            <td class="col-sm-2">{{matesw.costo}}</td>
+            <td class="col-sm-3">{{matesw.entregado}}</td>
             <td class="col-sm-2 text-rigth">{{matesw.fecha}}</td>
-            <td><a href="/codproddel/{{prosw.id}}/{{listpsw.number}}" button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>
-            <td class="text-center"><a href="#" button type="button" class="btn btn-danger disabled btn-sm"><i class="bi bi-trash"></i></a></td>
-           </tr>
+            <td><a href="/codmatedel/{{matesw.id}}/{{datosw}}/{{pagesw}}" button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>
+            </tr>
            {%endfor%}
           </tbody>  
           </table>      
