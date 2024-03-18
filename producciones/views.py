@@ -7,7 +7,7 @@ from producciones.formulario import formulariopro,formulariomate
 # Create your views here.
 def indexprod(request, vista, dato):
     page=request.GET.get('page',1)
-    prolist=producciones.objects.all()
+    prolist=producciones.objects.all().order_by('codigo')
     paginador=Paginator(prolist, 10)
     prolist=paginador.page(page)
     if vista == 'index':
