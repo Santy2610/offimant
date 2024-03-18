@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from producciones.models import producciones, materiales
+from vales.models import vale
 from django.core.paginator import Paginator
 from producciones.formulario import formulariopro,formulariomate
 
@@ -53,6 +54,12 @@ def indexmate(request, dato, pagina):
       matelist=paginador.page(page)
       matebot=materiales.objects.filter(idprod=prodlist).order_by('novale')
       formate=formulariomate()
-      return render(request,"listavale.html",{"form":formate, "prodsw":prodlist, "matesw":matelist, "pagesw":pagina, "dato":dato, "matebot":matebot, "paginador":paginador,"listpsw":matelist})
+      return render(request,"listavale.html",{"form":formate, "prodsw":prodlist, "matesw":matelist, "pagesw":pagina, "datosw":dato, "matebot":matebot, "paginador":paginador,"listpsw":matelist})
 
+def codmateadd(request, dato, pagina):
+    codigo=request.GET["Novale"] 
+    valer=vale.objects.get(codigo=codigo)
+    valelist=materiales.objects.create(novale=valer.codigo, almacen=valer.almacen, costo=valer.costo, entregado=valer.entregado, fecha=valer.fecha)
+    valelist.save()
+    return redirect(indexmate, dato, pagina)
    
