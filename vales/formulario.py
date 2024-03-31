@@ -6,7 +6,7 @@ class formulariovales(forms.Form):
     Codigo=forms.CharField(label="Código")
     Almacen=forms.ModelChoiceField(queryset=almacen.objects.values_list('codigo', flat=True).order_by('codigo')) # type: ignore
     Costo=forms.ModelChoiceField(queryset=centrocosto.objects.values_list('descripcion', flat=True).order_by('codigo')) # type: ignore
-    Entregado=forms.ModelChoiceField(queryset=trabajadores.objects.values_list('nombre', flat=True).order_by('codigo')) # type: ignore
+    Entregado=forms.ModelChoiceField(queryset=trabajadores.objects.filter(solic='Solicita').values_list('nombre', flat=True).order_by('codigo')) # type: ignore
     Fecha=forms.DateField(widget=forms.TextInput(attrs={'class': 'form-control', 'type':'date'}))
 
 class formulariomaterial(forms.Form):

@@ -221,7 +221,7 @@
       <tbody>
       {%for valessw in valessw%} 
        <tr> 
-       <td class="col-sm-1 text-center"><a href="/codvales/edit/{{valessw.id}}/?page={{listpsw.number}}"></i>{{valessw.codigo}}</a></td>
+       <td class="col-sm-1 text-center">{{valessw.codigo}}</td>
        <td class="col-sm-1">{{valessw.almacen}}</td>
        <td class="col-sm-1">{{valessw.costo}}</td>
        <td class="col-sm-3">{{valessw.entregado}}</td>
@@ -230,8 +230,24 @@
        <td><a href="/codmaterial/{{valessw.id}}/{{listpsw.number}}" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-table"></i></a></td>
        <td><a href="/codvales/edit/{{valessw.id}}/?page={{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
        <td><a href="/codvalesdel/{{valessw.id}}/{{listpsw.number}}" button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>
-       
-       <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <!--<td><button class="btn btn-danger btn-sm" id="btmodal" data-toggle="modal" data-target="#myModal" data-id={{valessw.id}} data-numero={{valessw.codigo}} data-fecha={{valessw.fecha}}><i class="bi bi-trash"></i></td>
+
+      <script>
+       $(document).on("click", "#btmodal", function () {
+         var idc=$(this).data(id);
+         var numeroc=$(this).data(numero);
+         var fechac=$(this).data(fecha);
+
+         $("#plot1").val(numeroc);
+         $("#plot2").val(fechac);
+       })
+
+      </script>
+        
+
+
+
+       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
@@ -239,7 +255,7 @@
               
             </div>
             <div class="modal-body">
-             Decea eliminar el vale numero {{valessw.codigo}} con fecha {{valessw.fecha}}  
+             Decea eliminar el vale numero <label id="plot1"></label> con fecha <label id="plot2"></label>  
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary">Eliminar</button>

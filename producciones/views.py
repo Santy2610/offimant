@@ -54,7 +54,7 @@ def indexmate(request, dato, pagina):
       matelist=paginador.page(page)
       matebot=materiales.objects.filter(idprod=prodlist).order_by('novale')
       formate=formulariomate()
-      return render(request,"listavale.html",{"form":formate, "prodsw":prodlist, "matesw":matelist, "pagesw":pagina, "datosw":dato, "matebot":matebot, "paginador":paginador,"listpsw":matelist})
+      return render(request,"listavale.html",{"form":formate, "prodsw":prodlist, "matesw":matelist, "pagesw":pagina, "datosw":dato, "matebot":matebot, "paginador":paginador,"listpsw":matelist, "retrosw":dato})
 
 def codmateadd(request, dato, pagina):
     matelist=producciones.objects.get(pk=dato)

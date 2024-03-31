@@ -17,7 +17,7 @@ class fomularioorden(forms.Form):
         (obc_2, u"Plan de mantenimiento"))
  motivosolic=forms.ChoiceField(choices=motivos)
  fechaRep=forms.DateField(widget=forms.TextInput(attrs={'class': 'form-control', 'type':'date'}))
- solicitante=forms.ModelChoiceField(queryset=trabajadores.objects.values_list('nombre', flat=True).order_by('codigo')) # type: ignore
+ solicitante=forms.ModelChoiceField(queryset=trabajadores.objects.filter(person='Otros').values_list('nombre', flat=True).order_by('codigo')) # type: ignore
  obc_0 = '----'
  obc_1 = 'Si'
  obc_2 = 'No'

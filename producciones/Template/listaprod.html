@@ -126,7 +126,37 @@
             {%if vistasw == 'index'%} 
             <td><a href="/indexmate/{{prosw.id}}/{{listpsw.number}}" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-table"></i></a></td>
             <td><a href="/indexprod/edit/{{prosw.id}}/?page={{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
-            <td><a href="/codproddel/{{prosw.id}}/{{listpsw.number}}" button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>
+            <!--<td><a href="/codproddel/{{prosw.id}}/{{listpsw.number}}" button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>-->
+            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal"><i class="bi bi-trash"></i></button></td>
+            
+            <!-- Modal -->
+     
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+   <div class="modal-content">
+    <div class="modal-header">
+     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+   
+    </div>
+    <div class="modal-body">
+   
+    </div>
+    <div class="modal-footer">
+     <button type="button" class="btn btn-primary">Guardar cambios</button>
+     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <!-- Modal -->
+            
+            
+            
+            
+            
+            
+            
             {%else%}
             <td class="text-center"><a href="#" button type="button" class="btn btn-primary disabled btn-sm"><i class="bi bi-table"></i></a></td>
             <td class="text-center"><a href="#" button type="button" class="btn btn-success disabled btn-sm"><i class="bi bi-pencil"></i></a></td>

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Offimant.views import principal
-from ordenes.views import ordenes,ordenesnew, ordenesadd, ordenesdel, ordenesvista, ordenesupdate
+from ordenes.views import ordenes,ordenesnew, ordenesadd, ordenesdel, ordenesvista, ordenesupdate, ordenimpcont
 from codificadores.views import codunidad, codalmacen, codcosto, codparada, codunidadadd,codunidaddel 
 from codificadores.views import codunidadupdate, codalmacenadd, codalmacendel,codalmacenupdate
 from codificadores.views import codcostoadd, codcostodel, codcostoupdate, codareas, codareasadd
@@ -37,6 +37,7 @@ urlpatterns = [
     path('ordenesdel/<dato>/<page>', ordenesdel),
     path('ordenesvista/<dato>',ordenesvista),
     path('ordenesupdate/<dato>/<page>',ordenesupdate),
+    path('ordenimpcont/',ordenimpcont),
     
     path('codunidad/<vista>/<dato>/', codunidad),
     path('codunidadadd', codunidadadd),
@@ -82,7 +83,7 @@ urlpatterns = [
     path('codmaterial/<dato>/<pagina>/', codmaterial),
     path('codmaterialadd/<dato>/<pagina>', codmaterialadd),
     path('codmaterialdel/<dato>/<vale>/<pagina>', codmaterialdel),
-    path('codmaterialorden/<dato>/<page>/', codmaterialorden),
+    path('codmaterialorden/<dato>/<page>/<retro>/', codmaterialorden),
 
     path('codparada', codparada),
 

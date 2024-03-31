@@ -103,3 +103,7 @@ def ordenesvista(request, dato):
       ordenlist=orden.objects.get(pk=dato)
       return render(request,"vistaorden.html", {"ordensw":ordenlist})
 
+def ordenimpcont(request):
+     ordenimp=orden.objects.all().order_by('codigo')
+     return render(request,"indexcontrol.html", {"ordensw":ordenimp})
+
