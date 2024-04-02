@@ -99,11 +99,11 @@ def ordenesdel(request, dato, page):
       ordenlist.delete()
       return redirect("/ordenes/?page=%s" %page)
 
-def ordenesvista(request, dato):
-      ordenlist=orden.objects.get(pk=dato)
-      return render(request,"vistaorden.html", {"ordensw":ordenlist})
-
 def ordenimpcont(request):
      ordenimp=orden.objects.all().order_by('codigo')
      return render(request,"indexcontrol.html", {"ordensw":ordenimp})
+
+def ordenimpres(request, dato):
+     ordenimp=orden.objects.get(pk=dato)
+     return render(request,"OrdenImpres.html",{"ordensw":ordenimp})
 

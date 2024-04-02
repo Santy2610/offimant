@@ -44,15 +44,13 @@ class fomularioorden(forms.Form):
  obc_1 = 'Uso'
  obc_2 = 'Baja técnica'
  obc_3 = 'Evaluación por control de la calidad'
- obc_4 = 'Evaluación por terceras partes'
- obc_5 = 'Pendiente a piezas de repuesto'
+ obc_4 = 'Pendiente a piezas de repuesto'
  destino = (
         (obc_0, u"----"),
         (obc_1, u"Uso"),
         (obc_2, u"Baja técnica"),
         (obc_3, u"Evaluación por control de la calidad"),
-        (obc_4, u"Evaluación por terceras partes"),
-        (obc_5, u"Pendiente a piezas de repuesto"))
+        (obc_4, u"Pendiente a piezas de repuesto"))
  Destino=forms.ChoiceField(choices=destino)
 
  obc_0 = '----'
