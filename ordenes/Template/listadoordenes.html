@@ -48,7 +48,11 @@
           </thead>
           <tbody>
            {%for ordensw in ordensw%}
-            <tr>
+            {% if ordensw.culminada == "No"%} 
+             <tr class="table-primary">
+            {%else%}
+             <tr>
+            {%endif%}     
              <td>{{ordensw.codigo}}</td>
              <td>{{ordensw.area}}</td>
              <td>{{ordensw.equipo}}</td>

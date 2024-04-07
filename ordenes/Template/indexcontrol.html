@@ -256,7 +256,12 @@ ZmuxOL18xn/RuaBz82cH/4tOi/4fSbPRrWf/ZKAAAAAASUVORK5CYII="/></b></span></p>
 
 <!--Empiesa aqui-->
  {%for ordensw in ordensw%}
-<tr>
+ {% if ordensw.culminada == "No"%} 
+             <tr class="table-primary">
+            {%else%}
+             <tr>
+            {%endif%}   
+
 	<td width="61" style="width:46.04998110236221pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">{{ordensw.codigo}} {{ordensw.campa}}
 	</td>
 	<td width="101" colspan="2" style="width:75.9267779527559pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">{{ordensw.departamento}}
