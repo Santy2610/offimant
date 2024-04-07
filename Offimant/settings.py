@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'ordenes',
     'codificadores',
     'vales',
-    'producciones'
+    'producciones',
+    'mantenimiento'
 ]
 
 MIDDLEWARE = [
@@ -62,7 +63,8 @@ TEMPLATES = [
                  BASE_DIR / 'ordenes/Template',
                  BASE_DIR / 'codificadores/Template',
                  BASE_DIR / 'vales/Template',
-                 BASE_DIR / 'producciones/Template'],
+                 BASE_DIR / 'producciones/Template',
+                 BASE_DIR / 'mantenimiento/Template',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

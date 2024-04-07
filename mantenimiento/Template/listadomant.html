@@ -1,0 +1,92 @@
+<html>
+<title></title>
+{% load static %}
+<link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'jquery-3.6.3.min.js' %}"></script>
+<script src="{% static 'popper.min.js' %}"></script>
+<link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+<link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
+
+
+<body>
+
+  <div class="container mt-1 ">
+
+    {%include "barra.html"%}
+  
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-5">
+          <a href="/adicionarmant/index/0" button type="button" class="btn btn-primary"><i class="bi bi-newspaper"></i> Nueva tarea de mantenimiento</a>
+          <a href="/ordenimpcont" button type="button" class="btn btn-primary"><i class="bi bi-printer"></i> Imprimir</a>
+        </div>
+        
+        <div class="col-6">
+          {%include "paginador.html"%} 
+        </div>
+        </div>
+    <div class="row">
+      <div class="col-md-12 mt-1">
+
+        <table class="table table-striped table-hover table-sm"> 
+          <thead class="thead-dark">
+            <tr>
+              <th>Codigo</th>
+              <th class="col-sm-2">Area</th>
+              <th class="col-sm-4">Tarea</th>
+              <th class="text-center">Ene</th>
+              <th class="text-center">Feb</th>
+              <th class="text-center">Mar</th>
+              <th class="text-center">Abr</th>
+              <th class="text-center">May</th>
+              <th class="text-center">Jun</th>
+              <th class="text-center">Jul</th>
+              <th class="text-center">Ago</th>
+              <th class="text-center">Sep</th>
+              <th class="text-center">Oct</th>
+              <th class="text-center">Nov</th>
+              <th class="text-center">Dic</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+             
+            </tr>
+          </thead>
+          <tbody>
+           {% for mantsw in mantsw%} 
+             <tr>
+             <td class="text-center">{{mantsw.codigo}}</td>
+              <td>{{mantsw.area}}</td>
+             <td>{{mantsw.tarea}}</td>
+             
+             <td class="table-bordered {%if mantsw.eneroP%} table-info {%endif%}"></td>
+             <td class="table-bordered {%if mantsw.febreroP%} table-info {%endif%}"></td>
+             <td class="table-bordered {%if mantsw.marzoP%} table-info {%endif%}"></td>
+             <td class="table-bordered {%if mantsw.abrilP%} table-info {%endif%}"></td>
+             <td class="table-bordered {%if mantsw.mayoP%} table-info {%endif%}"></td>
+             <td class="table-bordered {%if mantsw.junioP%} table-info {%endif%}"></td>
+             <td class="table-bordered {%if mantsw.julioP%} table-info {%endif%}"></td>
+             <td class="table-bordered {%if mantsw.agostoP%} table-info {%endif%}"></td>
+             <td class="table-bordered {%if mantsw.septiembreP%} table-info {%endif%}"></td>
+             <td class="table-bordered {%if mantsw.octubreP%} table-info {%endif%}"></td>
+             <td class="table-bordered {%if mantsw.noviembreP%} table-info {%endif%}"></td>
+             <td class="table-bordered {%if mantsw.diciembreP%} table-info {%endif%}"></td>
+             <td class="text-center"><a href="#" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-printer"></i></a></td>
+             <td class="text-center"><a href="adicionarmant/edit/{{mantsw.id}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
+             <td class="text-center"><a href="#" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>
+            </tr>
+           {%endfor%}
+          </tbody>
+        </table>
+    </div>
+    
+  </div>
+</div>
+</div>
+</div>
+</body>
+
+
+</html>
