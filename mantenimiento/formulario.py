@@ -4,18 +4,24 @@ from codificadores.models import areas
 
 
 class formmant(forms.Form):
-    codigof=forms.CharField()
-    areaf=forms.CharField()
+    codigof=forms.CharField(widget=forms.TextInput(attrs={'size': '5'}))
+    areaf=forms.ModelChoiceField(queryset=areas.objects.values_list('descripcion', flat=True).order_by('codigo')) # type: ignore
     tareaf=forms.Textarea()
-    enerof=forms.CheckboxInput()
-    febrerof=forms.CheckboxInput()
-    marzof=forms.CheckboxInput()
-    abrilf=forms.CheckboxInput()
-    mayof=forms.CheckboxInput()
-    juniof=forms.CheckboxInput()
-    juliof=forms.CheckboxInput()
-    agostof=forms.CheckboxInput()
-    septiembref=forms.CheckboxInput()
-    octubref=forms.CheckboxInput()
-    noviembref=forms.CheckboxInput()
-    diciembref=forms.CheckboxInput()
+    obc_0 = 'No'
+    obc_1 = 'Si'
+    afecta = (
+        (obc_0, u"No"),
+        (obc_1, u"Si"))
+    enerof=forms.ChoiceField(choices=afecta)
+    enerof=forms.ChoiceField(choices=afecta)
+    febrerof=forms.ChoiceField(choices=afecta)
+    marzof=forms.ChoiceField(choices=afecta)
+    abrilf=forms.ChoiceField(choices=afecta)
+    mayof=forms.ChoiceField(choices=afecta)
+    juniof=forms.ChoiceField(choices=afecta)
+    juliof=forms.ChoiceField(choices=afecta)
+    agostof=forms.ChoiceField(choices=afecta)
+    septiembref=forms.ChoiceField(choices=afecta)
+    octubref=forms.ChoiceField(choices=afecta)
+    noviembref=forms.ChoiceField(choices=afecta)
+    diciembref=forms.ChoiceField(choices=afecta)

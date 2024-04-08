@@ -21,7 +21,7 @@
       {%if vistasw == 'index'%}
       <form action="/mantadd" method="get">
 
-        <div class="row mt-2">
+       <!-- <div class="row mt-2">
           <div class="col-md-9">
           </div>
 
@@ -33,112 +33,76 @@
           </div>
         </div>
 
-      </p></p>
+      </p></p>-->
+      
       <hr>
 
-
+     <div class="row">
+     <div class="col-6 ">
         <table border="0">
       
           <tr>
-            <th class="col-4 text-right">Codígo de orden de trabajo:</th>
-            <th>{{form.Codigo}}</th>
-            <th class="col-3 text-right">Codígo cambio de campaña:</th>
-            <th>{{form.Campa}}</th>
+            <th class="col-2">Codígo: {{form.codigof}}</th><th class="col-5">Area: {{form.areaf}}</th>
+            
+            
           </tr>
          
         </table> 
     
       </p>
-        <table border="0">
-          
-          <tr>
-            <th class="col-10 text-center">Area o departamento de origen: {{form.Departamento}}</th>
-          </tr>  
-          
-       </table>
-      </p>
-       <table border="0">
-          
-        <tr>
-       <th class="col-2 text-left">Area: {{form.area}}</th>
-       <th class="col-4 text-left">Equipo: {{form.equipo}}</th>
-       <th class="col-3 text-left">ID equipo: {{form.idequipo}}</th>
-        </tr>
         
-       </table>
-       
-      </p>
-    
-    
       <table border="0">
           
         <tr>
-        <th class="col-3 text-left">Falla:<textarea name="Falla" rows="5" cols="114"></textarea></th>
+        <th class="col-3 text-left">Tarea:<textarea name="tareaf" rows="8" cols="55"></textarea></th>
        
         </tr>
         
        </table>
-       
-      </p>
-    
-    
-    
-       <table border="0">
-    
-        <tr>
-          <th class="col-6 text-left">Motivo de solicitud: {{form.motivosolic}}</th>
-          <th class="col-3 text-left">Fecha reportado:</th>
-          <th>{{form.fechaRep}}</th>
-        </tr>
-    
-       </table> 
-    
-      </p>
-    
-      <table border="0">
-    
-        <tr>
-          <th class="col-6 text-left">Solicita: {{form.solicitante}}</th>
-          <th class="col-3 text-left">Afecta un proceso: {{form.afectacion}}</th>
-          <th class="col-3 text-left">Prioridad: {{form.prioridad}}</th>
-        </tr>
-    
-       </table> 
       
       </p>
-    
-       <table border="0">
-          
+
+    </div>
+
+    <div class="col-6 ">
+<table border="0">
+  <tr><th></th></tr>
+      <tr>
+        <th class="col-6 text-center">Planificación de la tarea por meces</th> 
+      </tr>
+  <tr><th></th></tr>    
+</table> 
+</p>  
+
+      <table class="table  table-hover">
+         
         <tr>
-        <th class="col-3 text-left">Resultado:<textarea name="Resultado" rows="7" cols="114"></textarea></th>
-       
+          <th class="col-1">Enero:</th> <th class="col-1"> {{form.enerof}}</th> 
+          <th class="col-1">Febrero:</th> <th class="col-1">{{form.febrerof}}</th>
+          <th class="col-1">Marzo:</th> <th class="col-1">{{form.marzof}}</th>
+        </tr>
+        <tr>  
+          <th class="col-1">Abril:</th> <th class="col-1">{{form.abrilf}}</th>
+          <th class="col-1">Mayo:</th> <th class="col-1">{{form.mayof}}</th>
+          <th class="col-1">Junio:</th> <th class="col-1">{{form.juniof}}</th>
+        </tr>
+        <tr>  
+          <th class="col-1">Julio:</th> <th class="col-1">{{form.juliof}}</th>
+          <th class="col-1">Agosto:</th> <th class="col-1">{{form.agostof}}</th>
+          <th class="col-1">Septiembre:</th> <th class="col-1">{{form.septiembref}}</th>
+        </tr>
+        <tr>  
+          <th class="col-1">Octubre:</th> <th class="col-1">{{form.octubref}}</th>
+          <th class="col-1">Noviembre:</th> <th class="col-1">{{form.noviembref}}</th> 
+          <th class="col-1">Diciembre:</th> <th class="col-1">{{form.diciembref}}</th>
         </tr>
         
        </table>
+      </div>
        
-      </p>
-    
-      <table border="0">
-    
-        <tr>
-          <th class="col-5 text-left">Ejecutado por: {{form.reparado}}</th>
-          <th class="col-3 text-left">Vale de materiales: {{form.valecod}}</th>
-          <th class="col-2 text-left">Fecha de ejecución:</th>
-          <th>{{form.fechaEje}}</th>
-        </tr>
-    
-       </table> 
-       
-      </p>
-    
-      <table border="0">
-        <tr>
-          <th class="col-5 text-left">Destino: {{form.Destino}}</th>
-          <th class="col-3 text-left">Culminada: {{form.Culminada}}</th>
-        </tr>
-       </table> 
-      </p>
-       <hr>
+      </div>
+
+     <hr>
     
         <div class="row mt-2">
           <div class="col-md-9">
@@ -152,7 +116,9 @@
           </div>
         </div>
         </form>
+
       {%else%}  
+
       <form action="/ordenesupdate/{{datosw}}/{{pagesw}}" method="get">
 
         <div class="row mt-2">

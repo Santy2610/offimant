@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render, redirect
 from mantenimiento.models import mantplan
 from mantenimiento.formulario import formmant
@@ -5,7 +6,7 @@ from mantenimiento.formulario import formmant
 # Create your views here.
 
 def listmant(request):
-    listm=mantplan.objects.all().order_by("area")
+    listm=mantplan.objects.all().order_by("codigo")
     return render(request,"listadomant.html", {"mantsw":listm})
 
 def adicionarmant(request, vista, dato):
@@ -35,8 +36,14 @@ def mantadd(request):
    octubre=request.GET["octubref"]
    noviembre=request.GET["noviembref"]
    diciembre=request.GET["diciembref"]
-   listmant=mantplan.objects.create(codigo=codigo, area=area, tarea=tarea, eneroP=enero, febreroP=febrero, marzoP=marzo, abrilP=abril,
+   lisma=mantplan.objects.create(codigo=codigo, area=area, tarea=tarea, eneroP=enero, febreroP=febrero, marzoP=marzo, abrilP=abril,
                                     mayoP=mayo, junioP=junio, julioP=julio, agostoP=agosto, septiembreP=septiembre, octubreP=octubre, noviembreP=noviembre,
                                     diciembreP=diciembre)
-   listmant.save()
+   lisma.save()
    return redirect(listmant)
+
+
+def mantdel(request, dato):
+    lisman=mantplan.objects.get(pk=dato)
+    lisman.delete()
+    return redirect(listmant)
