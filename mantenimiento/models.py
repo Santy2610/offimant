@@ -1,5 +1,5 @@
 from django.db import models
-from sympy import false
+
 
 # Create your models here.
 class mantplan(models.Model):
@@ -18,18 +18,18 @@ class mantplan(models.Model):
     octubreP=models.CharField(max_length=2, default="No")
     noviembreP=models.CharField(max_length=2, default="No")
     diciembreP=models.CharField(max_length=2, default="No")
-    eneroR=models.CharField(max_length=2, default="No")
-    febreroR=models.CharField(max_length=2, default="No")
-    marzoR=models.CharField(max_length=2, default="No")
-    abrilR=models.CharField(max_length=2, default="No")
-    mayoR=models.CharField(max_length=2, default="No")
-    junioR=models.CharField(max_length=2, default="No")
-    julioR=models.CharField(max_length=2, default="No")
-    agostoR=models.CharField(max_length=2, default="No")
-    septiembreR=models.CharField(max_length=2, default="No")
-    octubreR=models.CharField(max_length=2, default="No")
-    noviembreR=models.CharField(max_length=2, default="No")
-    diciembreR=models.CharField(max_length=2, default="No")
+    eneroR=models.CharField(max_length=2)
+    febreroR=models.CharField(max_length=2)
+    marzoR=models.CharField(max_length=2)
+    abrilR=models.CharField(max_length=2)
+    mayoR=models.CharField(max_length=2)
+    junioR=models.CharField(max_length=2)
+    julioR=models.CharField(max_length=2)
+    agostoR=models.CharField(max_length=2)
+    septiembreR=models.CharField(max_length=2)
+    octubreR=models.CharField(max_length=2)
+    noviembreR=models.CharField(max_length=2)
+    diciembreR=models.CharField(max_length=2)
 
 
 

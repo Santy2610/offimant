@@ -18,7 +18,7 @@
     <div class="container mt-3">
       <div class="row">
         <div class="col-5">
-          <a href="/adicionarmant/index/0" button type="button" class="btn btn-primary"><i class="bi bi-newspaper"></i> Nueva tarea de mantenimiento</a>
+          <a href="/adicionarmant/index/0/0" button type="button" class="btn btn-primary"><i class="bi bi-newspaper"></i> Nueva tarea de mantenimiento</a>
           <a href="/ordenimpcont" button type="button" class="btn btn-primary"><i class="bi bi-printer"></i> Imprimir</a>
         </div>
         
@@ -61,20 +61,20 @@
               <td>{{mantsw.area}}</td>
              <td>{{mantsw.tarea}}</td>
              
-             <td class="table-bordered {%if mantsw.eneroP == 'Si'%} table-info {%endif%}"></td>
-             <td class="table-bordered {%if mantsw.febreroP == 'Si'%} table-info {%endif%}"></td>
-             <td class="table-bordered {%if mantsw.marzoP == 'Si'%} table-info {%endif%}"></td>
-             <td class="table-bordered {%if mantsw.abrilP == 'Si'%} table-info {%endif%}"></td>
-             <td class="table-bordered {%if mantsw.mayoP == 'Si'%} table-info {%endif%}"></td>
-             <td class="table-bordered {%if mantsw.junioP == 'Si'%} table-info {%endif%}"></td>
-             <td class="table-bordered {%if mantsw.julioP == 'Si'%} table-info {%endif%}"></td>
-             <td class="table-bordered {%if mantsw.agostoP == 'Si'%} table-info {%endif%}"></td>
-             <td class="table-bordered {%if mantsw.septiembreP == 'Si'%} table-info {%endif%}"></td>
-             <td class="table-bordered {%if mantsw.octubreP == 'Si'%} table-info {%endif%}"></td>
-             <td class="table-bordered {%if mantsw.noviembreP == 'Si'%} table-info {%endif%}"></td>
-             <td class="table-bordered {%if mantsw.diciembreP == 'Si'%} table-info {%endif%}"></td>
+             <td class="table-bordered {%if mantsw.eneroP == 'X'%} table-primary {%endif%}">{{mantsw.eneroR}}</td>
+             <td class="table-bordered {%if mantsw.febreroP == 'X'%} table-primary {%endif%}">{{mantsw.febreroR}}</td>
+             <td class="table-bordered {%if mantsw.marzoP == 'X'%} table-primary {%endif%}">{{mantsw.marzoR}}</td>
+             <td class="table-bordered {%if mantsw.abrilP == 'X'%} table-primary {%endif%}">{{mantsw.abrilR}}</td>
+             <td class="table-bordered {%if mantsw.mayoP == 'X'%} table-primary {%endif%}">{{mantsw.mayoR}}</td>
+             <td class="table-bordered {%if mantsw.junioP == 'X'%} table-primary {%endif%}">{{mantsw.junioR}}</td>
+             <td class="table-bordered {%if mantsw.julioP == 'X'%} table-primary {%endif%}">{{mantsw.julioR}}</td>
+             <td class="table-bordered {%if mantsw.agostoP == 'X'%} table-primary {%endif%}">{{mantsw.agostoR}}</td>
+             <td class="table-bordered {%if mantsw.septiembreP == 'X'%} table-primary {%endif%}">{{mantsw.septiembreR}}</td>
+             <td class="table-bordered {%if mantsw.octubreP == 'X'%} table-primary {%endif%}">{{mantsw.octubreR}}</td>
+             <td class="table-bordered {%if mantsw.noviembreP == 'X'%} table-primary {%endif%}">{{mantsw.noviembreR}}</td>
+             <td class="table-bordered {%if mantsw.diciembreP == 'X'%} table-primary {%endif%}">{{mantsw.diciembreR}}</td>
              <td class="text-center"><a href="#" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-printer"></i></a></td>
-             <td class="text-center"><a href="adicionarmant/edit/{{mantsw.id}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
+             <td class="text-center"><a href="adicionarmant/edit/{{mantsw.id}}/{{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
              <td class="text-center"><a href="mantdel/{{mantsw.id}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>
             </tr>
            {%endfor%}

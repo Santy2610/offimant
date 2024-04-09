@@ -7,11 +7,11 @@ class formmant(forms.Form):
     codigof=forms.CharField(widget=forms.TextInput(attrs={'size': '5'}))
     areaf=forms.ModelChoiceField(queryset=areas.objects.values_list('descripcion', flat=True).order_by('codigo')) # type: ignore
     tareaf=forms.Textarea()
-    obc_0 = 'No'
-    obc_1 = 'Si'
+    obc_0 = ' '
+    obc_1 = 'X'
     afecta = (
-        (obc_0, u"No"),
-        (obc_1, u"Si"))
+        (obc_0, u" "),
+        (obc_1, u"X"))
     enerof=forms.ChoiceField(choices=afecta)
     enerof=forms.ChoiceField(choices=afecta)
     febrerof=forms.ChoiceField(choices=afecta)
