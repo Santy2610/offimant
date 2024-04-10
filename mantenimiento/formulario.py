@@ -25,3 +25,28 @@ class formmant(forms.Form):
     octubref=forms.ChoiceField(choices=afecta)
     noviembref=forms.ChoiceField(choices=afecta)
     diciembref=forms.ChoiceField(choices=afecta)
+
+    obc_0 = ' '
+    obc_1 = 'C'
+    obc_1 = 'I'
+    obc_1 = 'EP'
+    estado = (
+        (obc_0, u" "),
+        (obc_1, u"C"),
+        (obc_1, u"I"),
+        (obc_1, u"EP")
+        )
+    enerorf=forms.ChoiceField(choices=estado)
+    enerorf=forms.ChoiceField(choices=estado)
+    febrerorf=forms.ChoiceField(choices=estado)
+    marzorf=forms.ChoiceField(choices=estado)
+    abrilrf=forms.ChoiceField(choices=estado)
+    mayorf=forms.ChoiceField(choices=estado)
+    juniorf=forms.ChoiceField(choices=estado)
+    juliorf=forms.ChoiceField(choices=estado)
+    agostorf=forms.ChoiceField(choices=estado)
+    septiembrerf=forms.ChoiceField(choices=estado)
+    octubrerf=forms.ChoiceField(choices=estado)
+    noviembrerf=forms.ChoiceField(choices=estado)
+    diciembrerf=forms.ChoiceField(choices=estado)  
+

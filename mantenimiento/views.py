@@ -65,23 +65,23 @@ def mantupdate(request, dato, page):
    octubre=request.GET["octubref"]
    noviembre=request.GET["noviembref"]
    diciembre=request.GET["diciembref"]
-   listmant=mantplan.objects.get(pk=dato)
-   listmant.codigo=codigo
-   listmant.area=area
-   listmant.tarea=tarea
-   listmant.eneroP=enero
-   listmant.febreroP=febrero
-   listmant.marzoP=marzo
-   listmant.abrilP=abril
-   listmant.mayoP=mayo
-   listmant.junioP=junio
-   listmant.julioP=julio
-   listmant.agostoP=agosto
-   listmant.septiembreP=septiembre
-   listmant.octubreP=octubre
-   listmant.noviembreP=noviembre
-   listmant.diciembreP=diciembre
-   listmant.save()
+   lismant=mantplan.objects.get(pk=dato)
+   lismant.codigo=codigo
+   lismant.area=area
+   lismant.tarea=tarea
+   lismant.eneroP=enero
+   lismant.febreroP=febrero
+   lismant.marzoP=marzo
+   lismant.abrilP=abril
+   lismant.mayoP=mayo
+   lismant.junioP=junio
+   lismant.julioP=julio
+   lismant.agostoP=agosto
+   lismant.septiembreP=septiembre
+   lismant.octubreP=octubre
+   lismant.noviembreP=noviembre
+   lismant.diciembreP=diciembre
+   lismant.save()
    return redirect("/listmant?page=%s" %page)
 
 
@@ -89,3 +89,40 @@ def mantdel(request, dato):
     lisman=mantplan.objects.get(pk=dato)
     lisman.delete()
     return redirect(listmant)
+
+def estadomant(request, dato, page):
+    list=mantplan.objects.get(pk=dato)
+    format=formmant(initial={ 'enerorf':list.eneroR, 'febrerorf':list.febreroR,'marzorf':list.marzoR,'abrilrf':list.abrilR,'mayorf':list.mayoR,
+                              'juniorf':list.junioR,'juliorf':list.julioR,'agostorf':list.agostoR,'septiembrerf':list.septiembreR,'octubrerf':list.octubreR,
+                              'noviembrerf':list.noviembreR,'diciembrerf':list.diciembreR })   
+    return render(request, "estadomant.html",{"form":format,"listsw":list,"dato":dato, "pagesw":page})
+
+def estadomantupdate(request, dato, page):
+   lismant=mantplan.objects.get(pk=dato)
+   enero=request.GET["enerorf"]
+   febrero=request.GET["febrerorf"]
+   marzo=request.GET["marzorf"]
+   abril=request.GET["abrilrf"]
+   mayo=request.GET["mayorf"]
+   junio=request.GET["juniorf"]
+   julio=request.GET["juliorf"]
+   agosto=request.GET["agostorf"]
+   septiembre=request.GET["septiembrerf"]
+   octubre=request.GET["octubrerf"]
+   noviembre=request.GET["noviembrerf"]
+   diciembre=request.GET["diciembrerf"]
+   lismant.eneroR=enero
+   lismant.febreroR=febrero
+   lismant.marzoR=marzo
+   lismant.abrilR=abril
+   lismant.mayoR=mayo
+   lismant.junioR=junio
+   lismant.julioR=julio
+   lismant.agostoR=agosto
+   lismant.septiembreR=septiembre
+   lismant.octubreR=octubre
+   lismant.noviembreR=noviembre
+   lismant.diciembreR=diciembre
+   lismant.save()
+   return redirect("/listmant?page=%s" %page)
+
