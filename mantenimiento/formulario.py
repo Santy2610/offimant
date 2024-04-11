@@ -28,13 +28,15 @@ class formmant(forms.Form):
 
     obc_0 = ' '
     obc_1 = 'C'
-    obc_1 = 'I'
-    obc_1 = 'EP'
+    obc_2 = 'I'
+    obc_3 = 'EP'
+    obc_4 = 'FF'
     estado = (
         (obc_0, u" "),
         (obc_1, u"C"),
-        (obc_1, u"I"),
-        (obc_1, u"EP")
+        (obc_2, u"I"),
+        (obc_3, u"EP"),
+        (obc_4, u"FF")
         )
     enerorf=forms.ChoiceField(choices=estado)
     enerorf=forms.ChoiceField(choices=estado)

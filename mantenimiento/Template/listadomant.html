@@ -27,6 +27,9 @@
         </div>
         </div>
     <div class="row">
+    <div class="col-6 ml-2"><span class="badge badge-success">C:</span> Cumplido  <span class="badge badge-danger">I:</span> Incumplido  <span class="badge badge-info">EP:</span> En proceso  <span class="badge badge-warning">FF:</span> Fuera de fecha</div>  
+    </div>    
+    <div class="row">
       <div class="col-md-12 mt-1">
 
         <table class="table  table-hover table-sm"> 
@@ -61,18 +64,44 @@
               <td>{{mantsw.area}}</td>
              <td>{{mantsw.tarea}}</td>
              
-             <td class="table-bordered {%if mantsw.eneroP == 'X'%} table-primary {%endif%}">{{mantsw.eneroR}}</td>
-             <td class="table-bordered {%if mantsw.febreroP == 'X'%} table-primary {%endif%}">{{mantsw.febreroR}}</td>
-             <td class="table-bordered {%if mantsw.marzoP == 'X'%} table-primary {%endif%}">{{mantsw.marzoR}}</td>
-             <td class="table-bordered {%if mantsw.abrilP == 'X'%} table-primary {%endif%}">{{mantsw.abrilR}}</td>
-             <td class="table-bordered {%if mantsw.mayoP == 'X'%} table-primary {%endif%}">{{mantsw.mayoR}}</td>
-             <td class="table-bordered {%if mantsw.junioP == 'X'%} table-primary {%endif%}">{{mantsw.junioR}}</td>
-             <td class="table-bordered {%if mantsw.julioP == 'X'%} table-primary {%endif%}">{{mantsw.julioR}}</td>
-             <td class="table-bordered {%if mantsw.agostoP == 'X'%} table-primary {%endif%}">{{mantsw.agostoR}}</td>
-             <td class="table-bordered {%if mantsw.septiembreP == 'X'%} table-primary {%endif%}">{{mantsw.septiembreR}}</td>
-             <td class="table-bordered {%if mantsw.octubreP == 'X'%} table-primary {%endif%}">{{mantsw.octubreR}}</td>
-             <td class="table-bordered {%if mantsw.noviembreP == 'X'%} table-primary {%endif%}">{{mantsw.noviembreR}}</td>
-             <td class="table-bordered {%if mantsw.diciembreP == 'X'%} table-primary {%endif%}">{{mantsw.diciembreR}}</td>
+             <td class="table-bordered {%if mantsw.febreroP == 'X'%} table-primary {%endif%} text-center">
+              {%if mantsw.eneroR == "C" %}
+              <span class="badge badge-success">{{mantsw.eneroR}}</span>
+              {%endif%}
+              {%if mantsw.eneroR == "I" %}
+              <span class="badge badge-danger">{{mantsw.eneroR}}</span>
+              {%endif%}
+              {%if mantsw.eneroR == "EP" %}
+              <span class="badge badge-info">{{mantsw.eneroR}}</span>
+              {%endif%}
+              {%if mantsw.eneroR == "FF" %}
+              <span class="badge badge-warning">{{mantsw.eneroR}}</span>
+              {%endif%}
+             </td>
+             <td class="table-bordered {%if mantsw.febreroP == 'X'%} table-primary {%endif%} text-center">
+              {%if mantsw.febreroR == "C" %}
+              <span class="badge badge-success">{{mantsw.febreroR}}</span>
+              {%endif%}
+              {%if mantsw.febreroR == "I" %}
+              <span class="badge badge-danger">{{mantsw.febreroR}}</span>
+              {%endif%}
+              {%if mantsw.febreroR == "EP" %}
+              <span class="badge badge-info">{{mantsw.febreroR}}</span>
+              {%endif%}
+              {%if mantsw.febreroR == "FF" %}
+              <span class="badge badge-warning">{{mantsw.febreroR}}</span>
+              {%endif%}
+            </td>
+             <td class="table-bordered {%if mantsw.marzoP == 'X'%} table-primary {%endif%} text-center">{{mantsw.marzoR}}</td>
+             <td class="table-bordered {%if mantsw.abrilP == 'X'%} table-primary {%endif%} text-center">{{mantsw.abrilR}}</td>
+             <td class="table-bordered {%if mantsw.mayoP == 'X'%} table-primary {%endif%} text-center">{{mantsw.mayoR}}</td>
+             <td class="table-bordered {%if mantsw.junioP == 'X'%} table-primary {%endif%} text-center">{{mantsw.junioR}}</td>
+             <td class="table-bordered {%if mantsw.julioP == 'X'%} table-primary {%endif%} text-center">{{mantsw.julioR}}</td>
+             <td class="table-bordered {%if mantsw.agostoP == 'X'%} table-primary {%endif%} text-center">{{mantsw.agostoR}}</td>
+             <td class="table-bordered {%if mantsw.septiembreP == 'X'%} table-primary {%endif%} text-center">{{mantsw.septiembreR}}</td>
+             <td class="table-bordered {%if mantsw.octubreP == 'X'%} table-primary {%endif%} text-center">{{mantsw.octubreR}}</td>
+             <td class="table-bordered {%if mantsw.noviembreP == 'X'%} table-primary {%endif%} text-center">{{mantsw.noviembreR}}</td>
+             <td class="table-bordered {%if mantsw.diciembreP == 'X'%} table-primary {%endif%} text-center">{{mantsw.diciembreR}}</td>
              <td class="text-center"><a href="estadomant/{{mantsw.id}}/{{listpsw.number}}" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-printer"></i></a></td>
              <td class="text-center"><a href="adicionarmant/edit/{{mantsw.id}}/{{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
              <td class="text-center"><a href="mantdel/{{mantsw.id}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>

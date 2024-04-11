@@ -92,10 +92,11 @@ def mantdel(request, dato):
 
 def estadomant(request, dato, page):
     list=mantplan.objects.get(pk=dato)
-    format=formmant(initial={ 'enerorf':list.eneroR, 'febrerorf':list.febreroR,'marzorf':list.marzoR,'abrilrf':list.abrilR,'mayorf':list.mayoR,
+    tareaf=list.tarea
+    format=formmant(initial={ 'codigof':list.codigo, 'areaf':list.area,'enerorf':list.eneroR, 'febrerorf':list.febreroR,'marzorf':list.marzoR,'abrilrf':list.abrilR,'mayorf':list.mayoR,
                               'juniorf':list.junioR,'juliorf':list.julioR,'agostorf':list.agostoR,'septiembrerf':list.septiembreR,'octubrerf':list.octubreR,
                               'noviembrerf':list.noviembreR,'diciembrerf':list.diciembreR })   
-    return render(request, "estadomant.html",{"form":format,"listsw":list,"dato":dato, "pagesw":page})
+    return render(request, "estadomant.html",{"form":format,"listsw":list,"dato":dato, "pagesw":page, "tareasw":tareaf})
 
 def estadomantupdate(request, dato, page):
    lismant=mantplan.objects.get(pk=dato)
