@@ -33,7 +33,7 @@
     <form  action="/codvalesadd" method="get">
      <div class="row">
       
-       <div class="col-4 ml-4 "> 
+       <div class="col-2 ml-4 "> 
          Codigo: {{form.Codigo}}
        </div>
        <div class="col-2"> 
@@ -47,14 +47,14 @@
         <div class="col-1"></div> 
         <div class="row">
  
-        <input type="submit"  class="btn btn-success btn-sm float-rigth" value="Adicionar">
+        <input type="submit"  class="btn btn-success btn-sm float-rigth" value=" Adicionar ">
          
         </div>
        </div>
      </div>
 
    <div class="row mt-2 mb-2">
-    <div class="col-4 ml-4 "> 
+    <div class="col-3 ml-4 "> 
         Solicitante: {{form.Entregado}}
     </div>
     <div class="col-3 ">     
@@ -85,7 +85,7 @@
     
     <form  action="/codvalesupdate/{{dato}}/{{listpsw.number}}" method="get">
       <div class="row">
-        <div class="col-4 ml-4 "> 
+        <div class="col-2 ml-4 "> 
           Codigo: {{form.Codigo}}
         </div>
         <div class="col-2"> 
@@ -98,7 +98,7 @@
          <div class="row mt-4" ></div>
          <div class="col-1"></div> 
          <div class="row">
-  
+          
          <input type="submit"  class="btn btn-success btn-sm float-rigth" value="Actualizar">
           
          </div>
@@ -106,14 +106,14 @@
       </div>
  
     <div class="row mt-2 mb-2">
-     <div class="col-4 ml-4 "> 
+     <div class="col-3 ml-4 "> 
          Solicitante: {{form.Entregado}}
      </div>
      <div class="col-3 ">     
          Fecha: {{form.Fecha}}
      </div>
 
-     <div class="col-2"></div>
+     <div class="col-1"></div>
  
      <div class="col-1">
        <div class="row mt-2" ></div>
@@ -227,7 +227,7 @@
        <td class="col-sm-3">{{valessw.entregado}}</td>
        <td class="col-sm-3">{{valessw.fecha}}</td>
        {%if vistasw == 'index'%} 
-       <td><a href="/codmaterial/{{valessw.id}}/{{listpsw.number}}" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-table"></i></a></td>
+       <td><a href="/codmaterial/{{valessw.id}}/{{listpsw.number}}" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-receipt-cutoff"></i></a></td>
        <td><a href="/codvales/edit/{{valessw.id}}/?page={{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
        <td><a href="/codvalesdel/{{valessw.id}}/{{listpsw.number}}" button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>
        <!--<td><button class="btn btn-danger btn-sm" id="btmodal" data-toggle="modal" data-target="#myModal" data-id={{valessw.id}} data-numero={{valessw.codigo}} data-fecha={{valessw.fecha}}><i class="bi bi-trash"></i></td>

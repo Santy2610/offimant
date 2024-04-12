@@ -3,7 +3,7 @@ from codificadores.models import almacen, centrocosto, unidadm, trabajadores
 
 
 class formulariovales(forms.Form):
-    Codigo=forms.CharField(label="Código")
+    Codigo=forms.CharField(label="Código",widget=forms.TextInput(attrs={'size': '5'}))
     Almacen=forms.ModelChoiceField(queryset=almacen.objects.values_list('codigo', flat=True).order_by('codigo')) # type: ignore
     Costo=forms.ModelChoiceField(queryset=centrocosto.objects.values_list('descripcion', flat=True).order_by('codigo')) # type: ignore
     Entregado=forms.ModelChoiceField(queryset=trabajadores.objects.filter(solic='Solicita').values_list('nombre', flat=True).order_by('codigo')) # type: ignore
