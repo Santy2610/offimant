@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from vales.models import vale, materialv
 from vales.formulario import formulariovales, formulariomaterial
 from django.core.paginator import Paginator
+from django.db.models import Sum
 
 
 # Create your views here.
@@ -97,3 +98,4 @@ def codmaterialdel(request, dato, vale, pagina):
     materiallist = materialv.objects.get(pk=dato)
     materiallist.delete()
     return redirect(codmaterial, vale, pagina)
+

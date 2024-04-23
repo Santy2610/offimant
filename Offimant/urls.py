@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Offimant.views import principal
+from Offimant.views import principal, consolmat
 from ordenes.views import ordenes,ordenesnew, ordenesadd, ordenesdel, ordenesupdate, ordenimpcont, ordenimpres
 from codificadores.views import codunidad, codalmacen, codcosto, codparada, codunidadadd,codunidaddel 
 from codificadores.views import codunidadupdate, codalmacenadd, codalmacendel,codalmacenupdate
@@ -24,14 +24,18 @@ from codificadores.views import codareasdel, codareasupdate
 from codificadores.views import codequipos, codequiposadd, codequiposdel, codequiposedit, codequiposupdate
 from codificadores.views import codcausas, codcausasadd, codcausasdel, codcausasupdate
 from codificadores.views import codtraba, codtrabaadd, codtrabadel, codtrabaupdate
-from vales.views import codvales, codvalesadd, codvalesdel, codvalesupdate, codmaterial, codmaterialadd, codmaterialdel, codmaterialorden
+from vales.views import codvales, codvalesadd, codvalesdel, codvalesupdate, codmaterial, codmaterialadd, codmaterialdel
+from vales.views import codmaterialorden
 from producciones.views import indexmate, codmateadd, codmatedel, indexprod, codproddel, codprodadd, codprodupdate
 from mantenimiento.views import listmant, adicionarmant, mantadd, mantdel, mantupdate, estadomant, estadomantupdate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', principal),
-    
+    path('consolmat', consolmat),
+
+
+
     path('ordenes/', ordenes),
     path('ordenesnew/<vista>/<dato>/<page>', ordenesnew),
     path('ordenesadd', ordenesadd),
@@ -87,7 +91,7 @@ urlpatterns = [
     path('codmaterialadd/<dato>/<pagina>', codmaterialadd),
     path('codmaterialdel/<dato>/<vale>/<pagina>', codmaterialdel),
     path('codmaterialorden/<dato>/<page>/<retro>/', codmaterialorden),
-
+ 
     path('codparada', codparada),
 
     path('indexprod/<vista>/<dato>/', indexprod),
