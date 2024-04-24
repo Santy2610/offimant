@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from vales.models import vale, materialv
 from vales.formulario import formulariovales, formulariomaterial
 from django.core.paginator import Paginator
-from django.db.models import Sum
+from django.db.models import Sum, Count
 
 
 # Create your views here.
@@ -99,3 +99,9 @@ def codmaterialdel(request, dato, vale, pagina):
     materiallist.delete()
     return redirect(codmaterial, vale, pagina)
 
+def consolmat(request):
+      page=request.GET.get('page',1)
+      listma=materialv.objects.values('material','unidad').order_by('material').annotate(tot=Sum('cantidad'), sal=Count('material'))
+      paginador=Paginator(listma, 13)
+      listma=paginador.page(page)
+      return render(request, "materialconsol.html", {"listmasw":listma, "paginador":paginador,"listpsw":listma})
