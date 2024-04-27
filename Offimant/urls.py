@@ -25,7 +25,7 @@ from codificadores.views import codequipos, codequiposadd, codequiposdel, codequ
 from codificadores.views import codcausas, codcausasadd, codcausasdel, codcausasupdate
 from codificadores.views import codtraba, codtrabaadd, codtrabadel, codtrabaupdate
 from vales.views import codvales, codvalesadd, codvalesdel, codvalesupdate, codmaterial, codmaterialadd, codmaterialdel
-from vales.views import codmaterialorden, consolmat
+from vales.views import codmaterialorden, consolmat, consolspe
 from producciones.views import indexmate, codmateadd, codmatedel, indexprod, codproddel, codprodadd, codprodupdate
 from mantenimiento.views import listmant, adicionarmant, mantadd, mantdel, mantupdate, estadomant, estadomantupdate
 
@@ -92,6 +92,8 @@ urlpatterns = [
     path('codmaterialdel/<dato>/<vale>/<pagina>', codmaterialdel),
     path('codmaterialorden/<dato>/<page>/<retro>/', codmaterialorden),
     path('consolmat', consolmat),
+    path('consolspe/<dato>', consolspe),
+
  
     path('codparada', codparada),
 

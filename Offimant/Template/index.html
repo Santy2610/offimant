@@ -104,13 +104,29 @@
         </tbody>
       </table>
       <a href="/codvales/index/0" button type="button" class="btn btn-primary"><i class="bi bi-newspaper"></i> Control de vales</a>
-      <a href="/consolmat" button type="button" class="btn btn-success"><i class="bi bi-boxes"></i> Consolidado mat.</a>
+      <div class="btn-group">
+        <a href="/consolmat" button type="button" class="btn btn-success"><i class="bi bi-boxes"></i> Consolidado</button></a>
+        <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+        {%for listcentrosw in listcentrosw%}
+        <a class="dropdown-item" href="consolspe/{{listcentrosw.descripcion}}">{{listcentrosw.descripcion}}</a>
+        {%endfor%}  
+        </div>
+      </div>
+
+
+
+
+
+
 
     </div>
    </div>
-   <div class="row">
+  <!-- <div class="row">
        <canvas id="chBar" height="400" with="400"></canvas>
-   </div>
+   </div>-->
   </div>
 </div>
 

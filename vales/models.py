@@ -9,7 +9,7 @@ class vale(models.Model):
   fecha=models.DateField()
 
 class materialv(models.Model):
-  vale=models.ForeignKey(vale, on_delete=models.CASCADE, null=False, blank=False)
+  valeID=models.ForeignKey(vale, on_delete=models.CASCADE, null=False, blank=False)
   material=models.CharField(max_length=150)
   unidad=models.CharField(max_length=4)
   cantidad=models.FloatField()

@@ -7,7 +7,7 @@ class valeAdmin(admin.ModelAdmin):
     list_display=("codigo","almacen","costo","entregado","fecha")
 
 class materialesvAdmin(admin.ModelAdmin):
-    list_display=("vale","material","unidad","cantidad")
+    list_display=("valeID","material","unidad","cantidad")
 
 
 admin.site.register(vale, valeAdmin)
