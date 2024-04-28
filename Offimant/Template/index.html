@@ -8,8 +8,22 @@
 <script src="{% static 'jquery-3.2.1.js' %}"></script>
 <script src="{% static 'popper.js' %}"></script> 
 <script src="{% static 'chart.js'%}"></script>
-
 <link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
+
+<script>
+  var ctx = document.getElementById("myChart").getContext("2d");
+  var myChart = new Chart(ctx,{
+    type:"bar",
+    data:{
+      labels:['col1','col2','col3'],
+      datasets:[{
+           label:'Num de datos',
+           data:[10,8,15]
+      }]
+    }
+  });
+</script>
+
 <body>
 
     
@@ -72,8 +86,12 @@
            <tr class="table-primary table-bordered">
          {%else%}
            <tr class="table-bordered">
-         {%endif%}   
-            <td>{{listord.codigo}}</td>
+         {%endif%}
+          {%if listord.campa|length > 0 %}   
+            <td>{{listord.codigo}} {{listord.campa}}</td>
+          {%else%}
+          <td>{{listord.codigo}}</td>
+          {%endif%}  
             <td>{{listord.fechaRep}}</td>
             <td>{{listord.falla}}</td>
             <td class="text-center">{{listord.culminada}}</td>
@@ -103,9 +121,9 @@
          {%endfor%} 
         </tbody>
       </table>
-      <a href="/codvales/index/0" button type="button" class="btn btn-primary"><i class="bi bi-newspaper"></i> Control de vales</a>
+      <a href="/codvales/index/0" button type="button" class="btn btn-primary"><i class="bi bi-newspaper"></i> Materiales</a>
       <div class="btn-group">
-        <a href="/consolmat" button type="button" class="btn btn-success"><i class="bi bi-boxes"></i> Consolidado</button></a>
+        <a href="/consolmat" button type="button" class="btn btn-success"><i class="bi bi-boxes"></i> Consolidado Mat.</button></a>
         <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="sr-only">Toggle Dropdown</span>
         </button>
@@ -116,44 +134,13 @@
         </div>
       </div>
 
-
-
-
-
-
-
     </div>
    </div>
   <!-- <div class="row">
-       <canvas id="chBar" height="400" with="400"></canvas>
+       <canvas id="myChart" height="400" with="400"></canvas>
    </div>-->
   </div>
 </div>
-
-
-<script type="text/javascript">
-  var chBar = document.getElementById("chBar");
-  var chartData = {
-  labels: ["S", "M", "T", "W", "T", "F", "S"],
-     datasets: [{data: [589, 445, 483, 503, 689, 692, 634],backgroundColor: colors[0]},
-                {data: [209, 245, 383, 403, 589, 692, 580],backgroundColor: colors[1]},
-                {data: [489, 135, 483, 290, 189, 603, 600],backgroundColor: colors[2]},
-                {data: [639, 465, 493, 478, 589, 632, 674],backgroundColor: colors[4]}]};
-  if (chBar) 
-  {new Chart(chBar,
-     {type: 'bar',
-      data: chartData,
-      options: {
-      scales: {
-      xAxes: [{barPercentage: 0.4,
-               categoryPercentage: 0.5}],
-      yAxes: [{ticks: {beginAtZero: false}}]
-              },
-    legend: {display: false}}});
-   }
-</script>
-
-
 </body>
 
 
