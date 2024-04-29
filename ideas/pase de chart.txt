@@ -1,0 +1,48 @@
+en el view.py
+
+
+from django.shortcuts import render
+from django.db.models import Sum
+from .models import Richest
+
+def TotalNetWorth(request):
+    # Query the database to get the data
+    data = Richest.objects.values('country').annotate(total_net_worth=Sum('net_worth')).order_by('-total_net_worth')
+
+    # Prepare the data for the chart
+    chart_data = []
+    for item in data:
+        chart_data.append({
+            'country': item['country'],
+            'total_net_worth': item['total_net_worth']
+        })
+
+    # Render the template with the chart data
+    return render(request, 'total_net_worth.html', {'chart_data': chart_data})
+
+
+En el script
+
+    <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {{ chart_data|safe }}.map(item => item.country),
+            datasets: [{
+                label: 'Total Net Worth',
+                data: {{ chart_data|safe }}.map(item => item.total_net_worth),
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1    
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

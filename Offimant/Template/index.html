@@ -7,22 +7,10 @@
 <script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'jquery-3.2.1.js' %}"></script>
 <script src="{% static 'popper.js' %}"></script> 
-<script src="{% static 'chart.js'%}"></script>
+<script src="{% static 'Chart.js'%}"></script>
 <link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
 
-<script>
-  var ctx = document.getElementById("myChart").getContext("2d");
-  var myChart = new Chart(ctx,{
-    type:"bar",
-    data:{
-      labels:['col1','col2','col3'],
-      datasets:[{
-           label:'Num de datos',
-           data:[10,8,15]
-      }]
-    }
-  });
-</script>
+
 
 <body>
 
@@ -62,7 +50,8 @@
       <a href="/indexprod/index/0" button type="button" class="btn btn-primary"><i class="bi bi-box-seam"></i> Producciones</a>
       
     </div>
-    <div class="col-3 "> 
+    <div class="col-6 ">
+       <canvas id="myChart" height="200" with="400"></canvas>
    </div>
   </div>
   
@@ -136,12 +125,34 @@
 
     </div>
    </div>
-  <!-- <div class="row">
-       <canvas id="myChart" height="400" with="400"></canvas>
+   <!--<div class="row">
+     <div class="col-6">
+       <canvas id="myChart" height="200" with="400"></canvas>
+      </div> 
    </div>-->
   </div>
 </div>
 </body>
 
+<script>
+  var ctx = document.getElementById("myChart").getContext("2d");
+  var myChart = new Chart(ctx,{
+    type:"pie",
+    data:{
+      labels:{{ datosPT|safe }}.map(item => item.descripcion),
+      datasets:[{
+           label:'Num de datos',
+           data:{{ datosPT|safe }}.map(item => item.prosu),
+           backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)'
+                ],
+      }]
+    }
+  });
+</script>
 
 </html>

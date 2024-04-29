@@ -11,5 +11,13 @@ def principal(request):
       listorden=orden.objects.all().order_by('-codigo')[0:5]
       listvale=vale.objects.values('costo').order_by('costo').annotate(cant=Count('costo'))
       listprod=producciones.objects.values('descripcion','unidad').order_by('descripcion').annotate(prosu=Sum('cantidad'))
-      return render(request,"index.html", {"listord":listorden, "listpro":listprod, "listv":listvale, "listcentrosw":listcentro})
+      datosPT=[]
+      for item in listprod:
+            datosPT.append({
+              'descripcion':item['descripcion'],
+              'prosu':item['prosu']    
+            })
+
+
+      return render(request,"index.html", {"listord":listorden, "listpro":listprod, "listv":listvale, "listcentrosw":listcentro, "datosPT":datosPT})
 
