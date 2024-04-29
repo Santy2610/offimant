@@ -92,7 +92,7 @@ def codmaterialadd(request, dato, pagina):
     unidad = request.GET["Unidad"]
     cantidad = request.GET["Cantidad"]
     valeslist = vale.objects.get(pk=dato)
-    materialeslist = materialv.objects.create(vale=valeslist, material=material, unidad=unidad, cantidad=cantidad)
+    materialeslist = materialv.objects.create(valeID=valeslist, material=material, unidad=unidad, cantidad=cantidad)
     return redirect(codmaterial, dato, pagina)
 
 
