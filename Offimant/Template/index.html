@@ -48,7 +48,7 @@
         </tbody>
       </table>
       <a href="/indexprod/index/0" button type="button" class="btn btn-primary"><i class="bi bi-box-seam"></i> Producciones</a>
-      
+      <a href="/ordenes" button type="button" class="btn btn-primary"><i class="bi bi-wrench-adjustable"></i> Ordenes de trabajo</a>
     </div>
     <div class="col-6 ">
        <canvas id="myChart" height="200" with="400"></canvas>
@@ -88,7 +88,7 @@
          {%endfor%}
         </tbody>
        </table>  
-        <a href="/ordenes" button type="button" class="btn btn-primary"><i class="bi bi-wrench-adjustable"></i> Ordenes de trabajo</a>
+        
       </div>
     </div>   
  
@@ -104,25 +104,15 @@
         <tbody>
          {%for listv in listv%}
          <tr class="table-bordered">
-          <th>{{listv.costo}}</th>
+          <th><a href="consolspe/{{listv.costo}}">{{listv.costo}}</a></th>
           <th class="text-center">{{listv.cant}}</th>
          </tr>
          {%endfor%} 
         </tbody>
       </table>
       <a href="/codvales/index/0" button type="button" class="btn btn-primary"><i class="bi bi-newspaper"></i> Materiales</a>
-      <div class="btn-group">
-        <a href="/consolmat" button type="button" class="btn btn-success"><i class="bi bi-boxes"></i> Consolidado Mat.</button></a>
-        <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="sr-only">Toggle Dropdown</span>
-        </button>
-        <div class="dropdown-menu">
-        {%for listcentrosw in listcentrosw%}
-        <a class="dropdown-item" href="consolspe/{{listcentrosw.descripcion}}">{{listcentrosw.descripcion}}</a>
-        {%endfor%}  
-        </div>
-      </div>
-
+      <a href="/consolmat" button type="button" class="btn btn-success"><i class="bi bi-boxes"></i> Consolidado total Mat.</button></a>
+      
     </div>
    </div>
    <!--<div class="row">
@@ -144,12 +134,12 @@
            label:'Num de datos',
            data:{{ datosPT|safe }}.map(item => item.prosu),
            backgroundColor: [
-                'rgba(255, 99, 132, 0.7)',
+                'rgba(170, 0, 0, 0.7)',
                 'rgba(54, 162, 235, 0.7)',
-                'rgba(255, 206, 86, 0.7)',
-                'rgba(75, 192, 192, 0.7)',
+                'rgba(204, 204, 0, 0.7)',
+                'rgba(85, 170, 127, 0.7)',
                 'rgba(153, 102, 255, 0.7)',
-                'rgba(153, 102, 255, 0.7)'
+                'rgba(255, 170, 0, 0.7)'
                 ],
       }]
     }
