@@ -1,11 +1,15 @@
 <html>
 <title></title>
 {% load static %}
+
 <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
 <link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
 <script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'jquery-3.2.1.js' %}"></script>
-<script src="{% static 'popper.js' %}"></script> 
+<script src="{% static 'popper.js' %}"></script>
+ 
+
+<body>
 
 <div class="container mt-1 ">
     
@@ -126,28 +130,31 @@
             <td><a href="/indexmate/{{prosw.id}}/{{listpsw.number}}" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-table"></i></a></td>
             <td><a href="/indexprod/edit/{{prosw.id}}/?page={{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
             <!--<td><a href="/codproddel/{{prosw.id}}/{{listpsw.number}}" button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>-->
-            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal"><i class="bi bi-trash"></i></button></td>
+            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" data-id="{{prosw.id}}" data-codigo="{{prosw.codigo}}" data-prod="{{porsw.descripcion}}" data-page="{{listpsw.number}}"><i class="bi bi-trash"></i></button></td>
             
             <!-- Modal -->
      
- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-   <div class="modal-content">
-    <div class="modal-header">
-     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-   
-    </div>
-    <div class="modal-body">
-   
-    </div>
-    <div class="modal-footer">
-     <button type="button" class="btn btn-primary">Guardar cambios</button>
-     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-    </div>
-   </div>
-  </div>
- </div>
-
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h6 class="modal-title" id="exampleModalLabel">Ordenes de producción</h6>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    
+                  </div>
+                  
+                  <div class="modal-body">
+                   Decea eliminar la orden de producción
+                  </div>
+                  <div class="modal-footer">
+                    <button id="id_del" type="button"  class="btn btn-danger"></button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+      
  <!-- Modal -->
             
             
@@ -173,9 +180,24 @@
     </div>
   </div>
 
-</div>    
+</div>
 
+<script>
 
-<body>
+  $('#myModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget)
+    var id = button.data('id')
+    var codigo=button.data('codigo')
+    var prod=button.data('prod')
+    var page=button.data('page')
+    var modal = $(this)
+    //modal.find('.modal-title').text('New message to ' + id)
+    modal.find('.modal-body').text('¿ Decea elminar la orden # '+codigo+' ?')
+    document.getElementById('id_del').innerHTML = "<a href=/codproddel/"+id+"/"+page+">Eliminar</button>"
+  })
+  
+  console.log('ejecuta');
+  </script>
+
 </body>
 </html>    

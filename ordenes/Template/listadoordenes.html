@@ -62,18 +62,58 @@
              <td class="text-center"><a href="/codmaterialorden/{{ordensw.valecodigo}}/{{listpsw.number}}/0">{{ordensw.valecodigo}}</a></td>
              <td class="text-center"><a href="/ordenimpres/{{ordensw.id}}" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-printer"></i></a></td>
              <td class="text-center"><a href="/ordenesnew/edit/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
-             <td class="text-center"><a href="/ordenesdel/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>
+             <!--<td class="text-center"><a href="/ordenesdel/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>-->
+             <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" data-id="{{ordensw.id}}" data-codigo="{{ordensw.codigo}}" data-page="{{listpsw.number}}"><i class="bi bi-trash"></i></a></button></td>
+            
+             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h6 class="modal-title" id="exampleModalLabel">Ordenes de trabajo</h6>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    
+                  </div>
+                  
+                  <div class="modal-body">
+                   Decea eliminar la orden de producción
+                  </div>
+                  <div class="modal-footer">
+                    <button id="id_del" type="button"  class="btn btn-danger"></button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
             </tr>
            {%endfor%}
           </tbody>
         </table>
+
     </div>
     
   </div>
 </div>
 </div>
 </div>
+
+<script>
+
+  $('#myModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget)
+    var id = button.data('id')
+    var codigo=button.data('codigo')
+    var page=button.data('page')
+    var modal = $(this)
+    //modal.find('.modal-title').text('New message to ' + id)
+    modal.find('.modal-body').text('¿ Decea elminar la orden de trabajo con codigo. '+codigo+' ?')
+    document.getElementById('id_del').innerHTML = "<a href=/ordenesdel/"+id+"/"+page+">Eliminar</button>"
+  })
+  </script>
+
+
 </body>
+
 
 
 </html>
