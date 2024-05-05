@@ -249,7 +249,7 @@
                    Decea eliminar la orden de producción
                   </div>
                   <div class="modal-footer">
-                    <button id="id_del" type="button"  class="btn btn-danger"></button>
+                    <div id="id_del"></div>
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
                     
                   </div>
@@ -279,7 +279,7 @@
     var modal = $(this)
     //modal.find('.modal-title').text('New message to ' + id)
     modal.find('.modal-body').text('¿ Decea elminar el plan de mantenimiento codigo. '+codigo+' ?')
-    document.getElementById('id_del').innerHTML = "<a href=/mantdel/"+id+">Eliminar</button>"
+    document.getElementById('id_del').innerHTML = "<a href=/mantdel/"+id+" button type='button' class='btn btn-danger' >Eliminar</a>"
   })
   </script>
 

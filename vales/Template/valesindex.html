@@ -211,7 +211,7 @@
              Decea eliminar el vale numero 
             </div>
             <div class="modal-footer">
-              <button id="id_del" type="button"  class="btn btn-danger"></button>
+              <div id="id_del"></div>
               <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
               
             </div>
@@ -244,10 +244,10 @@ $('#myModal').on('show.bs.modal', function (event) {
   var modal = $(this)
   //modal.find('.modal-title').text('New message to ' + id)
   modal.find('.modal-body').text('¿ Decea elminar la solicitud de materiales con código. ' + codigo +' ?')
-  document.getElementById('id_del').innerHTML = "<a href=/codvalesdel/"+id+"/"+page+">Eliminar</button>"
+  document.getElementById('id_del').innerHTML = "<a href=/codvalesdel/"+id+"/"+page+" button type='button' class='btn btn-danger' >Eliminar</a>"
 })
 
-console.log('ejecuta');
+
 </script>
 
 </body>

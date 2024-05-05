@@ -138,7 +138,34 @@
        <td></td>
        {%if vistasw == 'index'%} 
        <td class="text-center"><a href="/codcosto/edit/{{costosw.id}}?page={{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
-       <td class="text-center"><a href="/codcostodel/{{costosw.id}}/{{listpsw.number}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>
+       <!--<td class="text-center"><a href="/codcostodel/{{costosw.id}}/{{listpsw.number}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>-->
+       <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" data-id="{{costosw.id}}" data-descripcion="{{costosw.descripcion}}" data-page="{{listpsw.number}}"><i class="bi bi-trash"></i></td>
+
+       
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h6 class="modal-title" id="exampleModalLabel">Centro de costo</h6>
+               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+               
+             </div>
+             
+             <div class="modal-body">
+              Decea eliminar el vale numero 
+             </div>
+             <div class="modal-footer">
+               <div id="id_del"></div>
+               <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+               
+             </div>
+           </div>
+         </div>
+       </div>
+      
+       
+       
        {%else%}
        <td class="text-center"><a href="#" button type="button" class="btn btn-success disabled btn-sm"><i class="bi bi-pencil"></i></a></td>
        <td class="text-center"><a href="#" button type="button" class="btn btn-danger disabled btn-sm"><i class="bi bi-trash"></i></a></td>
@@ -152,5 +179,19 @@
   </div>
  </div>
  </div>
+ <script>
+
+  $('#myModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget)
+    var id = button.data('id')
+    var descripcion=button.data('descripcion')
+    var page=button.data('page')
+    var modal = $(this)
+    modal.find('.modal-body').text('¿ Decea elminar centro de costo. ' + descripcion +' ?')
+    document.getElementById('id_del').innerHTML = "<a href=/codcostodel/"+id+"/"+page+" button type='button' class='btn btn-danger' >Eliminar</a>"
+  })
+  
+  
+  </script>
  </body>
  </html>
