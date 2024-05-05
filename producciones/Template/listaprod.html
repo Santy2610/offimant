@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <title></title>
 {% load static %}
 
@@ -131,7 +131,7 @@
             <td><a href="/indexmate/{{prosw.id}}/{{listpsw.number}}" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-table"></i></a></td>
             <td><a href="/indexprod/edit/{{prosw.id}}/?page={{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
             <!--<td><a href="/codproddel/{{prosw.id}}/{{listpsw.number}}" button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>-->
-            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" data-id="{{prosw.id}}" data-codigo="{{prosw.codigo}}" data-page="{{listpsw.number}}"><i class="bi bi-trash"></i></button></td>
+            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" data-id="{{prosw.id}}" data-codigo="{{prosw.codigo}}" data-descrip="{{prosw.descripcion}}" data-page="{{listpsw.number}}"><i class="bi bi-trash"></i></button></td>
             
             <!-- Modal -->
      
@@ -188,10 +188,11 @@ $('#myModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget)
     var id = button.data('id')
     var codigo=button.data('codigo')
+    var descrip=button.data('descrip')
     var page=button.data('page')
     var modal = $(this)
     //modal.find('.modal-title').text('New message to ' + id)
-    modal.find('.modal-body').text('¿ Decea elminar la orden de produccion #. '+codigo+' ?')
+    modal.find('.modal-body').text('¿ Decea elminar la producción #. '+codigo+' - '+descrip+' ?')
     document.getElementById('id_del').innerHTML = "<a href=/codproddel/"+id+"/"+page+" button type='button' class='btn btn-danger' >Eliminar</a>"
   })
 </script>

@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <title></title>
 {% load static %}
 <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
@@ -107,7 +107,7 @@
     var page=button.data('page')
     var modal = $(this)
     //modal.find('.modal-title').text('New message to ' + id)
-    modal.find('.modal-body').text('¿ Decea elminar la orden de trabajo con codigo. '+codigo+' ?')
+    modal.find('.modal-body').text('¿ Decea elminar la orden de trabajo. '+codigo+' ?')
     document.getElementById('id_del').innerHTML = "<a href=/ordenesdel/"+id+"/"+page+" button type='button' class='btn btn-danger' >Eliminar</a>"
   })
   </script>
