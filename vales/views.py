@@ -76,9 +76,10 @@ def codmaterial(request, dato, pagina):
     materiallist = paginador.page(page)
     materialbot = materialv.objects.filter(valeID=valeslist).order_by('id')
     formmaterial = formulariomaterial()
+    consol=materialv.objects.values('material','unidad').order_by('material').annotate(tot=Sum('cantidad'), sal=Count('material'))
     return render(request, "materialindex.html",
                   {"form": formmaterial, "valessw": valeslist, "materialsw": materiallist, "materialbot": materialbot,
-                   "paginador": paginador, "listpsw": materiallist, "pagesw": pagina})
+                   "paginador": paginador, "listpsw": materiallist, "pagesw": pagina, "consolsw":consol})
 
 
 def codmaterialorden(request, dato, page, retro):

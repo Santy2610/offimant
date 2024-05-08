@@ -163,11 +163,45 @@
 
       <div class="container">
         <div class="row">
-        <div class="col-md-6">{%include "paginador.html"%}</div>
-        <div class="col-md-1"></div> 
-        <div class="col-md-3"> 
-         <a href="/codvales/index/0?page={{pagesw}}" button type="button" class="btn btn-primary btn-sm float-right"><i class="bi bi-backspace-fill"> Vale codigo:  {{valessw.codigo}}</i> <span class="badge badge-light">{{materialbot|length}}</span></a>
-        </div>
+        <div class="col-md-5">{%include "paginador.html"%}</div>
+        <div class="col md-10">
+          <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#myViewC"><i class="bi bi-boxes"></i> Consolidado de materiales</button>
+          
+          <div class="modal fade" id="myViewC" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h6 class="modal-title" id="exampleModalLabel">Listado de materiales capturados</h6>
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                  <table class="table table-striped table-hover table-sm">
+                    <thead class="thead-dark">
+                     <tr class="table-primary">
+                      <td>Descripcion</td>
+                      <td class="text-center">Unidad</td>
+                     </tr>
+                    </thead>
+                    <tbody>  
+                     {%for consolsw in consolsw%}
+                     <tr>
+                      <td>{{consolsw.material}}</td>
+                      <td class="text-center">{{consolsw.unidad}}</td>
+                     </tr> 
+                     {%endfor%}
+                    </tbody> 
+                  </table>
+                </div>
+                <div class="modal-footer">
+                 <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="/codvales/index/0?page={{pagesw}}" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-backspace-fill"> Vale codigo:  {{valessw.codigo}}</i> <span class="badge badge-light">{{materialbot|length}}</span></a>        
+        </div>  
+       
       </div>
     </div>
        
@@ -234,9 +268,54 @@
        <td class="col-sm-6">{{materialsw.material}}</td>
        <td class="col-sm-2 text-center">{{materialsw.unidad}}</td>
        <td class="col-sm-2 text-center">{{materialsw.cantidad}}</td>
-       <td class="text-center"><a href="/codmaterialdel/{{materialsw.id}}/{{valessw.id}}/{{pagesw}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>
+       <!--<td class="text-center"><a href="/codmaterialdel/{{materialsw.id}}/{{valessw.id}}/{{pagesw}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>-->
+       <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" data-mate="{{materialsw.material}}" data-id="{{materialsw.id}}" data-valeid="{{valessw.id}}" data-page="{{pagesw}}"><i class="bi bi-trash"></i></a></button></td>
+      
+       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h6 class="modal-title" id="exampleModalLabel">Materiales</h6>
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              
+            </div>
+            
+            <div class="modal-body">
+             Decea eliminar la orden de producción
+            </div>
+            <div class="modal-footer">
+              <!--<button id="id_del" type="button"  class="btn btn-danger"></button>-->
+              <div id="id_del"></div>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
       </tr>
       {%endfor%}
+
+      <script>
+
+        $('#myModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget)
+          var id = button.data('id')
+          var valeid=button.data('valeid')
+          var page=button.data('page')
+          var mate=button.data('mate')
+          var modal = $(this)
+          //modal.find('.modal-title').text('New message to ' + id)
+          modal.find('.modal-body').text('¿ Decea elminar el material. '+mate+' ?')
+          document.getElementById('id_del').innerHTML = "<a href=/codmaterialdel/"+id+"/"+valeid+"/"+page+" button type='button' class='btn btn-danger' >Eliminar</a>"
+        })
+        </script>
+      
+
+
+
+
      </tbody>
      </table>
      
