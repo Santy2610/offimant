@@ -177,9 +177,10 @@
                 <div class="modal-body">
                   <table class="table table-striped table-hover table-sm">
                     <thead class="thead-dark">
-                     <tr class="table-primary">
+                     <tr class="table-dark">
                       <td>Descripcion</td>
                       <td class="text-center">Unidad</td>
+                      <td></td>
                      </tr>
                     </thead>
                     <tbody>  
@@ -187,6 +188,7 @@
                      <tr>
                       <td>{{consolsw.material}}</td>
                       <td class="text-center">{{consolsw.unidad}}</td>
+                      <td><button  type="button" class="btn btn-success btn-sm" data-dismiss="modal"><i class="bi bi-check-square"></i></button></td>
                      </tr> 
                      {%endfor%}
                     </tbody> 
