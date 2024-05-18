@@ -188,7 +188,7 @@
                      <tr>
                       <td>{{consolsw.material}}</td>
                       <td class="text-center">{{consolsw.unidad}}</td>
-                      <td><button  type="button" class="btn btn-success btn-sm" data-dismiss="modal"><i class="bi bi-check-square"></i></button></td>
+                      <td><button  type="button" id="demo" class="btn btn-success btn-sm" onclick="actua('{{consolsw.material}}','{{consolsw.unidad}}');" data-dismiss="modal"><i class="bi bi-check-square"></i></button></td>
                      </tr> 
                      {%endfor%}
                     </tbody> 
@@ -208,49 +208,6 @@
     </div>
        
     
-        
-      <!--  <div class="col-md-4">
-        {%if vistasw == 'index'%} 
-         <form  action="/codvalesadd" method="get">
-           <div class="imput-group mb-3 mt-1">
-            <table>
-             {{form.as_table}}  
-            </table>
-           </div>
-   
-           <div class="row">
-             <div class="col-md-7">
-              </div>
-              <div class="col-md-1">
-              <input type="submit"  class="btn btn-success btn-sm" value="Adicionar">
-             </div>
-           </div>
-             
-   
-         </form>  
-        {%else%}
-         <form  action="/codvalesupdate/{{dato}}" method="get">
-          <div class="imput-group mb-3 mt-1">
-           <table>
-            {{form.as_table}}  
-           </table>
-          </div>
-  
-          <div class="row">
-           <div class="col-md-4">
-           </div>
-           <div class="col-md-3">    
-             <a href="/codvales/index/0" button type="button" class="btn btn-danger btn-sm">Cancelar</a>
-           </div>
-           <div class="col-md-1">
-            <input type="submit"  class="btn btn-success btn-sm" value="Actualizar">
-           </div>
-         </div>
-        </form>
-        {%endif%}
-       
-     </div> -->
-   
  
    <div class="col-md-10 mt-1">
     
@@ -299,26 +256,8 @@
       </tr>
       {%endfor%}
 
-      <script>
+    </tbody>
 
-        $('#myModal').on('show.bs.modal', function (event) {
-          var button = $(event.relatedTarget)
-          var id = button.data('id')
-          var valeid=button.data('valeid')
-          var page=button.data('page')
-          var mate=button.data('mate')
-          var modal = $(this)
-          //modal.find('.modal-title').text('New message to ' + id)
-          modal.find('.modal-body').text('¿ Decea elminar el material. '+mate+' ?')
-          document.getElementById('id_del').innerHTML = "<a href=/codmaterialdel/"+id+"/"+valeid+"/"+page+" button type='button' class='btn btn-danger' >Eliminar</a>"
-        })
-        </script>
-      
-
-
-
-
-     </tbody>
      </table>
      
      
@@ -327,5 +266,35 @@
   </div>
  </div>
  </div>
+
+ 
+
+
+
+
  </body>
+
+ <script>
+
+  $('#myModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget)
+    var id = button.data('id')
+    var valeid=button.data('valeid')
+    var page=button.data('page')
+    var mate=button.data('mate')
+    var modal = $(this)
+    //modal.find('.modal-title').text('New message to ' + id)
+    modal.find('.modal-body').text('¿ Decea elminar el material. '+mate+' ?')
+    document.getElementById('id_del').innerHTML = "<a href=/codmaterialdel/"+id+"/"+valeid+"/"+page+" button type='button' class='btn btn-danger' >Eliminar</a>"
+  })
+  </script>
+
+
+ <script>
+  function actua(dato1,dato2)
+  {
+   document.getElementById('id_Material').value=dato1;
+   document.getElementById('id_Unidad').value=dato2;
+  }
+ </script>  
  </html>
