@@ -2,18 +2,28 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
 from ordenes.models import orden
 from ordenes.formulario import fomularioorden
+from django.db.models import Sum, Count
 
 def ordenes(request):
      page=request.GET.get('page',1)
      ordenlist=orden.objects.all().order_by('codigo')
      paginador=Paginator(ordenlist, 10)
      ordenlist=paginador.page(page)
-     return render(request,"listadoordenes.html",{"ordensw":ordenlist, "paginador":paginador,"listpsw":ordenlist})
+     dato="SED"
+     return render(request,"listadoordenes.html",{"ordensw":ordenlist, "paginador":paginador,"listpsw":ordenlist, "datosw":dato})
+
+def ordenesfilt(request, dato):
+     page=request.GET.get('page',1)
+     ordenlist=orden.objects.filter(area=dato).order_by('codigo')
+     paginador=Paginator(ordenlist, 10)
+     ordenlist=paginador.page(page)
+     return render(request,"listadoordenes.html",{"ordensw":ordenlist, "paginador":paginador,"listpsw":ordenlist, "datosw":dato})     
 
 def ordenesnew(request, vista, dato, page):
+      dept=orden.objects.values('departamento').order_by('departamento').annotate(sed=Count('departamento'))
       if vista == 'index':
        formorden=fomularioorden()
-       return render(request,"adicionarordenes.html",{"form":formorden, "vistasw":vista, "datosw":dato})
+       return render(request,"adicionarordenes.html",{"form":formorden, "vistasw":vista, "datosw":dato, "deptsw":dept})
       else:      
        ordenubica=orden.objects.get(pk=dato)
        formorden=fomularioorden(initial={'Codigo':ordenubica.codigo,'area':ordenubica.area,'equipo':ordenubica.equipo,
@@ -24,7 +34,7 @@ def ordenesnew(request, vista, dato, page):
        'Campa':ordenubica.campa})
        result=ordenubica.Resumen
        falla=ordenubica.falla
-       return render(request,"adicionarordenes.html",{"form":formorden, "resultsw":result,"fallasw":falla, "vistasw":vista, "datosw":dato, "pagesw":page})
+       return render(request,"adicionarordenes.html",{"form":formorden, "resultsw":result,"fallasw":falla, "vistasw":vista, "datosw":dato, "pagesw":page, "deptsw":dept})
 
 def ordenesadd(request):
       Codigof=request.GET["Codigo"]

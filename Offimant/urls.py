@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Offimant.views import principal
-from ordenes.views import ordenes,ordenesnew, ordenesadd, ordenesdel, ordenesupdate, ordenimpcont, ordenimpres
+from ordenes.views import ordenes,ordenesnew, ordenesadd, ordenesdel, ordenesupdate, ordenimpcont, ordenimpres, ordenesfilt
 from codificadores.views import codunidad, codalmacen, codcosto, codparada, codunidadadd,codunidaddel 
 from codificadores.views import codunidadupdate, codalmacenadd, codalmacendel,codalmacenupdate
 from codificadores.views import codcostoadd, codcostodel, codcostoupdate, codareas, codareasadd
@@ -43,6 +43,7 @@ urlpatterns = [
     path('ordenesupdate/<dato>/<page>',ordenesupdate),
     path('ordenimpcont/',ordenimpcont),
     path('ordenimpres/<dato>',ordenimpres),
+    path('ordenesfilt/<dato>',ordenesfilt),
 
 
 
