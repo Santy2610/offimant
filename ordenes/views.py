@@ -20,11 +20,11 @@ def ordenesfilt(request, dato):
      return render(request,"listadoordenes.html",{"ordensw":ordenlist, "paginador":paginador,"listpsw":ordenlist, "datosw":dato})     
 
 def ordenesnew(request, vista, dato, page):
-      dept=orden.objects.values('departamento').order_by('departamento').annotate(sed=Count('departamento'))
       if vista == 'index':
+       dept=orden.objects.values('departamento').order_by('departamento').annotate(contador=Count('departamento'))
        formorden=fomularioorden()
        return render(request,"adicionarordenes.html",{"form":formorden, "vistasw":vista, "datosw":dato, "deptsw":dept})
-      else:      
+      else:
        ordenubica=orden.objects.get(pk=dato)
        formorden=fomularioorden(initial={'Codigo':ordenubica.codigo,'area':ordenubica.area,'equipo':ordenubica.equipo,
        'fechaRep':ordenubica.fechaRep,'prioridad':ordenubica.prioridad,'fechaEje':ordenubica.fechaEje,'Destino':ordenubica.Destino,
@@ -34,7 +34,8 @@ def ordenesnew(request, vista, dato, page):
        'Campa':ordenubica.campa})
        result=ordenubica.Resumen
        falla=ordenubica.falla
-       return render(request,"adicionarordenes.html",{"form":formorden, "resultsw":result,"fallasw":falla, "vistasw":vista, "datosw":dato, "pagesw":page, "deptsw":dept})
+       clog=orden.objects.values('departamento').order_by('departamento').annotate(contador=Count('departamento'))      
+       return render(request,"adicionarordenes.html",{"form":formorden, "resultsw":result,"fallasw":falla, "vistasw":vista, "datosw":dato, "pagesw":page, "clogsw":clog})
 
 def ordenesadd(request):
       Codigof=request.GET["Codigo"]

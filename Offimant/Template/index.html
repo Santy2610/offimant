@@ -4,7 +4,6 @@
 {% load static %}
 <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
 <link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
-<link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
 <script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'jquery-3.2.1.js' %}"></script>
 <script src="{% static 'popper.js' %}"></script> 
@@ -21,6 +20,11 @@
  {%include "barra.html"%}
 </div>
 
+<div class="container mt-4">
+  <div class="row mt-4"></div>
+  <div class="row mt-4"></div>
+</div>
+
 <div class="container mt-2">
   
   <div class="container mt-3 ">
@@ -31,7 +35,8 @@
     <div class="row">
     <div class="col-6 ">
         <canvas id="myChart2" height="230" with="400"></canvas>
-        <a href="/ordenes" button type="button" class="btn btn-primary"><i class="bi bi-wrench-adjustable"></i> Ordenes de trabajo</a>    
+        <a href="/ordenes" button type="button" class="btn btn-primary"><i class="bi bi-wrench-adjustable"></i> Ord. de trabajo</a> 
+        <a href="/listmant" button type="button" class="btn btn-primary"><i class="bi bi-calendar2-check"></i> P. mantenimiento</a> 
     </div>      
     <div class="col-6">
       <table class="table table-striped table-hover table-sm">
@@ -80,9 +85,9 @@
            <tr class="table-bordered">
          {%endif%}
           {%if listord.campa|length > 0 %}   
-            <td>{{listord.codigo}} {{listord.campa}}</td>
+            <td><a href="/ordenimpres/{{listord.id}}">{{listord.codigo}} {{listord.campa}}</a></td>
           {%else%}
-          <td>{{listord.codigo}}</td>
+          <td><a href="/ordenimpres/{{listord.id}}">{{listord.codigo}}</a></td>
           {%endif%}  
             <td>{{listord.equipo}}</td>
             <td>{{listord.falla}}</td>
@@ -103,7 +108,7 @@
       <div class="row mt-2">
       <div class="col-12">
       <a href="/codvales/index/0" button type="button" class="btn btn-primary"><i class="bi bi-newspaper"></i> Materiales</a>
-      <a href="/consolmat" button type="button" class="btn btn-success"><i class="bi bi-boxes"></i> Consolidado total Mat.</button></a>  
+      <a href="/consolmat" button type="button" class="btn btn-success"><i class="bi bi-boxes"></i> Consolidado materiales</button></a>  
       <table class="table table-striped table-hover table-sm mt-2">
         <thead class="thead-dark">
         <tr>
