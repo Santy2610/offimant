@@ -28,7 +28,7 @@
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h6 class="modal-title" id="exampleModalLabel">Registro de tiempo perdido</h6>
+                    <h6 class="modal-title" id="exampleModalLabel">Adicionar registro de tiempo perdido</h6>
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     
                   </div>
@@ -50,6 +50,7 @@
                 </div>
               </div>
             </div>
+            <a href="#" button type="button" class="btn btn-primary"><i class="bi bi-printer"></i> Imprimir</a> 
         </div>
         
         <div class="col-6">
@@ -71,8 +72,7 @@
               <th>Equipo</th>
               <th>Causa</th>
               <th class="col-2">Fecha</th>
-              <th>Dias</th>
-              <th></th>
+              <th>Horas</th>
               <th></th>
               <th></th>
             </tr>
@@ -84,11 +84,46 @@
              <td>{{listTsw.equipo}}</td>
              <td>{{listTsw.causa}}</td>
              <td>{{listTsw.fechaI}}</td>
-             <td>{{listTsw.dias}}</td>
-             <td class="text-center"><a href="/ordenimpres/{{ordensw.id}}" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-printer"></i></a></td>
-             <td class="text-center"><a href="/ordenesnew/edit/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
+             <td class="text-center">{{listTsw.dias}}</td>
+             <!--<td class="text-center"><a href="/ordenesnew/edit/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>-->
+            <!--
+             <td><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModaledit" data-id="{{listTsw.id}}" data-area="{{listTsw.area}}" data-equipo="{{listTsw.equipo}}" data-fechaI="{{listTsw.fechaI}}" data-fechaF="{{listTsw.fechaF}}" data-causa="{{listTsw.causa}}" data-observacion="{{listTsw.observaciones}}"><i class="bi bi-pencil"></i></button>
+             
+             <div class="modal fade" id="myModaledit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h6 class="modal-title" id="exampleModalLabel">Modificar registro de tiempo perdido</h6>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    
+                  </div>
+                  
+                  <div class="modal-body">
+                  <form  action="/tiempoupdate" method="get">  
+                  <table>
+                  {{listFor.as_table}}
+                  <td>
+                  <th>Observaciones:<textarea name="observacionf" rows="3" cols="40" required id="id_observacionf"></textarea></th>
+                  </td>
+                  </table>  
+                  </div>
+                  <div class="modal-footer">
+                    <input type="submit"  class="btn btn-primary btn-sm" value="Adicionar">
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
+                  </form>  
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          </td>
+             
+             -->
+             
+             
+             
              <!--<td class="text-center"><a href="/ordenesdel/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>-->
-             <td class="text-center"><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" data-id="{{listTsw.id}}" data-area="{{listTsw.area}}" data-equipo="{{listTsw.equipo}}" data-fecha="{{listTsw.fechaI}}" data-page="{{listpsw.number}}"><i class="bi bi-trash"></i></a></button></td>
+             <td class="text-center"><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" data-id="{{listTsw.id}}" data-area="{{listTsw.area}}" data-equipo="{{listTsw.equipo}}" data-fecha="{{listTsw.fechaI}}" data-page="{{listpsw.number}}"><i class="bi bi-trash"></i></button></td>
             
              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered">
@@ -170,5 +205,22 @@
 </script>
 
 
+<!--
+<script>
 
+  $('#myModaledit').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget)
+    var id=button.data('id')
+    document.getElementById('id_areaf').value=button.data('area');
+    document.getElementById('id_equiposf').value=button.data('equipo');
+    document.getElementById('id_fechaIf').value=button.data('fechaI');
+    document.getElementById('id_fechaFf').value=button.data('fechaF');
+    document.getElementById('id_causaf').value=button.data('causa');
+    document.getElementById('id_observacionf').value=button.data('observacion');
+    var modal = $(this)
+    
+  })
+  </script>
+
+-->
 </html>

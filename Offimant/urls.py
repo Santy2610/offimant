@@ -28,7 +28,7 @@ from vales.views import codvales, codvalesadd, codvalesdel, codvalesupdate, codm
 from vales.views import codmaterialorden, consolmat, consolspe
 from producciones.views import indexmate, codmateadd, codmatedel, indexprod, codproddel, codprodadd, codprodupdate
 from mantenimiento.views import listmant, adicionarmant, mantadd, mantdel, mantupdate, estadomant, estadomantupdate
-from tiempoperdido.views import listadotiempo, tiempodel, tiempoadd
+from tiempoperdido.views import listadotiempo, tiempodel, tiempoadd, tiempoupdate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -120,5 +120,7 @@ urlpatterns = [
     path('listadotiempo', listadotiempo),
     path('tiempodel/<dato>', tiempodel),
     path('tiempoadd', tiempoadd),
+    path('tiempoupdate/<dato>', tiempoupdate),
+    
 
 ]

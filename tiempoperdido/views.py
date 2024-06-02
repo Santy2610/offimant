@@ -11,7 +11,7 @@ import random
 def listadotiempo(request):
     page=request.GET.get('page',1)
     listT=tiempo.objects.all().order_by('fechaI')
-    paginador=Paginator(listT, 10)
+    paginador=Paginator(listT, 8)
     listT=paginador.page(page)
     Grafth=tiempo.objects.values('area').order_by('area').annotate(canti=Sum('dias'))
     listF=tiempoF()
@@ -29,7 +29,7 @@ def listadotiempo(request):
 
 
 
-    return render(request, "listadotiempo.html",{"listFor":listF, "listTsw":listT,"datosTP":datosTP})
+    return render(request, "listadotiempo.html",{"listFor":listF, "listTsw":listT,"datosTP":datosTP, "paginador":paginador, "listpsw":listT})
 
 def tiempoadd(request):
     area=request.GET["areaf"]
@@ -38,7 +38,7 @@ def tiempoadd(request):
     fechaF=request.GET["fechaFf"]
     fechaI=datetime.strptime(fechaI, '%Y-%m-%d').date()
     fechaF=datetime.strptime(fechaF, '%Y-%m-%d').date()
-    time=(fechaI-fechaF)*-1
+    time=((fechaI-fechaF)*24)*-1
     time=time.days
     causa=request.GET["causaf"]
     observacion=request.GET["observacionf"]
@@ -46,6 +46,27 @@ def tiempoadd(request):
     listT.save()
     return redirect(listadotiempo)
 
+def tiempoupdate(request, dato):
+    area=request.GET["areaf"]
+    equipo=request.GET["equiposf"]
+    fechaI=request.GET["fechaIf"]
+    fechaF=request.GET["fechaFf"]
+    fechaI=datetime.strptime(fechaI, '%Y-%m-%d').date()
+    fechaF=datetime.strptime(fechaF, '%Y-%m-%d').date()
+    time=((fechaI-fechaF)*24)*-1
+    time=time.days
+    causa=request.GET["causaf"]
+    observacion=request.GET["observacionf"]
+    listT=tiempo.objects.get(pk=dato)
+    listT.area=area
+    listT.equipo=equipo
+    listT.fechaI=fechaI
+    listT.fechaF=fechaF
+    listT.causa=causa
+    listT.observacion=observacion
+    listT.dias=time
+    listT.save()
+    return redirect(listadotiempo)
 
 def tiempodel(request, dato):
     listT=tiempo.objects.get(pk=dato)
