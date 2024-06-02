@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<title></title>
+{% load static %}
+<link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+<link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'jquery-3.2.1.js' %}"></script>
+<script src="{% static 'popper.js' %}"></script> 
+
+<body>
+
+  <div class="container mt-1 ">
+
+    {%include "barra.html"%}
+
+    <div class="container mt-4">
+      <div class="row mt-4"></div>
+      <div class="row mt-4"></div>
+    </div>
+  
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-5">
+          <button class="btn btn-primary" data-toggle="modal" data-target="#myTadd"><i class="bi bi-newspaper"></i> Capturar tiempo perdido</button>
+
+            <div class="modal fade" id="myTadd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h6 class="modal-title" id="exampleModalLabel">Registro de tiempo perdido</h6>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    
+                  </div>
+                  
+                  <div class="modal-body">
+                  <form  action="/tiempoadd" method="get">  
+                  <table>
+                  {{listFor.as_table}}
+                  <td>
+                  <th>Observaciones:<textarea name="observacionf" rows="3" cols="40"></textarea></th>
+                  </td>
+                  </table>  
+                  </div>
+                  <div class="modal-footer">
+                    <input type="submit"  class="btn btn-primary btn-sm" value="Adicionar">
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
+                  </form>  
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <div class="col-6">
+          {%include "paginador.html"%} 
+        </div>
+        </div>
+    <div class="row">
+    <div class="col-md-3 mt-3">
+      <canvas id="myChart2" height="230" with="400"></canvas>
+
+
+    </div>
+      <div class="col-md-9 mt-3">
+
+        <table class="table table-striped table-hover table-sm"> 
+          <thead class="thead-dark">
+            <tr>
+              <th>Area</th>
+              <th>Equipo</th>
+              <th>Causa</th>
+              <th>Fecha</th>
+              <th>Tiempo</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+           {%for listTsw in listTsw %}
+             <tr>
+             <td>{{listTsw.area}}</td>
+             <td>{{listTsw.equipo}}</td>
+             <td>{{listTsw.causa}}</td>
+             <td>{{listTsw.fechaI}}</td>
+             <td>{{listTsw.tiempo}}</td>
+             <td class="text-center"><a href="/ordenimpres/{{ordensw.id}}" button type="button" class="btn btn-primary btn-sm"><i class="bi bi-printer"></i></a></td>
+             <td class="text-center"><a href="/ordenesnew/edit/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>
+             <!--<td class="text-center"><a href="/ordenesdel/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>-->
+             <td class="text-center"><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" data-id="{{listTsw.id}}" data-area="{{listTsw.area}}" data-equipo="{{listTsw.equipo}}" data-fecha="{{listTsw.fechaI}}" data-page="{{listpsw.number}}"><i class="bi bi-trash"></i></a></button></td>
+            
+             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h6 class="modal-title" id="exampleModalLabel">Registro de tiempo perdido</h6>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    
+                  </div>
+                  
+                  <div class="modal-body">
+                   Decea eliminar la orden de producción
+                  </div>
+                  <div class="modal-footer">
+                    <!--<button id="id_del" type="button"  class="btn btn-danger"></button>-->
+                    <div id="id_del"></div>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            </tr>
+           {%endfor%}
+
+
+          </tbody>
+        </table>
+
+    </div>
+    
+  </div>
+</div>
+</div>
+</div>
+
+<script>
+
+  $('#myModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget)
+    var id = button.data('id')
+    var area=button.data('area')
+    var equipo=button.data('equipo')
+    var fecha=button.data('fecha')
+    var page=button.data('page')
+    var modal = $(this)
+    //modal.find('.modal-title').text('New message to ' + id)
+    modal.find('.modal-body').text('¿ Decea elminar el registro de tiempo perdido. Area: '+area+' Equipo: '+equipo+' con fecha:'+fecha+'?')
+    document.getElementById('id_del').innerHTML = "<a href=/tiempodel/"+id+" button type='button' class='btn btn-danger' >Eliminar</a>"
+  })
+  </script>
+
+
+</body>
+
+
+
+</html>
