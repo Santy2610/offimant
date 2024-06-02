@@ -8,4 +8,4 @@ class tiempo(models.Model):
     fechaF=models.DateField()
     causa=models.CharField(max_length=150)
     observacion=models.TextField()
-    tiempo=models.CharField(max_length=10)
+    dias=models.CharField(max_length=10)
