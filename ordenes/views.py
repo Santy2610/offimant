@@ -105,10 +105,10 @@ def ordenesupdate(request, dato, page):
       ordenlist.save()
       return redirect("/ordenes/?page=%s" %page)
 
-def ordenesdel(request, dato, page):
+def ordenesdel(request, dato):
       ordenlist=orden.objects.get(pk=dato)
       ordenlist.delete()
-      return redirect("/ordenes/?page=%s" %page)
+      return redirect(ordenes)
 
 def ordenimpcont(request):
      ordenimp=orden.objects.all().order_by('codigo')

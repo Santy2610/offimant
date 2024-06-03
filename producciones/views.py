@@ -41,10 +41,10 @@ def codprodupdate(request, dato, page):
       prolist.save()
       return redirect("/indexprod/index/0/?page=%s" %page)
 
-def codproddel(request, dato, page):
+def codproddel(request, dato):
       prolist=producciones.objects.get(pk=dato)
       prolist.delete()
-      return redirect("/indexprod/index/0/?page=%s" %page)
+      return redirect("/indexprod/index/0")
 
 def indexmate(request, dato, pagina):
       prodlist=producciones.objects.get(pk=dato)

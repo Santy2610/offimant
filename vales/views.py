@@ -58,10 +58,10 @@ def codvalesupdate(request, dato, page):
     return redirect("/codvales/index/0/?page=%s" % page)
 
 
-def codvalesdel(request, dato, page):
+def codvalesdel(request, dato):
     valeslist = vale.objects.get(pk=dato)
     valeslist.delete()
-    return redirect("/codvales/index/0/?page=%s" % page)
+    return redirect("/codvales/index/0")
 
 
 # termina Vales

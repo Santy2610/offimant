@@ -37,10 +37,10 @@ def codunidadupdate(request, dato, page):
     return redirect("/codunidad/index/0/?page=%s" %page) 
 
 
-def codunidaddel(request, dato, page):
+def codunidaddel(request, dato):
       unilist=unidadm.objects.get(pk=dato)
       unilist.delete()
-      return redirect("/codunidad/index/0/?page=%s" %page)
+      return redirect("/codunidad/index/0")
 
 # fin unidades
 
@@ -74,10 +74,10 @@ def codalmacenupdate(request, dato,page):
     almacendg.save()
     return redirect("/codalmacen/index/0/?page=%s" %page) 
 
-def codalmacendel(request, dato, page):
+def codalmacendel(request, dato):
      Almalist=almacen.objects.get(pk=dato)
      Almalist.delete()
-     return redirect("/codalmacen/index/0/?page=%s" %page)
+     return redirect("/codalmacen/index/0")
 
 
 # fin almacenes
@@ -114,10 +114,10 @@ def codcostoupdate(request, dato, page):
     costodg.save()
     return redirect("/codcosto/index/0/?page=%s" %page)    
 
-def codcostodel(request, dato, page):
+def codcostodel(request, dato):
      costolist=centrocosto.objects.get(pk=dato)
      costolist.delete()
-     return redirect("/codcosto/index/0/?page=%s" %page)
+     return redirect("/codcosto/index/0")
 
 # fin de centro de costo
 
@@ -151,10 +151,10 @@ def codareasupdate(request, dato, page):
     return redirect("/codareas/index/0/?page=%s" %page)
    
 
-def codareasdel(request, dato, page):
+def codareasdel(request, dato):
      areaslist=areas.objects.get(pk=dato)
      areaslist.delete()
-     return redirect("/codareas/index/0/?page=%s" %page)
+     return redirect("/codareas/index/0")
 
 
 
@@ -203,7 +203,7 @@ def codequiposupdate(request, dato, area, page):
 def codequiposdel(request, dato, area, page):
      equiposlist=equipos.objects.get(pk=dato)
      equiposlist.delete()
-     return redirect("/codequipos/"+area+"/?page=%s" %page) 
+     return redirect("/codequipos/"+area) 
 
 # fin Equipos
 
@@ -236,10 +236,10 @@ def codcausasupdate(request, dato, page):
     causasdg.save()
     return redirect("/codcausas/index/0/?page=%s" %page) 
 
-def codcausasdel(request, dato, page):
+def codcausasdel(request, dato):
      causaslist=causas.objects.get(pk=dato)
      causaslist.delete()
-     return redirect("/codcausas/index/0/?page=%s" %page) 
+     return redirect("/codcausas/index/0") 
 
 
 
@@ -282,10 +282,10 @@ def codtrabaupdate(request, dato, page):
     return redirect("/codtraba/index/0/?page=%s" %page) 
 
 
-def codtrabadel(request, dato, page):
+def codtrabadel(request, dato):
       trablist=trabajadores.objects.get(pk=dato)
       trablist.delete()
-      return redirect("/codtraba/index/0/?page=%s" %page)
+      return redirect("/codtraba/index/0")
 
 
 

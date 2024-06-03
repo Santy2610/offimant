@@ -54,7 +54,7 @@ def tiempoupdate(request, dato):
     fechaI=datetime.strptime(fechaI, '%Y-%m-%d').date()
     fechaF=datetime.strptime(fechaF, '%Y-%m-%d').date()
     time=((fechaI-fechaF)*24)*-1
-    time=time.days
+    time=str(time.days)
     causa=request.GET["causaf"]
     observacion=request.GET["observacionf"]
     listT=tiempo.objects.get(pk=dato)
@@ -68,7 +68,7 @@ def tiempoupdate(request, dato):
     listT.save()
     return redirect(listadotiempo)
 
-def tiempodel(request, dato):
+def tiempodel(request, dato, page):
     listT=tiempo.objects.get(pk=dato)
     listT.delete()
     return redirect(listadotiempo) 

@@ -40,7 +40,7 @@ urlpatterns = [
     path('ordenes/', ordenes),
     path('ordenesnew/<vista>/<dato>/<page>', ordenesnew),
     path('ordenesadd', ordenesadd),
-    path('ordenesdel/<dato>/<page>', ordenesdel),
+    path('ordenesdel/<dato>', ordenesdel),
     path('ordenesupdate/<dato>/<page>',ordenesupdate),
     path('ordenimpcont/',ordenimpcont),
     path('ordenimpres/<dato>',ordenimpres),
@@ -50,22 +50,22 @@ urlpatterns = [
 
     path('codunidad/<vista>/<dato>/', codunidad),
     path('codunidadadd', codunidadadd),
-    path('codunidaddel/<dato>/<page>', codunidaddel),
+    path('codunidaddel/<dato>', codunidaddel),
     path('codunidadupdate/<dato>/<page>', codunidadupdate),
     
     path('codalmacen/<vista>/<dato>/', codalmacen),
     path('codalmacenadd', codalmacenadd),
-    path('codalmacendel/<dato>/<page>', codalmacendel),
+    path('codalmacendel/<dato>', codalmacendel),
     path('codalmacenupdate/<dato>/<page>', codalmacenupdate),
     
     path('codcosto/<vista>/<dato>/', codcosto),
     path('codcostoadd', codcostoadd),
-    path('codcostodel/<dato>/<page>', codcostodel),
+    path('codcostodel/<dato>', codcostodel),
     path('codcostoupdate/<dato>/<page>', codcostoupdate),
     
     path('codareas/<vista>/<dato>/', codareas),
     path('codareasadd', codareasadd),
-    path('codareasdel/<dato>/<page>', codareasdel),
+    path('codareasdel/<dato>', codareasdel),
     path('codareasupdate/<dato>/<page>', codareasupdate),
 
     path('codequipos/<dato>/', codequipos),
@@ -76,17 +76,17 @@ urlpatterns = [
 
     path('codcausas/<vista>/<dato>/', codcausas),
     path('codcausasadd', codcausasadd),
-    path('codcausasdel/<dato>/<page>', codcausasdel),
+    path('codcausasdel/<dato>', codcausasdel),
     path('codcausasupdate/<dato>/<page>', codcausasupdate),
 
     path('codtraba/<vista>/<dato>/', codtraba),
     path('codtrabaadd', codtrabaadd),
-    path('codtrabadel/<dato>/<page>', codtrabadel),
+    path('codtrabadel/<dato>', codtrabadel),
     path('codtrabaupdate/<dato>/<page>', codtrabaupdate),
       
     path('codvales/<vista>/<dato>/', codvales),
     path('codvalesadd', codvalesadd),
-    path('codvalesdel/<dato>/<page>', codvalesdel),
+    path('codvalesdel/<dato>', codvalesdel),
     path('codvalesupdate/<dato>/<page>', codvalesupdate),
 
     path('codmaterial/<dato>/<pagina>/', codmaterial),
@@ -101,7 +101,7 @@ urlpatterns = [
 
     path('indexprod/<vista>/<dato>/', indexprod),
     path('codprodadd', codprodadd),
-    path('codproddel/<dato>/<page>', codproddel),
+    path('codproddel/<dato>', codproddel),
     path('codprodupdate/<dato>/<page>', codprodupdate),
 
     path('indexmate/<dato>/<pagina>', indexmate),
@@ -117,8 +117,8 @@ urlpatterns = [
     path('estadomantupdate/<dato>/<page>', estadomantupdate),
 
 
-    path('listadotiempo', listadotiempo),
-    path('tiempodel/<dato>', tiempodel),
+    path('listadotiempo/', listadotiempo),
+    path('tiempodel/<dato>/<page>', tiempodel),
     path('tiempoadd', tiempoadd),
     path('tiempoupdate/<dato>', tiempoupdate),
     
