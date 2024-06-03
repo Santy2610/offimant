@@ -29,7 +29,7 @@ def listadotiempo(request):
 
 
 
-    return render(request, "listadotiempo.html",{"listFor":listF, "listTsw":listT,"datosTP":datosTP, "paginador":paginador, "listpsw":listT})
+    return render(request, "listadotiempo.html",{"listFor":listF, "listTsw":listT,"datosTP":datosTP, "paginador":paginador, "listpsw":listT, "Grafthsw":Grafth})
 
 def tiempoadd(request):
     area=request.GET["areaf"]
