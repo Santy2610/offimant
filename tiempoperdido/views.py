@@ -72,3 +72,22 @@ def tiempodel(request, dato, page):
     listT=tiempo.objects.get(pk=dato)
     listT.delete()
     return redirect(listadotiempo) 
+
+def imptiemp(request):
+    listT=tiempo.objects.all().order_by('fechaI')
+    Grafth=tiempo.objects.values('area').order_by('area').annotate(canti=Sum('dias'))
+    datosTP=[]
+    for item in Grafth:
+            a = random.randint(0,255)
+            b = random.randint(0,255)
+            c = random.randint(0,255)
+            color='rgba'+ '(%s' % a +', %s' % b +', %s' % c + ', 0.7)'
+            datosTP.append({
+              'area':item['area'],
+              'canti':item['canti'],
+              'color':color    
+            })
+
+
+
+    return render(request, "implistadotiempo.html",{"listTsw":listT,"datosTP":datosTP, "Grafthsw":Grafth}) 
