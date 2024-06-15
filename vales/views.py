@@ -4,6 +4,7 @@ from vales.formulario import formulariovales, formulariomaterial
 from django.core.paginator import Paginator
 from django.db.models import Sum, Count
 from codificadores.models import centrocosto
+from Offimant.views import barracont, tareaM
 
 
 # Create your views here.
@@ -21,7 +22,7 @@ def codvales(request, vista, dato):
         materialeslist = materialv.objects.all()
         return render(request, "valesindex.html",
                       {"form": formavales, "valessw": valeslist, "materialessw": materialeslist, "vistasw": vista,
-                       "paginador": paginador, "listpsw": valeslist, "listcentrosw":listcentro})
+                       "paginador": paginador, "listpsw": valeslist, "listcentrosw":listcentro, "contadorSW":barracont(), "ordenmSW":tareaM()})
     else:
         valesdg = vale.objects.get(pk=dato)
         formvales = formulariovales(
@@ -29,7 +30,7 @@ def codvales(request, vista, dato):
                      'Entregado': valesdg.entregado, 'Fecha': valesdg.fecha})
         return render(request, "valesindex.html",
                       {"form": formvales, "valessw": valeslist, "dato": dato, "vistasw": vista, "paginador": paginador,
-                       "listpsw": valeslist})
+                       "listpsw": valeslist, "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 
 def codvalesadd(request):
@@ -79,13 +80,13 @@ def codmaterial(request, dato, pagina):
     consol=materialv.objects.values('material','unidad').order_by('material').annotate(tot=Sum('cantidad'), sal=Count('material'))
     return render(request, "materialindex.html",
                   {"form": formmaterial, "valessw": valeslist, "materialsw": materiallist, "materialbot": materialbot,
-                   "paginador": paginador, "listpsw": materiallist, "pagesw": pagina, "consolsw":consol})
+                   "paginador": paginador, "listpsw": materiallist, "pagesw": pagina, "consolsw":consol, "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 
 def codmaterialorden(request, dato, page, retro):
     resort = vale.objects.get(codigo=dato)
     materiallist = materialv.objects.filter(valeID=resort).order_by('id')
-    return render(request, "materialview.html", {"valessw": resort, "materialsw": materiallist, "pagesw": page, "retrosw":retro})
+    return render(request, "materialview.html", {"valessw": resort, "materialsw": materiallist, "pagesw": page, "retrosw":retro, "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 
 def codmaterialadd(request, dato, pagina):
@@ -107,11 +108,11 @@ def consolmat(request):
       listma=materialv.objects.values('material','unidad').order_by('material').annotate(tot=Sum('cantidad'), sal=Count('material'))
       paginador=Paginator(listma, 13)
       listma=paginador.page(page)
-      return render(request, "materialconsol.html", {"listmasw":listma, "paginador":paginador,"listpsw":listma})
+      return render(request, "materialconsol.html", {"listmasw":listma, "paginador":paginador,"listpsw":listma, "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 def consolspe(request, dato):
       page=request.GET.get('page',1)
       listma=materialv.objects.filter(valeID__costo__contains=dato).values('material','unidad').order_by('material').annotate(tot=Sum('cantidad'), sal=Count('material'))
       paginador=Paginator(listma, 13)
       listma=paginador.page(page)
-      return render(request, "materialconsol.html", {"listmasw":listma, "paginador":paginador,"listpsw":listma})
+      return render(request, "materialconsol.html", {"listmasw":listma, "paginador":paginador,"listpsw":listma, "contadorSW":barracont(), "ordenmSW":tareaM()})

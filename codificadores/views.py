@@ -3,6 +3,7 @@ from codificadores.admin import equiposAdmin
 from codificadores.formulario import formularioalmacen, formularioareas, formulariocausas, formulariocosto, formulariounidadm, formularioequipos, formulariocausas,formulariotrab
 from codificadores.models import areas, centrocosto, trabajadores, unidadm, almacen, equipos, causas
 from django.core.paginator import Paginator
+from Offimant.views import barracont, tareaM
 
 # Create your views here.
 
@@ -18,7 +19,7 @@ def codunidad(request, vista, dato):
       else:
        unidg=unidadm.objects.get(pk=dato)
        formUnidad=formulariounidadm(initial={'Unidad':unidg.unid, 'Descripcion':unidg.descripcion})
-      return render(request,"unidadindex.html",{"form":formUnidad, "unisw":unidlist, "vistasw":vista, "dato":dato, "paginador":paginador,"listpsw":unidlist})
+      return render(request,"unidadindex.html",{"form":formUnidad, "unisw":unidlist, "vistasw":vista, "dato":dato, "paginador":paginador,"listpsw":unidlist, "contadorSW":barracont(), "ordenmSW":tareaM()})
     
 
 def codunidadadd(request):
@@ -57,7 +58,7 @@ def codalmacen(request, vista, dato):
       else:
        almaceng=almacen.objects.get(pk=dato)
        formAlmacen=formularioalmacen(initial={'Codigo':almaceng.codigo, 'Descripcion':almaceng.descripcion})
-      return render(request,"almacenesindex.html",{"form":formAlmacen, "Almasw":Almalist, "vistasw":vista, "dato":dato , "paginador":paginador,"listpsw":Almalist})    
+      return render(request,"almacenesindex.html",{"form":formAlmacen, "Almasw":Almalist, "vistasw":vista, "dato":dato , "paginador":paginador,"listpsw":Almalist, "contadorSW":barracont(), "ordenmSW":tareaM()})    
 
 def codalmacenadd(request):
       codigo=request.GET["Codigo"]
@@ -94,7 +95,7 @@ def codcosto(request, vista, dato):
       else:
        costong=centrocosto.objects.get(pk=dato)
        formcosto=formulariocosto(initial={'Codigo':costong.codigo, 'Descripcion':costong.descripcion, 'Produccion':costong.prod})
-      return render(request,"costoindex.html",{"form":formcosto, "costosw":costolist, "vistasw":vista, "dato":dato, "paginador":paginador,"listpsw":costolist})
+      return render(request,"costoindex.html",{"form":formcosto, "costosw":costolist, "vistasw":vista, "dato":dato, "paginador":paginador,"listpsw":costolist, "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 def codcostoadd(request):
       codigo=request.GET["Codigo"]
@@ -133,7 +134,7 @@ def codareas(request, vista, dato):
       else:
        areasdg=areas.objects.get(pk=dato)
        formareas=formularioareas(initial={'Codigo':areasdg.codigo, 'Descripcion':areasdg.descripcion})
-      return render(request,"areasindex.html", {"form":formareas, "areassw":areaslist, "dato":dato, "vistasw":vista, "paginador":paginador,"listpsw":areaslist})
+      return render(request,"areasindex.html", {"form":formareas, "areassw":areaslist, "dato":dato, "vistasw":vista, "paginador":paginador,"listpsw":areaslist, "contadorSW":barracont(), "ordenmSW":tareaM()})
       
 def codareasadd(request):
       codigo=request.GET["Codigo"]
@@ -170,7 +171,7 @@ def codequipos(request, dato):
       equiposlist=paginador.page(page)
       equiposbot=equipos.objects.filter(masterArea=areaslist).order_by('codigo')
       formequipos=formularioequipos()
-      return render(request,"equiposindex.html",{"form":formequipos, "areassw":areaslist, "equipossw":equiposlist, "equiposbot":equiposbot, "paginador":paginador,"listpsw":equiposlist})
+      return render(request,"equiposindex.html",{"form":formequipos, "areassw":areaslist, "equipossw":equiposlist, "equiposbot":equiposbot, "paginador":paginador,"listpsw":equiposlist, "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 def codequiposadd(request, dato):
       codigo=request.GET["Codigo"]
@@ -188,7 +189,7 @@ def codequiposedit(request, dato, area):
      equiposlist=paginador.page(page)
      equiposdg=equipos.objects.get(pk=dato)
      formequipos=formularioequipos(initial={'Codigo':equiposdg.codigo, 'Descripcion':equiposdg.descripcion})
-     return render(request,"equiposedit.html", {"form":formequipos, "equipossw":equiposlist, "equiposbot":equiposbot, "areassw":areaslist, "area":area, "dato":dato, "paginador":paginador,"listpsw":equiposlist})
+     return render(request,"equiposedit.html", {"form":formequipos, "equipossw":equiposlist, "equiposbot":equiposbot, "areassw":areaslist, "area":area, "dato":dato, "paginador":paginador,"listpsw":equiposlist, "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 
 def codequiposupdate(request, dato, area, page):
@@ -219,7 +220,7 @@ def codcausas(request, vista, dato):
       else:
        causasdg=causas.objects.get(pk=dato)
        formcausas=formulariocausas(initial={'Codigo':causasdg.codigo, 'Descripcion':causasdg.descripcion})
-      return render(request,"causasindex.html",{"form":formcausas, "causassw":causalist, "vistasw":vista, "dato":dato, "paginador":paginador,"listpsw":causalist })   
+      return render(request,"causasindex.html",{"form":formcausas, "causassw":causalist, "vistasw":vista, "dato":dato, "paginador":paginador,"listpsw":causalist, "contadorSW":barracont(), "ordenmSW":tareaM() })   
 
 def codcausasadd(request):
       codigo=request.GET["Codigo"]
@@ -257,7 +258,7 @@ def codtraba(request, vista, dato):
       else:
        trabdg=trabajadores.objects.get(pk=dato)
        formtrab=formulariotrab(initial={'codigo':trabdg.codigo, 'nombre':trabdg.nombre, 'Solic':trabdg.solic, 'Person':trabdg.person})
-      return render(request,"trabajadoresindex.html",{"form":formtrab, "trabsw":trablist, "vistasw":vista, "dato":dato, "paginador":paginador,"listpsw":trablist})
+      return render(request,"trabajadoresindex.html",{"form":formtrab, "trabsw":trablist, "vistasw":vista, "dato":dato, "paginador":paginador,"listpsw":trablist, "contadorSW":barracont(), "ordenmSW":tareaM()})
     
 
 def codtrabaadd(request):
@@ -295,4 +296,4 @@ def codtrabadel(request, dato):
 
 
 def codparada(request):
-      return render(request,"paradasindex.html")
+      return render(request,"paradasindex.html", {"contadorSW":barracont(), "ordenmSW":tareaM()})

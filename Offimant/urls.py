@@ -30,6 +30,7 @@ from producciones.views import indexmate, codmateadd, codmatedel, indexprod, cod
 from mantenimiento.views import listmant, adicionarmant, mantadd, mantdel, mantupdate, estadomant, estadomantupdate
 from tiempoperdido.views import listadotiempo, tiempodel, tiempoadd, tiempoupdate, imptiemp
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', principal),

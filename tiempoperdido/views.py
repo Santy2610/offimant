@@ -5,6 +5,7 @@ from tiempoperdido.formulario import tiempoF
 from datetime import datetime
 from django.db.models import Sum, Count
 import random
+from Offimant.views import barracont, tareaM 
 
 # Create your views here.
 
@@ -29,7 +30,7 @@ def listadotiempo(request):
 
 
 
-    return render(request, "listadotiempo.html",{"listFor":listF, "listTsw":listT,"datosTP":datosTP, "paginador":paginador, "listpsw":listT, "Grafthsw":Grafth})
+    return render(request, "listadotiempo.html",{"listFor":listF, "listTsw":listT,"datosTP":datosTP, "paginador":paginador, "listpsw":listT, "Grafthsw":Grafth, "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 def tiempoadd(request):
     area=request.GET["areaf"]

@@ -1,81 +1,133 @@
 <http>
-    <title></title>
-    
-    {% load static %}
-    
-    <script src="{% static 'jquery-3.2.1.js' %}"></script>
-    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
-    <link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
-    <script src="{% static 'js/bootstrap.js' %}"></script>
-    <script src="{% static 'popper.js' %}"></script> 
-    <script src="{% static 'chart.js'%}"></script>
-    
-    
+  <title></title>
 
-<body>  
+  {% load static %}
+
+  <script src="{% static 'jquery-3.2.1.js' %}"></script>
+  <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+  <link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="{% static 'popper.js' %}"></script>
+  <script src="{% static 'chart.js'%}"></script>
+
+
+
+  <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
- <!--Brand--> 
+      <!--Brand-->
 
- <a class="navbar-brand" href="/">
-  <img src="{% static 'icons/database-fill-gear.svg'%}" width="30" height="30" class="d-inline-block align-top" alt="">
-  Offimant
-</a>
-
-
-   
- <!--Toggler/collapsibe Button--> 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-  <!--Navbar links--> 
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Produccion
+      <a class="navbar-brand" href="/">
+        <img src="{% static 'icons/database-fill-gear.svg'%}" width="30" height="30" class="d-inline-block align-top"
+          alt="">
+        Offimant
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="/indexprod/index/0">Producciones</a>
-        <a class="dropdown-item" href="/listadotiempo">Tiempo perdido</a>
-        <!--<div class="dropdown-divider"></div>-->
+
+
+
+      <!--Toggler/collapsibe Button-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--Navbar links-->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Produccion
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/indexprod/index/0">Producciones</a>
+              <a class="dropdown-item" href="/listadotiempo">Tiempo perdido</a>
+              <!--<div class="dropdown-divider"></div>-->
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Mantenimiento
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/ordenes">Ordenes de trabajo</a>
+              <a class="dropdown-item" href="/listmant">Plan de Mantenimiento</a>
+              <!--<div class="dropdown-divider"></div>-->
+
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/codvales/index/0">Materiales</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/codunidad/index/0">Codificadores</a>
+          </li>
+        </ul>
+
+
+
+
+
+
       </div>
-     </li>      
-     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Mantenimiento
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="/ordenes">Ordenes de trabajo</a>
-        <a class="dropdown-item" href="/listmant">Plan de Mantenimiento</a>
-        <!--<div class="dropdown-divider"></div>-->
-        
-      </div>
-     </li> 
-     <li class="nav-item">
-      <a class="nav-link" href="/codvales/index/0">Materiales</a>
-     </li>
-     <li class="nav-item">
-      <a class="nav-link" href="/codunidad/index/0">Codificadores</a>
-     </li>
-    </ul>
+      <form class="form-inline my-2 my-md-0">
+        <div class="dropdown">
+          <button class="btn btn-danger my-2 my-md-0" type="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"><i class="bi bi-bell"></i> <span
+              class="position-absolute top-0.5 start-88 translate-middle badge rounded-pill bg-primary">{{contadorSW|length}}-{{ordenmSW|length}}</span></button>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-header">
+              <h4>
+                Tareas de mantenimiento
+              </h4>
+            </div>
+            <hr class="dropdown-divider">
+            {%for contadorSW in contadorSW%}
+            <li>
+              <a class="dropdown-item" href="">
+                <span class="badge badge-primary">{{contadorSW.codigo}}</span> - {{contadorSW.area}} -Estado
+                {%if contadorSW.last == "C" %}
+                <span class="badge badge-success">{{contadorSW.last}}</span>
+                {%elif contadorSW.last == "I" %}
+                <span class="badge badge-danger">{{contadorSW.last}}</span>
+                {%elif contadorSW.last == "EP" %}
+                <span class="badge badge-info">{{contadorSW.last}}</span>
+                {%elif contadorSW.last == "FF" %}
+                <span class="badge badge-warning">{{contadorSW.last}}</span>
+                {%else%}
+                <span class="badge badge-secondary">Sin acción</span>
+                {%endif%}
 
-    
+                <!--{{contadorSW.conteo}} -
+                {%if contadorSW.conteo > 1 %}Tareas
+                {%else%}
+                Tarea
+                {%endif%}-->
+              </a>
+            </li>
+            {%endfor%}
+            <hr class="dropdown-divider">
+            <div class="dropdown-header bg-warnig">
+              <h4>Ordenes de trabajo pendientes</h4>
+            </div>
+            <hr class="dropdown-divider">
+            {%for ordenmSW in ordenmSW %}
+            <li><a class="dropdown-item" href="/ordenesnew/edit/{{ordenmSW.id}}/0"><span
+                  class="badge badge-pill badge-danger">{{ordenmSW.codigo}}</span>
+                {{ordenmSW.equipo}} ({{ordenmSW.fechaRep}}) </a></li>
+            {%endfor%}
+          </ul>
 
-   
+        </div>
+        <div class="col"></div>
+        <input class="form-control mr-sm-2" type="text" placeholder="Elemento a buscar" name="">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
 
-    
-   </div>
-    <form class="form-inline my-2 my-md-0">
-      <input class="form-control mr-sm-2" type="text"placeholder="Elemento a buscar" name="">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
+    </nav>
 
-</nav> 
+    <div class="container mt-4">
+      <div class="row mt-4"></div>
+      <div class="row mt-4"></div>
+    </div>
 
-<div class="container mt-4">
-  <div class="row mt-4"></div>
-  <div class="row mt-4"></div>
-</div>
-
-</body>  
+  </body>
 </http>

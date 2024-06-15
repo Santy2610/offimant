@@ -3,6 +3,7 @@ from producciones.models import producciones, materiales
 from vales.models import vale
 from django.core.paginator import Paginator
 from producciones.formulario import formulariopro,formulariomate
+from Offimant.views import barracont, tareaM
 
 # Create your views here.
 def indexprod(request, vista, dato):
@@ -14,8 +15,8 @@ def indexprod(request, vista, dato):
       formprod=formulariopro()
     else:
       prolubica=producciones.objects.get(pk=dato)
-      formprod=formulariopro(initial={'codigo':prolubica.codigo, 'unidad':prolubica.unidad, 'descripcion':prolubica.descripcion, 'cantidad':prolubica.cantidad, 'fechafab':prolubica.fechaf})
-    return render(request, "listaprod.html",{"form":formprod, "prosw":prolist, "vistasw":vista, "listpsw":prolist, "paginador":paginador, "dato":dato})
+      formprod=formulariopro(initial={'codigo':prolubica.codigo, 'unidad':prolubica.unidad, 'descripcion':prolubica.descripcion, 'cantidad':prolubica.cantidad, 'fechafab':prolubica.fechaf, "contadorSW":barracont(), "ordenmSW":tareaM()})
+    return render(request, "listaprod.html",{"form":formprod, "prosw":prolist, "vistasw":vista, "listpsw":prolist, "paginador":paginador, "dato":dato, "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 def codprodadd(request):
       codigo=request.GET["codigo"]
@@ -54,7 +55,7 @@ def indexmate(request, dato, pagina):
       matelist=paginador.page(page)
       matebot=materiales.objects.filter(idprod=prodlist).order_by('novale')
       formate=formulariomate()
-      return render(request,"listavale.html",{"form":formate, "prodsw":prodlist, "matesw":matelist, "pagesw":pagina, "datosw":dato, "matebot":matebot, "paginador":paginador,"listpsw":matelist, "retrosw":dato})
+      return render(request,"listavale.html",{"form":formate, "prodsw":prodlist, "matesw":matelist, "pagesw":pagina, "datosw":dato, "matebot":matebot, "paginador":paginador,"listpsw":matelist, "retrosw":dato, "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 def codmateadd(request, dato, pagina):
     matelist=producciones.objects.get(pk=dato)

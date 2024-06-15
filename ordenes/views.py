@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from ordenes.models import orden
 from ordenes.formulario import fomularioorden
 from django.db.models import Sum, Count
+from Offimant.views import barracont, tareaM
 
 def ordenes(request):
      page=request.GET.get('page',1)
@@ -10,20 +11,20 @@ def ordenes(request):
      paginador=Paginator(ordenlist, 10)
      ordenlist=paginador.page(page)
      dato="SED"
-     return render(request,"listadoordenes.html",{"ordensw":ordenlist, "paginador":paginador,"listpsw":ordenlist, "datosw":dato})
+     return render(request,"listadoordenes.html",{"ordensw":ordenlist, "paginador":paginador,"listpsw":ordenlist, "datosw":dato, "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 def ordenesfilt(request, dato):
      page=request.GET.get('page',1)
      ordenlist=orden.objects.filter(area=dato).order_by('codigo')
      paginador=Paginator(ordenlist, 10)
      ordenlist=paginador.page(page)
-     return render(request,"listadoordenes.html",{"ordensw":ordenlist, "paginador":paginador,"listpsw":ordenlist, "datosw":dato})     
+     return render(request,"listadoordenes.html",{"ordensw":ordenlist, "paginador":paginador,"listpsw":ordenlist, "datosw":dato, "contadorSW":barracont(), "ordenmSW":tareaM()})     
 
 def ordenesnew(request, vista, dato, page):
       if vista == 'index':
        dept=orden.objects.values('departamento').order_by('departamento').annotate(contador=Count('departamento'))
        formorden=fomularioorden()
-       return render(request,"adicionarordenes.html",{"form":formorden, "vistasw":vista, "datosw":dato, "deptsw":dept})
+       return render(request,"adicionarordenes.html",{"form":formorden, "vistasw":vista, "datosw":dato, "deptsw":dept, "contadorSW":barracont(), "ordenmSW":tareaM()})
       else:
        ordenubica=orden.objects.get(pk=dato)
        formorden=fomularioorden(initial={'Codigo':ordenubica.codigo,'area':ordenubica.area,'equipo':ordenubica.equipo,
@@ -35,7 +36,7 @@ def ordenesnew(request, vista, dato, page):
        result=ordenubica.Resumen
        falla=ordenubica.falla
        clog=orden.objects.values('departamento').order_by('departamento').annotate(contador=Count('departamento'))      
-       return render(request,"adicionarordenes.html",{"form":formorden, "resultsw":result,"fallasw":falla, "vistasw":vista, "datosw":dato, "pagesw":page, "clogsw":clog})
+       return render(request,"adicionarordenes.html",{"form":formorden, "resultsw":result,"fallasw":falla, "vistasw":vista, "datosw":dato, "pagesw":page, "clogsw":clog , "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 def ordenesadd(request):
      Codigof=request.GET["Codigo"]
