@@ -5,7 +5,7 @@
 <link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
 <script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'jquery-3.2.1.js' %}"></script>
-<script src="{% static 'popper.js' %}"></script> 
+<script src="{% static 'popper.js' %}"></script>
 <script src="{% static 'Chart.js'%}"></script>
 
 <body>
@@ -14,54 +14,60 @@
 
     <div class="container mt-3">
 
-    <div class="row">
-    <div class="col-md-4 mt-3">
-      <canvas id="myChart" height="230" with="400"></canvas>
-    <div class="row">
-      <div class="col-md-12 mt-3">
-        <table cellspacing="0" border="1" cellpadding="0"> 
-          <thead>
-          <tr>
-            <th class="col-10">Area</th>
-            <th>Tiempo(Horas)</th>
-          </tr>
-          </thead>
-          <tbody>
-            {%for Grafthsw in Grafthsw %}
-            <tr>
-            <td>{{Grafthsw.area}}</td>
-            <td class="text-center">{{Grafthsw.canti}}</td> 
-            </tr>
-            {%endfor%} 
-           </tbody>
-          </table>    
-      </div>      
+      <div class="row">
+        <div class="col-md-4 mt-3">
+          <canvas id="myChart" height="230" with="400"></canvas>
+          <div class="row">
+            <div class="col-md-12 mt-3">
+              <table cellspacing="0" border="1" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th class="col-10">Area</th>
+                    <th>Tiempo(Horas)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for Grafthsw in Grafthsw %}
+                  <tr>
+                    <td>{{Grafthsw.area}}</td>
+                    <td class="text-center">{{Grafthsw.canti}}</td>
+                  </tr>
+                  {%endfor%}
 
-    </div>
+                  <tr>
+                    <td class="text-right"><b>Total</b></td>
+                    <td class="text-center"><b>{{totalSW}}</b></td>
+                  </tr>
 
-    </div>
-      <div class="col-md-8 mt-3">
+                </tbody>
+              </table>
+            </div>
 
-        <table cellspacing="0" border="1" cellpadding="0"> 
-          <thead>
-            <tr>
-              <th>Area</th>
-              <th>Equipo</th>
-              <th>Causa</th>
-              <th class="col-2">Fecha</th>
-              <th>Horas</th>
-            </tr>
-          </thead>
-          <tbody>
-           {%for listTsw in listTsw %}
-             <tr>
-             <td>{{listTsw.area}}</td>
-             <td>{{listTsw.equipo}}</td>
-             <td>{{listTsw.causa}}</td>
-             <td>{{listTsw.fechaI}}</td>
-             <td class="text-center">{{listTsw.dias}}</td>
-             <!--<td class="text-center"><a href="/ordenesnew/edit/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>-->
-            <!--
+          </div>
+
+        </div>
+        <div class="col-md-8 mt-3">
+
+          <table cellspacing="0" border="1" cellpadding="0">
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>Equipo</th>
+                <th>Causa</th>
+                <th class="col-2">Fecha</th>
+                <th>Horas</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%for listTsw in listTsw %}
+              <tr>
+                <td>{{listTsw.area}}</td>
+                <td>{{listTsw.equipo}}</td>
+                <td>{{listTsw.causa}}</td>
+                <td>{{listTsw.fechaI}}</td>
+                <td class="text-center">{{listTsw.dias}}</td>
+                <!--<td class="text-center"><a href="/ordenesnew/edit/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a></td>-->
+                <!--
              <td><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModaledit" data-id="{{listTsw.id}}" data-area="{{listTsw.area}}" data-equipo="{{listTsw.equipo}}" data-fechaI="{{listTsw.fechaI}}" data-fechaF="{{listTsw.fechaF}}" data-causa="{{listTsw.causa}}" data-observacion="{{listTsw.observaciones}}"><i class="bi bi-pencil"></i></button>
              
              <div class="modal fade" id="myModaledit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -94,24 +100,24 @@
           </td>
              
              -->
-             
-             
-             
-             <!--<td class="text-center"><a href="/ordenesdel/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>-->
-             
-            </tr>
-           {%endfor%}
 
 
-          </tbody>
-        </table>
 
+                <!--<td class="text-center"><a href="/ordenesdel/{{ordensw.id}}/{{listpsw.number}}" button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a></td>-->
+
+              </tr>
+              {%endfor%}
+
+
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
     </div>
-    
   </div>
-</div>
-</div>
-</div>
+  </div>
 
 
 
@@ -122,29 +128,29 @@
   $('#myModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget)
     var id = button.data('id')
-    var area=button.data('area')
-    var equipo=button.data('equipo')
-    var fecha=button.data('fecha')
-    var page=button.data('page')
+    var area = button.data('area')
+    var equipo = button.data('equipo')
+    var fecha = button.data('fecha')
+    var page = button.data('page')
     var modal = $(this)
     //modal.find('.modal-title').text('New message to ' + id)
-    modal.find('.modal-body').text('¿ Decea elminar el registro de tiempo perdido. Area: '+area+' Equipo: '+equipo+' con fecha:'+fecha+'?')
-    document.getElementById('id_del').innerHTML = "<a href=/tiempodel/"+id+"/"+page+" button type='button' class='btn btn-danger' >Eliminar</a>"
+    modal.find('.modal-body').text('¿ Decea elminar el registro de tiempo perdido. Area: ' + area + ' Equipo: ' + equipo + ' con fecha:' + fecha + '?')
+    document.getElementById('id_del').innerHTML = "<a href=/tiempodel/" + id + "/" + page + " button type='button' class='btn btn-danger' >Eliminar</a>"
   })
-  </script>
+</script>
 
 
 
 <script>
   var ctx = document.getElementById("myChart").getContext("2d");
-  var myChart = new Chart(ctx,{
-    type:"pie",
-    data:{
-      labels:{{ datosTP|safe }}.map(item => item.area),
-      datasets:[{
-           label:'Num de datos',
-           data:{{ datosTP|safe }}.map(item => item.canti),
-           backgroundColor: {{ datosTP|safe }}.map(item => item.color),
+  var myChart = new Chart(ctx, {
+    type: "pie",
+    data: {
+      labels: {{ datosTP| safe }}.map(item => item.area),
+        datasets: [{
+          label: 'Num de datos',
+          data: {{ datosTP| safe }}.map(item => item.canti),
+          backgroundColor: {{ datosTP| safe }}.map(item => item.color),
                 //'rgba(170, 0, 0, 0.7)',
                 //'rgba(54, 162, 235, 0.7)',
                 //'rgba(204, 204, 0, 0.7)',
@@ -176,4 +182,5 @@
   </script>
 
 -->
+
 </html>

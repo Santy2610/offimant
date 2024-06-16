@@ -3,6 +3,7 @@ from mantenimiento.models import mantplan
 from mantenimiento.formulario import formmant
 from django.core.paginator import Paginator
 from Offimant.views import barracont, tareaM
+from datetime import date
 
 # Create your views here.
 
@@ -92,12 +93,14 @@ def mantdel(request, dato):
     return redirect(listmant)
 
 def estadomant(request, dato, page):
+    mes=date.today()
+    rest=mes.month
     list=mantplan.objects.get(pk=dato)
     tareaf=list.tarea
     format=formmant(initial={ 'codigof':list.codigo, 'areaf':list.area,'enerorf':list.eneroR, 'febrerorf':list.febreroR,'marzorf':list.marzoR,'abrilrf':list.abrilR,'mayorf':list.mayoR,
                               'juniorf':list.junioR,'juliorf':list.julioR,'agostorf':list.agostoR,'septiembrerf':list.septiembreR,'octubrerf':list.octubreR,
                               'noviembrerf':list.noviembreR,'diciembrerf':list.diciembreR })   
-    return render(request, "estadomant.html",{"form":format,"listsw":list,"dato":dato, "pagesw":page, "tareasw":tareaf, "contadorSW":barracont(), "ordenmSW":tareaM()})
+    return render(request, "estadomant.html",{"form":format,"listsw":list,"dato":dato, "pagesw":page, "tareasw":tareaf, "mesSW":rest, "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 def estadomantupdate(request, dato, page):
    lismant=mantplan.objects.get(pk=dato)

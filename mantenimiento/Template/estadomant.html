@@ -5,118 +5,162 @@
 <link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
 <script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'jquery-3.2.1.js' %}"></script>
-<script src="{% static 'popper.js' %}"></script> 
+<script src="{% static 'popper.js' %}"></script>
 
 <div class="container mt-1 ">
 
   {%include "barra.html"%}
 
-  
+
 
   <div class="container mt-1">
-    
+
     <div class="row">
-     
+
       <form action="/estadomantupdate/{{listsw.id}}/{{pagesw}}" method="get">
 
-       
+
 
         <hr>
 
         <div class="row">
-        <div class="col-6 mt-3 ">
-           <table border="0">
-         
-             <tr>
-               <th class="col-2">Codígo: <input type="text" readonly size="3" value="{{listsw.codigo}}"></input></th><th class="col-5">Area: <input type="text" readonly value="{{listsw.area}}"></input></th>
-               
-               
-             </tr>
-            
-           </table> 
-       
-         </p>
-           
-         <table border="0">
-             
-           <tr>
-           <th class="col-3 text-left">Tarea:<textarea name="tareaf" rows="9" cols="55" readonly>{{tareasw}}</textarea></th>
-          
-           </tr>
-           
-          </table>
-         
-         </p>
-   
-       </div>
-   
-       <div class="col-6 ">
-   <table border="0">
-     <tr><th></th></tr>
-         <tr>
-           <th class="col-6 text-center"><h4>Cumplimiento de la tarea por meces</h4></th> 
-         </tr>
-         <tr>
-          <th class="text-center">(C): Cumplido   (I): Incumplido   (EP):  En proceso   (FF):  Fuera de fecha</th>
-         </tr>
-     <tr><th></th></tr>    
-   </table> 
-   </p>  
-   
-         <table class="table  table-hover">
-            
-           <tr>
-             <th class="col-1 {%if listsw.eneroP == 'X'%} table-primary {%endif%}">Enero:</th> <th class="col-1{%if listsw.eneroP == 'X'%} table-primary {%endif%}"> {{form.enerorf}}</th> 
-             <th class="col-1 {%if listsw.febreroP == 'X'%} table-primary {%endif%}">Febrero:</th> <th class="col-1{%if listsw.febreroP == 'X'%} table-primary {%endif%}">{{form.febrerorf}}</th>
-             <th class="col-1 {%if listsw.marzoP == 'X'%} table-primary {%endif%}">Marzo:</th> <th class="col-1{%if listsw.marzoP == 'X'%} table-primary {%endif%}">{{form.marzorf}}</th>
-           </tr>
-           <tr>  
-             <th class="col-1 {%if listsw.abrilP == 'X'%} table-primary {%endif%}">Abril:</th> <th class="col-1{%if listsw.abrilP == 'X'%} table-primary {%endif%}">{{form.abrilrf}}</th>
-             <th class="col-1 {%if listsw.mayoP == 'X'%} table-primary {%endif%}">Mayo:</th> <th class="col-1{%if listsw.mayoP == 'X'%} table-primary {%endif%}">{{form.mayorf}}</th>
-             <th class="col-1 {%if listsw.junioP == 'X'%} table-primary {%endif%}">Junio:</th> <th class="col-1{%if listsw.junioP == 'X'%} table-primary {%endif%}">{{form.juniorf}}</th>
-           </tr>
-           <tr>  
-             <th class="col-1 {%if listsw.julioP == 'X'%} table-primary {%endif%}">Julio:</th> <th class="col-1{%if listsw.julioP == 'X'%} table-primary {%endif%}">{{form.juliorf}}</th>
-             <th class="col-1 {%if listsw.agostoP == 'X'%} table-primary {%endif%}">Agosto:</th> <th class="col-1{%if listsw.agostoP == 'X'%} table-primary {%endif%}">{{form.agostorf}}</th>
-             <th class="col-1 {%if listsw.septiembreP == 'X'%} table-primary {%endif%}">Septiembre:</th> <th class="col-1{%if listsw.septiembreP == 'X'%} table-primary {%endif%}">{{form.septiembrerf}}</th>
-           </tr>
-           <tr>  
-             <th class="col-1 {%if listsw.octubreP == 'X'%} table-primary {%endif%}">Octubre:</th> <th class="col-1{%if listsw.octubreP == 'X'%} table-primary {%endif%}">{{form.octubrerf}}</th>
-             <th class="col-1 {%if listsw.noviembreP == 'X'%} table-primary {%endif%}">Noviembre:</th> <th class="col-1{%if listsw.noviembreP == 'X'%} table-primary {%endif%}">{{form.noviembrerf}}</th> 
-             <th class="col-1 {%if listsw.diciembreP == 'X'%} table-primary {%endif%}">Diciembre:</th> <th class="col-1{%if listsw.diciembreP == 'X'%} table-primary {%endif%}">{{form.diciembrerf}}</th>
-           </tr>
-           
-          </table>
-         </div>
-          
-         </div>
-   
+          <div class="col-6 mt-3 ">
+            <table border="0">
+
+              <tr>
+                <th class="col-2">Codígo: <input type="text" readonly size="3" value="{{listsw.codigo}}"></input></th>
+                <th class="col-5">Area: <input type="text" readonly value="{{listsw.area}}"></input></th>
+
+
+              </tr>
+
+            </table>
+
+            </p>
+
+            <table border="0">
+
+              <tr>
+                <th class="col-3 text-left">Tarea:<textarea name="tareaf" rows="9" cols="55"
+                    readonly>{{tareasw}}</textarea></th>
+
+              </tr>
+
+            </table>
+
+            </p>
+
+          </div>
+
+          <div class="col-6 ">
+            <table border="0">
+              <tr>
+                <th></th>
+              </tr>
+              <tr>
+                <th class="col-6 text-center">
+                  <h4>Cumplimiento de la tarea por meces</h4>
+                </th>
+              </tr>
+              <tr>
+                <th class="text-center">(C): Cumplido (I): Incumplido (EP): En proceso (FF): Fuera de fecha</th>
+              </tr>
+              <tr>
+                <th></th>
+              </tr>
+            </table>
+            </p>
+
+            <table class="table  table-hover">
+
+              <tr>
+                <th
+                  class="col-1 {% if mesSW == 1%} text-danger {%endif%} {%if listsw.eneroP == 'X'%} table-primary {%endif%}">
+                  Enero:</th>
+                <th class="col-1{%if listsw.eneroP == 'X'%} table-primary {%endif%}"> {{form.enerorf}}</th>
+                <th
+                  class="col-1 {% if mesSW == 2%} text-danger {%endif%} {%if listsw.febreroP == 'X'%} table-primary {%endif%}">
+                  Febrero:</th>
+                <th class="col-1{%if listsw.febreroP == 'X'%} table-primary {%endif%}">{{form.febrerorf}}</th>
+                <th
+                  class="col-1 {% if mesSW == 3%} text-danger {%endif%} {%if listsw.marzoP == 'X'%} table-primary {%endif%}">
+                  Marzo:</th>
+                <th class="col-1{%if listsw.marzoP == 'X'%} table-primary {%endif%}">{{form.marzorf}}</th>
+              </tr>
+              <tr>
+                <th
+                  class="col-1 {% if mesSW == 4%} text-danger {%endif%} {%if listsw.abrilP == 'X'%} table-primary {%endif%}">
+                  Abril:</th>
+                <th class="col-1{%if listsw.abrilP == 'X'%} table-primary {%endif%}">{{form.abrilrf}}</th>
+                <th
+                  class="col-1 {% if mesSW == 5%} text-danger {%endif%} {%if listsw.mayoP == 'X'%} table-primary {%endif%}">
+                  Mayo:</th>
+                <th class="col-1{%if listsw.mayoP == 'X'%} table-primary {%endif%}">{{form.mayorf}}</th>
+                <th
+                  class="col-1 {% if mesSW == 6%} text-danger {%endif%} {%if listsw.junioP == 'X'%} table-primary {%endif%}">
+                  Junio:</th>
+                <th class="col-1{%if listsw.junioP == 'X'%} table-primary {%endif%}">{{form.juniorf}}</th>
+              </tr>
+              <tr>
+                <th
+                  class="col-1 {% if mesSW == 7%} text-danger {%endif%} {%if listsw.julioP == 'X'%} table-primary {%endif%}">
+                  Julio:</th>
+                <th class="col-1{%if listsw.julioP == 'X'%} table-primary {%endif%}">{{form.juliorf}}</th>
+                <th
+                  class="col-1 {% if mesSW == 8%} text-danger {%endif%} {%if listsw.agostoP == 'X'%} table-primary {%endif%}">
+                  Agosto:</th>
+                <th class="col-1{%if listsw.agostoP == 'X'%} table-primary {%endif%}">{{form.agostorf}}</th>
+                <th
+                  class="col-1  {% if mesSW == 9%} text-danger {%endif%} {%if listsw.septiembreP == 'X'%} table-primary {%endif%}">
+                  Septiembre:</th>
+                <th class="col-1{%if listsw.septiembreP == 'X'%} table-primary {%endif%}">{{form.septiembrerf}}</th>
+              </tr>
+              <tr>
+                <th
+                  class="col-1 {% if mesSW == 10%} text-danger {%endif%} {%if listsw.octubreP == 'X'%} table-primary {%endif%}">
+                  Octubre:</th>
+                <th class="col-1{%if listsw.octubreP == 'X'%} table-primary {%endif%}">{{form.octubrerf}}</th>
+                <th
+                  class="col-1 {% if mesSW == 11%} text-danger {%endif%} {%if listsw.noviembreP == 'X'%} table-primary {%endif%}">
+                  Noviembre:</th>
+                <th class="col-1{%if listsw.noviembreP == 'X'%} table-primary {%endif%}">{{form.noviembrerf}}</th>
+                <th
+                  class="col-1 {% if mesSW == 12%} text-danger {%endif%} {%if listsw.diciembreP == 'X'%} table-primary {%endif%}">
+                  Diciembre:</th>
+                <th class="col-1{%if listsw.diciembreP == 'X'%} table-primary {%endif%}">{{form.diciembrerf}}</th>
+              </tr>
+
+            </table>
+          </div>
+
+        </div>
+
         <hr>
-       
-          
-   
-    
+
+
+
+
         <div class="row mt-2">
           <div class="col-md-9">
-            
+
           </div>
 
           <div class="col-md-1">
-            <input type="submit" class="btn btn-success btn-sm" value="Modificar"> 
-          </div>  
-          <div class="col-md-1">  
+            <input type="submit" class="btn btn-success btn-sm" value="Modificar">
+          </div>
+          <div class="col-md-1">
             <a href="/listmant?page={{pagesw}}" button type="button" class="btn btn-danger btn-sm">Cancelar</a>
           </div>
-          
-        </div>
-        </form>
-
-     
 
         </div>
-      
+      </form>
+
+
+
     </div>
+
   </div>
+</div>
 
 
 </div>

@@ -75,14 +75,19 @@
               class="position-absolute top-0.5 start-88 translate-middle badge rounded-pill bg-primary">{{contadorSW|length}}-{{ordenmSW|length}}</span></button>
           <ul class="dropdown-menu dropdown-menu-right">
             <div class="dropdown-header">
-              <h4>
+              <h5>
                 Tareas de mantenimiento
-              </h4>
+              </h5>
+              <span class="badge badge-success">C:</span> Cumplido <span class="badge badge-danger">I:</span> Incumplido
+              <span class="badge badge-info">EP:</span> En proceso <span class="badge badge-warning">FF:</span> Fuera de
+              fecha
             </div>
+
             <hr class="dropdown-divider">
+            </hr>
             {%for contadorSW in contadorSW%}
             <li>
-              <a class="dropdown-item" href="">
+              <a class="dropdown-item" href="/estadomant/{{contadorSW.id}}/1">
                 <span class="badge badge-primary">{{contadorSW.codigo}}</span> - {{contadorSW.area}} -Estado
                 {%if contadorSW.last == "C" %}
                 <span class="badge badge-success">{{contadorSW.last}}</span>
@@ -105,21 +110,27 @@
             </li>
             {%endfor%}
             <hr class="dropdown-divider">
-            <div class="dropdown-header bg-warnig">
-              <h4>Ordenes de trabajo pendientes</h4>
+            </hr>
+            <div class="dropdown-header">
+              <h5>Ordenes de trabajo pendientes</h5>
             </div>
             <hr class="dropdown-divider">
+            {%if ordenmSW|length > 0%}
             {%for ordenmSW in ordenmSW %}
-            <li><a class="dropdown-item" href="/ordenesnew/edit/{{ordenmSW.id}}/0"><span
+            <li><a class="dropdown-item" href="/ordenesnew/edit/{{ordenmSW.id}}/1"><span
                   class="badge badge-pill badge-danger">{{ordenmSW.codigo}}</span>
                 {{ordenmSW.equipo}} ({{ordenmSW.fechaRep}}) </a></li>
             {%endfor%}
+            {%else%}
+            <li><a class="dropdown-item" href="#"><span class="badge badge-primary">Sin ordenes
+                  pendientes</span></a></li>
+            {%endif%}
           </ul>
 
         </div>
         <div class="col"></div>
         <input class="form-control mr-sm-2" type="text" placeholder="Elemento a buscar" name="">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
       </form>
 
     </nav>

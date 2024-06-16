@@ -15,6 +15,9 @@ def listadotiempo(request):
     paginador=Paginator(listT, 8)
     listT=paginador.page(page)
     Grafth=tiempo.objects.values('area').order_by('area').annotate(canti=Sum('dias'))
+    total=0
+    for item in Grafth:
+           total=total+item['canti']       
     listF=tiempoF()
     datosTP=[]
     for item in Grafth:
@@ -30,7 +33,7 @@ def listadotiempo(request):
 
 
 
-    return render(request, "listadotiempo.html",{"listFor":listF, "listTsw":listT,"datosTP":datosTP, "paginador":paginador, "listpsw":listT, "Grafthsw":Grafth, "contadorSW":barracont(), "ordenmSW":tareaM()})
+    return render(request, "listadotiempo.html",{"listFor":listF, "listTsw":listT,"datosTP":datosTP, "paginador":paginador, "listpsw":listT, "Grafthsw":Grafth, "totalSW":total, "contadorSW":barracont(), "ordenmSW":tareaM()})
 
 def tiempoadd(request):
     area=request.GET["areaf"]
@@ -77,6 +80,9 @@ def tiempodel(request, dato, page):
 def imptiemp(request):
     listT=tiempo.objects.all().order_by('fechaI')
     Grafth=tiempo.objects.values('area').order_by('area').annotate(canti=Sum('dias'))
+    total=0
+    for item in Grafth:
+           total=total+item['canti']    
     datosTP=[]
     for item in Grafth:
             a = random.randint(0,255)
@@ -91,4 +97,4 @@ def imptiemp(request):
 
 
 
-    return render(request, "implistadotiempo.html",{"listTsw":listT,"datosTP":datosTP, "Grafthsw":Grafth}) 
+    return render(request, "implistadotiempo.html",{"listTsw":listT,"datosTP":datosTP, "Grafthsw":Grafth, "totalSW":total}) 
