@@ -69,6 +69,35 @@
 
       </div>
       <form class="form-inline my-2 my-md-0">
+
+        <div class="dropdown">
+          <button class="btn btn-secundary my-2 my-md-0" type="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"><i class="bi bi-clock-fill text-danger" width="32" height="32"></i>
+            <span
+              class="position-absolute top-0.5 start-88 translate-middle badge rounded-pill badge-success">{{tiempopSW|length}}</span></button>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-header">
+              <h5>
+                Tiempo perdido
+              </h5>
+
+            </div>
+            <hr class="dropdown-divider">
+            </hr>
+            {%for tiempopSW in tiempopSW%}
+            <li>
+              <a class="dropdown-item" href="#"><span class="badge badge-primary">{{tiempopSW.sumT}}
+                  Horas</span> {{tiempopSW.area}}</a>
+            </li>
+            {%endfor%}
+          </ul>
+
+        </div>
+
+
+
+
+
         <div class="dropdown">
           <button class="btn btn-secundary my-2 my-md-0" type="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false"><i class="bi bi-bell-fill text-danger" width="32" height="32"></i> <span

@@ -5,6 +5,7 @@ from producciones.models import producciones
 from vales.models import vale, materialv
 from codificadores.models import centrocosto
 from mantenimiento.models import mantplan
+from tiempoperdido.models import tiempo
 from django.db.models import Sum, Count, F
 from django.core.paginator import Paginator
 from datetime import date
@@ -58,6 +59,12 @@ def tareaM():
     return listaM
 
 
+def tiempoP():
+    totalT = tiempo.objects.values('area').order_by(
+        'area').annotate(sumT=Sum('dias'))
+    return totalT
+
+
 def principal(request):
     listcentro = centrocosto.objects.all().order_by('descripcion')
     listorden = orden.objects.all().order_by('-codigo')[0:7]
@@ -91,4 +98,4 @@ def principal(request):
             'color': color
         })
 
-    return render(request, "index.html", {"listord": listorden, "listpro": listprod, "listv": listvale, "listcentrosw": listcentro, "datosPT": datosPT, "datosOT": datosOT, "contadorSW": barracont(), "ordenmSW": tareaM()})
+    return render(request, "index.html", {"listord": listorden, "listpro": listprod, "listv": listvale, "listcentrosw": listcentro, "datosPT": datosPT, "datosOT": datosOT, "contadorSW": barracont(), "ordenmSW": tareaM(), 'tiempopSW': tiempoP()})

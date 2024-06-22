@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from mantenimiento.models import mantplan
 from mantenimiento.formulario import formmant
 from django.core.paginator import Paginator
-from Offimant.views import barracont, tareaM
+from Offimant.views import barracont, tareaM, tiempoP
 from datetime import date
 
 # Create your views here.
@@ -14,13 +14,13 @@ def listmant(request):
     paginador = Paginator(listm, 8)
     listm = paginador.page(page)
 
-    return render(request, "listadomant.html", {"mantsw": listm, "paginador": paginador, "listpsw": listm, "contadorSW": barracont(), "ordenmSW": tareaM()})
+    return render(request, "listadomant.html", {"mantsw": listm, "paginador": paginador, "listpsw": listm, "contadorSW": barracont(), "ordenmSW": tareaM(), 'tiempopSW': tiempoP()})
 
 
 def adicionarmant(request, vista, dato, page):
     if vista == "index":
         format = formmant()
-        return render(request, "adicionarmant.html", {"form": format, "vistasw": vista, "dato": dato, "pagesw": page, "contadorSW": barracont(), "ordenmSW": tareaM()})
+        return render(request, "adicionarmant.html", {"form": format, "vistasw": vista, "dato": dato, "pagesw": page, "contadorSW": barracont(), "ordenmSW": tareaM(), 'tiempopSW': tiempoP()})
     else:
         list = mantplan.objects.get(pk=dato)
         rtarea = list.tarea
@@ -29,7 +29,7 @@ def adicionarmant(request, vista, dato, page):
                                    'juliof': list.julioP, 'agostof': list.agostoP, 'septiembref': list.septiembreP, 'octubref': list.octubreP,
                                    'noviembref': list.noviembreP, 'diciembref': list.diciembreP})
 
-    return render(request, "adicionarmant.html", {"form": format, "vistasw": vista, "dato": dato, "pagesw": page, "tareasw": rtarea, "contadorSW": barracont(), "ordenmSW": tareaM()})
+    return render(request, "adicionarmant.html", {"form": format, "vistasw": vista, "dato": dato, "pagesw": page, "tareasw": rtarea, "contadorSW": barracont(), "ordenmSW": tareaM(), 'tiempopSW': tiempoP()})
 
 
 def mantadd(request):
@@ -105,7 +105,7 @@ def estadomant(request, dato, page):
     format = formmant(initial={'codigof': list.codigo, 'areaf': list.area, 'enerorf': list.eneroR, 'febrerorf': list.febreroR, 'marzorf': list.marzoR, 'abrilrf': list.abrilR, 'mayorf': list.mayoR,
                                'juniorf': list.junioR, 'juliorf': list.julioR, 'agostorf': list.agostoR, 'septiembrerf': list.septiembreR, 'octubrerf': list.octubreR,
                                'noviembrerf': list.noviembreR, 'diciembrerf': list.diciembreR})
-    return render(request, "estadomant.html", {"form": format, "listsw": list, "dato": dato, "pagesw": page, "tareasw": tareaf, "mesSW": rest, "contadorSW": barracont(), "ordenmSW": tareaM()})
+    return render(request, "estadomant.html", {"form": format, "listsw": list, "dato": dato, "pagesw": page, "tareasw": tareaf, "mesSW": rest, "contadorSW": barracont(), "ordenmSW": tareaM(), 'tiempopSW': tiempoP()})
 
 
 def estadomantupdate(request, dato, page):
