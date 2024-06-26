@@ -1,20 +1,30 @@
 <html>
-    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="creator" content="Calidad1" />
-    </head>
 
-    {% load static %}
-    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
-    <link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
-    <script src="{% static 'js/bootstrap.js' %}"></script>
-    <script src="{% static 'jquery-3.2.1.js' %}"></script>
-    <script src="{% static 'popper.js' %}"></script> 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="creator" content="Calidad1" />
+</head>
+<title>Ordenes de trabajo</title>
+{% load static %}
+<link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+<link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'jquery-3.2.1.js' %}"></script>
+<script src="{% static 'popper.js' %}"></script>
 
 
-    <body>
+<body>
     <div class="container mt-3 ">
-    <table cellspacing="0" border="0" cellpadding="0" style="margin-left:-30.05pt;mso-padding-alt:0pt 5.4pt 0pt 5.4pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;mso-border-insidev:0.5pt solid #000000;mso-border-insideh:0.5pt solid #000000;">
-    <tr style="height:18.200000000000003pt;">
-    <td width="129" rowspan="3" colspan="2" style="width:96.42911811023623pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:6.000000000000001pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none"><span style="font-family:'Times New Roman';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b><img style="max-width:100%;" width="93" height="92" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAF0AAABcCAYAAAAMLblmAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
+        <table cellspacing="0" border="0" cellpadding="0"
+            style="margin-left:-30.05pt;mso-padding-alt:0pt 5.4pt 0pt 5.4pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;mso-border-insidev:0.5pt solid #000000;mso-border-insideh:0.5pt solid #000000;">
+            <tr style="height:18.200000000000003pt;">
+                <td width="129" rowspan="3" colspan="2"
+                    style="width:96.42911811023623pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:6.000000000000001pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        <span
+                            style="font-family:'Times New Roman';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b><img
+                                    style="max-width:100%;" width="93" height="92" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAF0AAABcCAYAAAAMLblmAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
 WXMAAA7EAAAOxAGVKw4bAAAgAElEQVR4nO2dd5TcV5XnP+/3q9w5qZM6KbRCK9qSbMuWnDE2Ntgw
 GGNsgzFgZmGZncNhZmd2zq5nmeVwdphdGBjiYIOH4DFgMNjGQZaTgpVastXqnLM6VXdXVVf61e/t
 H79Qv6puyUoG9py550hdXb/3e+++++6793vvCy2klPwH/WHJBaDr+seBa/+4rEiQAALQAQWEBB2G
@@ -213,145 +223,453 @@ f2XNmtWsWLGCp59+hlrPcnw+H4qioCgKLpcLj9tDYYExsL09fQRyAhQXFfPUr56mpraGQE6Al/bs
 5bprr6WjvYPZ2Vk0TcPlclFYUMBTv/oNmzdvoqqymrHRMa7dvQspQVXdxGIxenv6mZ2dY3JqksrK
 Cqqqqvnnb/yLORs0xkZH0bQUBYX5KEIgFMHw8AhTk9N09/Sy9bItVFdVsWfPXiorKmhqWs+hNw9R
 V1eDqiqMjo1z66230trayvPPP0/rqTZycgKEwiGONR9l7dp1RBYi/PQnP+fqa3bS3zdAOBJidjZI
-cXEJGCeQjUWM/6A/LF2aPzv4H3Re9P8ApA55wWvhFnUAAAAASUVORK5CYII="/></b></span></p>
-</td>
-<td width="324" rowspan="3" colspan="4" style="width:242.7216661417323pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;tab-stops:7.500055555555555cm 15.00011111111111cm;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none"><span style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>ORDEN DE TRABAJO</b></span></p>
-</td>
-<td width="112" colspan="4" style="width:83.78280000000004pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;tab-stops:7.500055555555555cm 15.00011111111111cm;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none"><span style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>PNO MT-001</b></span></p>
-</td>
-<td width="122" colspan="3" style="width:91.16651338582678pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;tab-stops:7.500055555555555cm 15.00011111111111cm;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none"><span style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>R-097</b></span></p>
-</td>
-</tr>
-<tr style="height:14.450000000000001pt;">
-    <td width="112" colspan="4" style="width:83.78280000000004pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;tab-stops:7.500055555555555cm 15.00011111111111cm;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none"><span style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>Edición 01</b></span></p>
-    </td>
-    <td width="58" colspan="2" style="width:43.151527559055154pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;tab-stops:7.500055555555555cm 15.00011111111111cm;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none"><span style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>Folio</b></span></p>
-    </td>
-    <td width="64" style="width:48.01498582677162pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;tab-stops:7.500055555555555cm 15.00011111111111cm;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p>
-    </td>
-</tr>
-<tr style="height:16.5pt;"><td width="233" colspan="7" style="width:174.9493133858268pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none"><span style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>Página </b></span><span style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>1</b></span><span style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b> de </b></span><span style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>1</b></span></p>
-</td>
-</tr>
-<tr>
-    <td width="489" colspan="7" style="width:366.5207338582678pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Solicitud de mantenimiento</p>
-    </td>
-    <td width="197" colspan="6" style="width:147.57936377952754pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">PNO:   {{ordensw.codigo}} {%if ordensw.campa|length > 0%} / {{ordensw.campa}} {%endif%}</p>
-    </td>
-</tr>
-<tr>
-    <td width="99" style="width:74.17145196850394pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Departamento</p>
-    </td>
-    <td width="304" colspan="4" style="width:227.7740976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">{{ordensw.departamento}}</p>
-    </td>
-    <td width="103" colspan="3" style="width:77.34118110236226pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Fecha</p>
-    </td>
-    <td width="180" colspan="5" style="width:134.81336692913385pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">{{ordensw.fechaRep}}</p>
-    </td>
-</tr>
-<tr>
-    <td width="99" style="width:74.17145196850394pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Equipo</p>
-    </td>
-    <td width="587" colspan="12" style="width:439.92864566929137pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">{{ordensw.equipo}}</p></td>
-</tr>
-<tr>
-    <td width="99" style="width:74.17145196850394pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Ubicación</p>
-    </td>
-    <td width="304" colspan="4" style="width:227.7740976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">{{ordensw.area}}</p>
-    </td>
-    <td width="103" colspan="3" style="width:77.34118110236226pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">ID #</p>
-    </td>
-    <td width="180" colspan="5" style="width:134.81336692913385pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">{{ordensw.idequipo}}</p>
-    </td>
-</tr>
-<tr>
-    <td width="685" colspan="13" style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
-        {%if ordensw.motivosolic == "Emergencia"%}Motivo de la solicitud: Emergencia (X)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Plan de mantenimiento (&nbsp; )
-        {%else%}Motivo de la solicitud: Emergencia (&nbsp; )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Plan de mantenimiento (X) 
-        {%endif%}
-    </p>
-    </td>
-</tr>
-<tr>
-    <td width="685" colspan="13" style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Descripción de la falla:</p>
-    </td>
-</tr>
-<tr style="height:10.900000000000006pt;">
-    <td width="685" colspan="13" style="padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">{{ordensw.falla}}</p>
-</td>
-</tr>
-<tr>
-    <td width="133" colspan="3" style="width:99.40115905511811pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Solicitante</p>
-    </td>
-    <td width="270" colspan="2" style="width:202.54439055118112pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">{{ordensw.solicitante}}</p>
-    </td>
-    <td width="103" colspan="3" style="width:77.34118110236226pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Firma</p>
-    </td>
-    <td width="180" colspan="5" style="width:134.81336692913385pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p>
-    </td>
-</tr>
-<tr style="height:33.25pt;">
-    <td width="685" colspan="13" style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">{%if ordensw.Afectacion == "Si"%}Afecta este trabajo un Proceso Crítico: Sí (X)&nbsp; No (&nbsp; ){%else%}Afecta este trabajo un Proceso Crítico: Sí (&nbsp; )&nbsp; No (X){%endif%}</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">En caso afirmativo, firma que certifica lo anterior: ___________________</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p>
-    </td>
-</tr>
-<tr style="height:14.758837795275593pt;">
-        <td width="685" colspan="13" style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Resumen del trabajo de reparación / mantenimiento:</p>
-        </td>
-    </tr>
-    <tr style="height:10.758837795275593pt;">
-        <td width="685" colspan="13" style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">{{ordensw.Resumen}}</p>
-    </td>
-</tr>
-<tr style="height:14.758837795275593pt;"><td width="685" colspan="13" style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">{%if ordensw.valecodigo|length == 0%}Anexos: Si (&nbsp; )&nbsp; No (X) {%else%} Anexos: Si (X)&nbsp; No (&nbsp; ) {%endif%} Identificación: {{ordensw.valecodigo}}</p>
-</td>
-</tr>
-<tr style="height:14.758837795275593pt;"><td width="685" colspan="13" style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Reparado por: {{ordensw.Reparado}} &nbsp;&nbsp; Firma:  _________   &nbsp;&nbsp;&nbsp;&nbsp; Fecha: {{ordensw.fechaEje}}</p>
-</td>
-</tr>
-<tr style="height:14.758837795275593pt;">
-    {%if ordensw.Destino == "Uso"%}
-      <td width="685" colspan="13" style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Este equipo / está disponible para:</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">(X) Uso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (&nbsp; ) Evaluación por control de la calidad</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">( ) Baja técnica&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (&nbsp; ) Pendientes por piezas de repuesto</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p></td></tr><tr style="height:14.758837795275593pt;">
-    {%endif%}    
-    {% if ordensw.Destino == "Baja técnica"%}
-      <td width="685" colspan="13" style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Este equipo / está disponible para:</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">(&nbsp; ) Uso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (&nbsp; ) Evaluación por control de la calidad</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">(X) Baja técnica&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (&nbsp; ) Pendientes por piezas de repuesto</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p></td></tr><tr style="height:14.758837795275593pt;">    
-    {%endif%}
-    {%if ordensw.Destino == "Evaluación por control de la calidad"%}    
-       <td width="685" colspan="13" style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Este equipo / está disponible para:</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">(&nbsp; ) Uso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (X) Evaluación por control de la calidad</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">(&nbsp; ) Baja técnica&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (&nbsp; ) Pendientes por piezas de repuesto</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p></td></tr><tr style="height:14.758837795275593pt;">    
-    {%endif%}
-    {%if ordensw.Destino == "Pendiente a piezas de repuesto"%}     
-        <td width="685" colspan="13" style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Este equipo / está disponible para:</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">(&nbsp; ) Uso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (&nbsp; ) Evaluación por control de la calidad</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">(&nbsp; ) Baja técnica&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (X) Pendientes por piezas de repuesto</p><p style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p></td></tr><tr style="height:14.758837795275593pt;">        
-    {%endif%}        
-        <td width="685" colspan="13" style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Firmas de aprobación</p></td></tr><tr style="height:14.758837795275593pt;">
-            <td width="161" colspan="4" style="width:120.47873385826773pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p>
-            </td>
-            <td width="369" colspan="5" style="width:276.37800944881894pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Nombre y Apellidos</p>
-            </td>
-            <td width="76" colspan="2" style="width:56.69294173228348pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:center;page-break-after:avoid;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Firma</p>
-            </td>
-            <td width="81" colspan="2" style="width:60.55041259842519pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">Fecha</p>
-            </td>
-        </tr>
-        <tr style="height:14.758837795275593pt;">
-            <td width="161" colspan="4" style="width:120.47873385826773pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:right;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">J’ de Mantenimiento</p>
-            </td>
-            <td width="369" colspan="5" style="width:276.37800944881894pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p>
-            </td>
-            <td width="76" colspan="2" style="width:56.69294173228348pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:center;page-break-after:avoid;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p>
-            </td>
-            <td width="81" colspan="2" style="width:60.55041259842519pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p>
-            </td>
-        </tr>
-        <tr style="height:14.758837795275593pt;">
-            <td width="161" colspan="4" style="width:120.47873385826773pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:right;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">J’ de Departamento</p>
-            </td>
-            <td width="369" colspan="5" style="width:276.37800944881894pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p>
-            </td>
-            <td width="76" colspan="2" style="width:56.69294173228348pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:center;page-break-after:avoid;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p>
-            </td>
-            <td width="81" colspan="2" style="width:60.55041259842519pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;"><p style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">&nbsp;</p>
-            </td>
-        </tr>
-    </table><p style="margin-top:0pt;margin-bottom:0pt;border:none;border-left:none;border-top:none;border-right:none;border-bottom:none;mso-border-between:none">&nbsp;</p>
-</div>
+cXEJGCeQjUWM/6A/LF2aPzv4H3Re9P8ApA55wWvhFnUAAAAASUVORK5CYII=" /></b></span></p>
+                </td>
+                <td width="324" rowspan="3" colspan="4"
+                    style="width:242.7216661417323pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;tab-stops:7.500055555555555cm 15.00011111111111cm;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        <span
+                            style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>ORDEN
+                                DE TRABAJO</b></span></p>
+                </td>
+                <td width="112" colspan="4"
+                    style="width:83.78280000000004pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;tab-stops:7.500055555555555cm 15.00011111111111cm;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        <span
+                            style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>PNO
+                                MT-001</b></span></p>
+                </td>
+                <td width="122" colspan="3"
+                    style="width:91.16651338582678pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;tab-stops:7.500055555555555cm 15.00011111111111cm;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        <span
+                            style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>R-097</b></span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:14.450000000000001pt;">
+                <td width="112" colspan="4"
+                    style="width:83.78280000000004pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;tab-stops:7.500055555555555cm 15.00011111111111cm;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        <span
+                            style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>Edición
+                                01</b></span></p>
+                </td>
+                <td width="58" colspan="2"
+                    style="width:43.151527559055154pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;tab-stops:7.500055555555555cm 15.00011111111111cm;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        <span
+                            style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>Folio</b></span>
+                    </p>
+                </td>
+                <td width="64"
+                    style="width:48.01498582677162pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;tab-stops:7.500055555555555cm 15.00011111111111cm;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+            </tr>
+            <tr style="height:16.5pt;">
+                <td width="233" colspan="7"
+                    style="width:174.9493133858268pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        <span
+                            style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>Página
+                            </b></span><span
+                            style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>1</b></span><span
+                            style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>
+                                de </b></span><span
+                            style="font-family:'Arial';font-size:12pt;color:#000000;mso-style-textfill-fill-color:#000000"><b>1</b></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="489" colspan="7"
+                    style="width:366.5207338582678pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Solicitud de mantenimiento</p>
+                </td>
+                <td width="197" colspan="6"
+                    style="width:147.57936377952754pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        PNO: {{ordensw.codigo}} {%if ordensw.campa|length > 0%} / {{ordensw.campa}} {%endif%}</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="99"
+                    style="width:74.17145196850394pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Departamento</p>
+                </td>
+                <td width="304" colspan="4"
+                    style="width:227.7740976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        {{ordensw.departamento}}</p>
+                </td>
+                <td width="103" colspan="3"
+                    style="width:77.34118110236226pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Fecha</p>
+                </td>
+                <td width="180" colspan="5"
+                    style="width:134.81336692913385pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        {{ordensw.fechaRep}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="99"
+                    style="width:74.17145196850394pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Equipo</p>
+                </td>
+                <td width="587" colspan="12"
+                    style="width:439.92864566929137pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        {{ordensw.equipo}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="99"
+                    style="width:74.17145196850394pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Ubicación</p>
+                </td>
+                <td width="304" colspan="4"
+                    style="width:227.7740976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        {{ordensw.area}}</p>
+                </td>
+                <td width="103" colspan="3"
+                    style="width:77.34118110236226pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        ID #</p>
+                </td>
+                <td width="180" colspan="5"
+                    style="width:134.81336692913385pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        {{ordensw.idequipo}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="685" colspan="13"
+                    style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        {%if ordensw.motivosolic == "Emergencia"%}Motivo de la solicitud: Emergencia
+                        (X)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Plan de mantenimiento (&nbsp; )
+                        {%else%}Motivo de la solicitud: Emergencia (&nbsp;
+                        )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Plan de mantenimiento (X)
+                        {%endif%}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="685" colspan="13"
+                    style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Descripción de la falla:</p>
+                </td>
+            </tr>
+            <tr style="height:10.900000000000006pt;">
+                <td width="685" colspan="13"
+                    style="padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    {{ordensw.falla}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td width="133" colspan="3"
+                    style="width:99.40115905511811pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Solicitante</p>
+                </td>
+                <td width="270" colspan="2"
+                    style="width:202.54439055118112pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        {{ordensw.solicitante}}</p>
+                </td>
+                <td width="103" colspan="3"
+                    style="width:77.34118110236226pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Firma</p>
+                </td>
+                <td width="180" colspan="5"
+                    style="width:134.81336692913385pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+            </tr>
+            <tr style="height:33.25pt;">
+                <td width="685" colspan="13"
+                    style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.5pt solid #000000;border-top:0.5pt solid #000000;border-right:0.5pt solid #000000;border-bottom:0.5pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        {%if ordensw.Afectacion == "Si"%}Afecta este trabajo un Proceso Crítico: Sí (X)&nbsp; No (&nbsp;
+                        ){%else%}Afecta este trabajo un Proceso Crítico: Sí (&nbsp; )&nbsp; No (X){%endif%}</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        En caso afirmativo, firma que certifica lo anterior: ___________________</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+            </tr>
+            <tr style="height:14.758837795275593pt;">
+                <td width="685" colspan="13"
+                    style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Resumen del trabajo de reparación / mantenimiento:</p>
+                </td>
+            </tr>
+            <tr style="height:10.758837795275593pt;">
+                <td width="685" colspan="13"
+                    style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    {{ordensw.Resumen}}</p>
+                </td>
+            </tr>
+            <tr style="height:14.758837795275593pt;">
+                <td width="685" colspan="13"
+                    style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        {%if ordensw.valecodigo|length == 0%}Anexos: Si (&nbsp; )&nbsp; No (X) {%else%} Anexos: Si
+                        (X)&nbsp; No (&nbsp; ) {%endif%} Identificación: {{ordensw.valecodigo}}</p>
+                </td>
+            </tr>
+            <tr style="height:14.758837795275593pt;">
+                <td width="685" colspan="13"
+                    style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Reparado por: {{ordensw.Reparado}} &nbsp;&nbsp; Firma: _________ &nbsp;&nbsp;&nbsp;&nbsp; Fecha:
+                        {{ordensw.fechaEje}}</p>
+                </td>
+            </tr>
+            <tr style="height:14.758837795275593pt;">
+                {%if ordensw.Destino == "Uso"%}
+                <td width="685" colspan="13"
+                    style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Este equipo / está disponible para:</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        (X)
+                        Uso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        (&nbsp; ) Evaluación por control de la calidad</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        ( ) Baja
+                        técnica&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        (&nbsp; ) Pendientes por piezas de repuesto</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+            </tr>
+            <tr style="height:14.758837795275593pt;">
+                {%endif%}
+                {% if ordensw.Destino == "Baja técnica"%}
+                <td width="685" colspan="13"
+                    style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Este equipo / está disponible para:</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        (&nbsp; )
+                        Uso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        (&nbsp; ) Evaluación por control de la calidad</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        (X) Baja
+                        técnica&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        (&nbsp; ) Pendientes por piezas de repuesto</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+            </tr>
+            <tr style="height:14.758837795275593pt;">
+                {%endif%}
+                {%if ordensw.Destino == "Evaluación por control de la calidad"%}
+                <td width="685" colspan="13"
+                    style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Este equipo / está disponible para:</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        (&nbsp; )
+                        Uso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        (X) Evaluación por control de la calidad</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        (&nbsp; ) Baja
+                        técnica&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        (&nbsp; ) Pendientes por piezas de repuesto</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+            </tr>
+            <tr style="height:14.758837795275593pt;">
+                {%endif%}
+                {%if ordensw.Destino == "Pendiente a piezas de repuesto"%}
+                <td width="685" colspan="13"
+                    style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Este equipo / está disponible para:</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        (&nbsp; )
+                        Uso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        (&nbsp; ) Evaluación por control de la calidad</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        (&nbsp; ) Baja
+                        técnica&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        (X) Pendientes por piezas de repuesto</p>
+                    <p
+                        style="margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+            </tr>
+            <tr style="height:14.758837795275593pt;">
+                {%endif%}
+                <td width="685" colspan="13"
+                    style="width:514.1000976377953pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Firmas de aprobación</p>
+                </td>
+            </tr>
+            <tr style="height:14.758837795275593pt;">
+                <td width="161" colspan="4"
+                    style="width:120.47873385826773pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+                <td width="369" colspan="5"
+                    style="width:276.37800944881894pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Nombre y Apellidos</p>
+                </td>
+                <td width="76" colspan="2"
+                    style="width:56.69294173228348pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:center;page-break-after:avoid;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Firma</p>
+                </td>
+                <td width="81" colspan="2"
+                    style="width:60.55041259842519pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        Fecha</p>
+                </td>
+            </tr>
+            <tr style="height:14.758837795275593pt;">
+                <td width="161" colspan="4"
+                    style="width:120.47873385826773pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:right;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        J’ de Mantenimiento</p>
+                </td>
+                <td width="369" colspan="5"
+                    style="width:276.37800944881894pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+                <td width="76" colspan="2"
+                    style="width:56.69294173228348pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:center;page-break-after:avoid;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+                <td width="81" colspan="2"
+                    style="width:60.55041259842519pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+            </tr>
+            <tr style="height:14.758837795275593pt;">
+                <td width="161" colspan="4"
+                    style="width:120.47873385826773pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:right;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        J’ de Departamento</p>
+                </td>
+                <td width="369" colspan="5"
+                    style="width:276.37800944881894pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+                <td width="76" colspan="2"
+                    style="width:56.69294173228348pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:center;page-break-after:avoid;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+                <td width="81" colspan="2"
+                    style="width:60.55041259842519pt;padding:0pt 5.3858267716535435pt 0pt 5.3858267716535435pt;border-left:0.49997480314960635pt solid #000000;border-top:0.49997480314960635pt solid #000000;border-right:0.49997480314960635pt solid #000000;border-bottom:0.49997480314960635pt solid #000000;">
+                    <p
+                        style="text-align:center;margin-top:0pt;margin-bottom:0pt;border:none;mso-border-left-alt:none;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-alt:none;mso-border-between:none">
+                        &nbsp;</p>
+                </td>
+            </tr>
+        </table>
+        <p
+            style="margin-top:0pt;margin-bottom:0pt;border:none;border-left:none;border-top:none;border-right:none;border-bottom:none;mso-border-between:none">
+            &nbsp;</p>
+    </div>
 </body>
+
 </html>

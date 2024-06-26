@@ -8,8 +8,6 @@
   <link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
   <script src="{% static 'js/bootstrap.js' %}"></script>
   <script src="{% static 'popper.js' %}"></script>
-  <script src="{% static 'chart.js'%}"></script>
-
 
 
   <body>
@@ -21,9 +19,6 @@
           alt="">
         Offimant
       </a>
-
-
-
       <!--Toggler/collapsibe Button-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -61,15 +56,8 @@
             <a class="nav-link" href="/codunidad/index/0">Codificadores</a>
           </li>
         </ul>
-
-
-
-
-
-
       </div>
       <form class="form-inline my-2 my-md-0">
-
         <div class="dropdown">
           <button class="btn btn-secundary my-2 my-md-0" type="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false"><i class="bi bi-clock-fill text-danger" width="32" height="32"></i>
@@ -80,13 +68,12 @@
               <h5>
                 Tiempo perdido
               </h5>
-
             </div>
             <hr class="dropdown-divider">
             </hr>
             {%for tiempopSW in tiempopSW%}
             <li>
-              <a class="dropdown-item" href="#"><span class="badge badge-primary">{{tiempopSW.sumT}}
+              <a class="dropdown-item" href="/listadotiempo"><span class="badge badge-primary">{{tiempopSW.sumT}}
                   Horas</span> {{tiempopSW.area}}</a>
             </li>
             {%endfor%}

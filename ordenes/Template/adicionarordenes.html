@@ -1,230 +1,237 @@
 <!DOCTYPE html>
-<title></title>
+<title>Ordenes de trabajo</title>
 {% load static %}
 
 <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
 <link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
 <script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'jquery-3.2.1.js' %}"></script>
-<script src="{% static 'popper.js' %}"></script> 
+<script src="{% static 'popper.js' %}"></script>
 
 
 <body>
 
-<div class="container mt-1 ">
+  <div class="container mt-1 ">
 
-  {%include "barra.html"%}
-
-   
+    {%include "barra.html"%}
 
 
-  <div class="container mt-1">
-    
-    <div class="row">
-      
-     
-      {%if vistasw == 'index'%}
-      <form action="/ordenesadd" method="get">
-      {%else%}
-      <form action="/ordenesupdate/{{datosw}}/{{pagesw}}" method="get">
-      {%endif%}  
 
-        <div class="row mt-2">
-          <div class="col-md-9">
-          </div>
-          {%if vistasw == 'index'%}
-          <div class="col-md-1">
-            <input type="submit" class="btn btn-success btn-sm" value="Adicionar"></input>
-          </div>
-          <div class="col-md-1">
-            <a href="/ordenes" button type="button" class="btn btn-danger btn-sm">Cancelar</a>
-          </div>
+
+    <div class="container mt-1">
+
+      <div class="row">
+
+
+        {%if vistasw == 'index'%}
+        <form action="/ordenesadd" method="get">
           {%else%}
-          <div class="col-md-1">
-            <input type="submit" class="btn btn-success btn-sm" value="Actualizar"></input>
-          </div>
-          <div class="col-md-1">
-            <a href="/ordenes" button type="button" class="btn btn-danger btn-sm">Cancelar</a>
-          </div>
-          {%endif%}
-        </div>
+          <form action="/ordenesupdate/{{datosw}}/{{pagesw}}" method="get">
+            {%endif%}
 
-      </p></p>
-      <hr>
-
-
-        <table border="0">
-      
-          <tr>
-            <th class="col-3 text-right">Codígo de orden de trabajo:</th>
-            <th>{{form.Codigo}}</th>
-            <th class="col-3 text-right">Codígo cambio de campaña:</th>
-            <th>{{form.Campa}}</th>
-          </tr>
-         
-        </table> 
-    
-      </p>
-        <table border="0">
-          
-          <tr>
-            <th class="col-9 text-right">Area o departamento de origen: {{form.Departamento}}</th>
-            <th>
+            <div class="row mt-2">
+              <div class="col-md-9">
+              </div>
               {%if vistasw == 'index'%}
-              <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#myViewC"><i class="bi bi-boxes"></i>Departamentos</button>
+              <div class="col-md-1">
+                <input type="submit" class="btn btn-success btn-sm" value="Adicionar"></input>
+              </div>
+              <div class="col-md-1">
+                <a href="/ordenes" button type="button" class="btn btn-danger btn-sm">Cancelar</a>
+              </div>
+              {%else%}
+              <div class="col-md-1">
+                <input type="submit" class="btn btn-success btn-sm" value="Actualizar"></input>
+              </div>
+              <div class="col-md-1">
+                <a href="/ordenes" button type="button" class="btn btn-danger btn-sm">Cancelar</a>
+              </div>
               {%endif%}
-              <div class="modal fade" id="myViewC" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h6 class="modal-title" id="exampleModalLabel">Listado departamentos</h6>
-                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    </div>
-                    <div class="modal-body">
-                      <table class="table table-striped table-hover table-sm">
-                        <thead>
-                         <tr>
-                          <td class="text-rigth">Descripcion</td>
-                          
-                          <td> </td>
-                         </tr>
-                        </thead>
-                        <tbody>  
-                         {%for deptsw in deptsw%}
-                         <tr>
-                          <td>{{deptsw.departamento}}</td>
-                          
-                          <td class="text-center"><button  type="button" id="demo" class="btn btn-success btn-sm" onclick="actua('{{deptsw.departamento}}');" data-dismiss="modal"><i class="bi bi-check-square"></i></button></td>
-                         </tr> 
-                         {%endfor%}
-                        </tbody> 
-                      </table>
-                    </div>
-                    <div class="modal-footer">
-                     <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+            </div>
+
+            </p>
+            </p>
+            <hr>
+
+
+            <table border="0">
+
+              <tr>
+                <th class="col-3 text-right">Codígo de orden de trabajo:</th>
+                <th>{{form.Codigo}}</th>
+                <th class="col-3 text-right">Codígo cambio de campaña:</th>
+                <th>{{form.Campa}}</th>
+              </tr>
+
+            </table>
+
+            </p>
+            <table border="0">
+
+              <tr>
+                <th class="col-9 text-right">Area o departamento de origen: {{form.Departamento}}</th>
+                <th>
+                  {%if vistasw == 'index'%}
+                  <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#myViewC"><i
+                      class="bi bi-boxes"></i>Departamentos</button>
+                  {%endif%}
+                  <div class="modal fade" id="myViewC" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h6 class="modal-title" id="exampleModalLabel">Listado departamentos</h6>
+                          <button type="button" class="close" data-dismiss="modal"><span
+                              aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-striped table-hover table-sm">
+                            <thead>
+                              <tr>
+                                <td class="text-rigth">Descripcion</td>
+
+                                <td> </td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {%for deptsw in deptsw%}
+                              <tr>
+                                <td>{{deptsw.departamento}}</td>
+
+                                <td class="text-center"><button type="button" id="demo" class="btn btn-success btn-sm"
+                                    onclick="actua('{{deptsw.departamento}}');" data-dismiss="modal"><i
+                                      class="bi bi-check-square"></i></button></td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+
+
+
+                </th>
+              </tr>
+
+            </table>
+            </p>
+            <table border="0">
+
+              <tr>
+                <th class="col-2 text-left">Area: {{form.area}}</th>
+                <th class="col-4 text-left">Equipo: {{form.equipo}}</th>
+                <th class="col-3 text-left">ID equipo: {{form.idequipo}}</th>
+              </tr>
+
+            </table>
+
+            </p>
+
+
+            <table border="0">
+
+              <tr>
+                {%if vistasw == 'index'%}
+                <th class="col-3 text-left">Falla:<textarea name="Falla" rows="5" cols="114"></textarea></th>
+                {%else%}
+                <th class="col-3 text-left">Falla:<textarea name="Falla" rows="5" cols="114">{{fallasw}}</textarea></th>
+                {%endif%}
+              </tr>
+
+            </table>
+
+            </p>
+
+
+
+            <table border="0">
+
+              <tr>
+                <th class="col-6 text-left">Motivo de solicitud: {{form.motivosolic}}</th>
+                <th class="col-3 text-left">Fecha reportado:</th>
+                <th>{{form.fechaRep}}</th>
+              </tr>
+
+            </table>
+
+            </p>
+
+            <table border="0">
+
+              <tr>
+                <th class="col-6 text-left">Solicita: {{form.solicitante}}</th>
+                <th class="col-3 text-left">Afecta un proceso: {{form.afectacion}}</th>
+                <th class="col-3 text-left">Prioridad: {{form.prioridad}}</th>
+              </tr>
+
+            </table>
+
+            </p>
+
+            <table border="0">
+
+              <tr>
+                {%if vistasw == 'index'%}
+                <th class="col-3 text-left">Resultado:<textarea name="Resultado" rows="7" cols="114"></textarea></th>
+                {%else%}
+                <th class="col-3 text-left">Resultado:<textarea name="Resultado" rows="7"
+                    cols="114">{{resultsw}}</textarea></th>
+                {%endif%}
+              </tr>
+
+            </table>
+
+            </p>
+
+            <table border="0">
+
+              <tr>
+                <th class="col-5 text-left">Ejecutado por: {{form.reparado}}</th>
+                <th class="col-3 text-left">Vale de materiales: {{form.valecod}}</th>
+                <th class="col-2 text-left">Fecha de ejecución:</th>
+                <th>{{form.fechaEje}}</th>
+              </tr>
+
+            </table>
+
+            </p>
+
+            <table border="0">
+              <tr>
+                <th class="col-5 text-left">Destino: {{form.Destino}}</th>
+                <th class="col-3 text-left">Culminada: {{form.Culminada}}</th>
+              </tr>
+            </table>
+            </p>
+            <hr>
+
+            <div class="row mt-2">
+              <div class="col-md-9">
               </div>
+              {%if vistasw == 'index'%}
+              <div class="col-md-1">
+                <input type="submit" class="btn btn-success btn-sm" value="Adicionar"></input>
+              </div>
+              <div class="col-md-1">
+                <a href="/ordenes" button type="button" class="btn btn-danger btn-sm">Cancelar</a>
+              </div>
+              {%else%}
+              <div class="col-md-1">
+                <input type="submit" class="btn btn-success btn-sm" value="Actualizar"></input>
+              </div>
+              <div class="col-md-1">
+                <a href="/ordenes" button type="button" class="btn btn-danger btn-sm">Cancelar</a>
+              </div>
+              {%endif%}
+            </div>
+          </form>
 
-
-
-            </th>
-          </tr>  
-          
-       </table>
-      </p>
-       <table border="0">
-          
-        <tr>
-       <th class="col-2 text-left">Area: {{form.area}}</th>
-       <th class="col-4 text-left">Equipo: {{form.equipo}}</th>
-       <th class="col-3 text-left">ID equipo: {{form.idequipo}}</th>
-        </tr>
-        
-       </table>
-       
-      </p>
-    
-    
-      <table border="0">
-          
-        <tr>
-       {%if vistasw == 'index'%}  
-        <th class="col-3 text-left">Falla:<textarea name="Falla" rows="5" cols="114"></textarea></th>
-       {%else%}
-       <th class="col-3 text-left">Falla:<textarea name="Falla" rows="5" cols="114">{{fallasw}}</textarea></th>
-       {%endif%}
-        </tr>
-        
-       </table>
-       
-      </p>
-    
-    
-    
-       <table border="0">
-    
-        <tr>
-          <th class="col-6 text-left">Motivo de solicitud: {{form.motivosolic}}</th>
-          <th class="col-3 text-left">Fecha reportado:</th>
-          <th>{{form.fechaRep}}</th>
-        </tr>
-    
-       </table> 
-    
-      </p>
-    
-      <table border="0">
-    
-        <tr>
-          <th class="col-6 text-left">Solicita: {{form.solicitante}}</th>
-          <th class="col-3 text-left">Afecta un proceso: {{form.afectacion}}</th>
-          <th class="col-3 text-left">Prioridad: {{form.prioridad}}</th>
-        </tr>
-    
-       </table> 
-      
-      </p>
-    
-       <table border="0">
-          
-        <tr>
-        {%if vistasw == 'index'%}   
-        <th class="col-3 text-left">Resultado:<textarea name="Resultado" rows="7" cols="114"></textarea></th>
-        {%else%}
-        <th class="col-3 text-left">Resultado:<textarea name="Resultado" rows="7" cols="114">{{resultsw}}</textarea></th>
-        {%endif%}
-        </tr>
-        
-       </table>
-       
-      </p>
-    
-      <table border="0">
-    
-        <tr>
-          <th class="col-5 text-left">Ejecutado por: {{form.reparado}}</th>
-          <th class="col-3 text-left">Vale de materiales: {{form.valecod}}</th>
-          <th class="col-2 text-left">Fecha de ejecución:</th>
-          <th>{{form.fechaEje}}</th>
-        </tr>
-    
-       </table> 
-       
-      </p>
-    
-      <table border="0">
-        <tr>
-          <th class="col-5 text-left">Destino: {{form.Destino}}</th>
-          <th class="col-3 text-left">Culminada: {{form.Culminada}}</th>
-        </tr>
-       </table> 
-      </p>
-       <hr>
-    
-        <div class="row mt-2">
-          <div class="col-md-9">
-          </div>
-          {%if vistasw == 'index'%} 
-          <div class="col-md-1">
-            <input type="submit" class="btn btn-success btn-sm" value="Adicionar"></input>
-          </div>
-          <div class="col-md-1">
-            <a href="/ordenes" button type="button" class="btn btn-danger btn-sm">Cancelar</a>
-          </div>
-          {%else%}
-          <div class="col-md-1">
-            <input type="submit" class="btn btn-success btn-sm" value="Actualizar"></input>
-          </div>
-          <div class="col-md-1">
-            <a href="/ordenes" button type="button" class="btn btn-danger btn-sm">Cancelar</a>
-          </div>
-          {%endif%}
-        </div>
-       </form>
-       
-     <!--
+          <!--
       <form action="/ordenesupdate/{{datosw}}/{{pagesw}}" method="get">
 
         <div class="row mt-2">
@@ -389,13 +396,13 @@
           </div>
         </div> 
          </form>-->
-      
 
-        </div>
-      
+
+      </div>
+
     </div>
 
-</div>
+  </div>
 
 
 
@@ -404,10 +411,9 @@
 </body>
 
 <script>
-  function actua(dato1)
-  {
-   document.getElementById('id_Departamento').value=dato1;
+  function actua(dato1) {
+    document.getElementById('id_Departamento').value = dato1;
   }
- </script>  
+</script>
 
 </html>

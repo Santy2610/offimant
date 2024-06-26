@@ -16,9 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Offimant.views import principal
-from ordenes.views import ordenes,ordenesnew, ordenesadd, ordenesdel, ordenesupdate, ordenimpcont, ordenimpres, ordenesfilt
-from codificadores.views import codunidad, codalmacen, codcosto, codparada, codunidadadd,codunidaddel 
-from codificadores.views import codunidadupdate, codalmacenadd, codalmacendel,codalmacenupdate
+from ordenes.views import ordenes, ordenesnew, ordenesadd, ordenesdel, ordenesupdate, ordenimpcont, ordenimpres, ordenesfilt
+from codificadores.views import codunidad, codalmacen, codcosto, codparada, codunidadadd, codunidaddel
+from codificadores.views import codunidadupdate, codalmacenadd, codalmacendel, codalmacenupdate
 from codificadores.views import codcostoadd, codcostodel, codcostoupdate, codareas, codareasadd
 from codificadores.views import codareasdel, codareasupdate
 from codificadores.views import codequipos, codequiposadd, codequiposdel, codequiposedit, codequiposupdate
@@ -29,6 +29,7 @@ from vales.views import codmaterialorden, consolmat, consolspe
 from producciones.views import indexmate, codmateadd, codmatedel, indexprod, codproddel, codprodadd, codprodupdate
 from mantenimiento.views import listmant, adicionarmant, mantadd, mantdel, mantupdate, estadomant, estadomantupdate
 from tiempoperdido.views import listadotiempo, tiempodel, tiempoadd, tiempoupdate, imptiemp
+from sistema.views import indexsys
 
 
 urlpatterns = [
@@ -42,10 +43,10 @@ urlpatterns = [
     path('ordenesnew/<vista>/<dato>/<page>', ordenesnew),
     path('ordenesadd', ordenesadd),
     path('ordenesdel/<dato>', ordenesdel),
-    path('ordenesupdate/<dato>/<page>',ordenesupdate),
-    path('ordenimpcont/',ordenimpcont),
-    path('ordenimpres/<dato>',ordenimpres),
-    path('ordenesfilt/<dato>',ordenesfilt),
+    path('ordenesupdate/<dato>/<page>', ordenesupdate),
+    path('ordenimpcont/', ordenimpcont),
+    path('ordenimpres/<dato>', ordenimpres),
+    path('ordenesfilt/<dato>', ordenesfilt),
 
 
 
@@ -53,17 +54,17 @@ urlpatterns = [
     path('codunidadadd', codunidadadd),
     path('codunidaddel/<dato>', codunidaddel),
     path('codunidadupdate/<dato>/<page>', codunidadupdate),
-    
+
     path('codalmacen/<vista>/<dato>/', codalmacen),
     path('codalmacenadd', codalmacenadd),
     path('codalmacendel/<dato>', codalmacendel),
     path('codalmacenupdate/<dato>/<page>', codalmacenupdate),
-    
+
     path('codcosto/<vista>/<dato>/', codcosto),
     path('codcostoadd', codcostoadd),
     path('codcostodel/<dato>', codcostodel),
     path('codcostoupdate/<dato>/<page>', codcostoupdate),
-    
+
     path('codareas/<vista>/<dato>/', codareas),
     path('codareasadd', codareasadd),
     path('codareasdel/<dato>', codareasdel),
@@ -73,7 +74,7 @@ urlpatterns = [
     path('codequiposadd/<dato>', codequiposadd),
     path('codequiposdel/<dato>/<area>/<page>', codequiposdel),
     path('codequiposedit/<dato>/<area>/', codequiposedit),
-    path('codequiposupdate/<dato>/<area>/<page>', codequiposupdate),   
+    path('codequiposupdate/<dato>/<area>/<page>', codequiposupdate),
 
     path('codcausas/<vista>/<dato>/', codcausas),
     path('codcausasadd', codcausasadd),
@@ -84,7 +85,7 @@ urlpatterns = [
     path('codtrabaadd', codtrabaadd),
     path('codtrabadel/<dato>', codtrabadel),
     path('codtrabaupdate/<dato>/<page>', codtrabaupdate),
-      
+
     path('codvales/<vista>/<dato>/', codvales),
     path('codvalesadd', codvalesadd),
     path('codvalesdel/<dato>', codvalesdel),
@@ -97,7 +98,7 @@ urlpatterns = [
     path('consolmat', consolmat),
     path('consolspe/<dato>', consolspe),
 
- 
+
     path('codparada', codparada),
 
     path('indexprod/<vista>/<dato>/', indexprod),
@@ -111,9 +112,9 @@ urlpatterns = [
 
     path('listmant', listmant),
     path('adicionarmant/<vista>/<dato>/<page>', adicionarmant),
-    path('mantadd', mantadd), 
+    path('mantadd', mantadd),
     path('mantdel/<dato>', mantdel),
-    path('mantupdate/<dato>/<page>', mantupdate),     
+    path('mantupdate/<dato>/<page>', mantupdate),
     path('estadomant/<dato>/<page>', estadomant),
     path('estadomantupdate/<dato>/<page>', estadomantupdate),
 
@@ -123,6 +124,8 @@ urlpatterns = [
     path('tiempoadd', tiempoadd),
     path('tiempoupdate/<dato>', tiempoupdate),
     path('imptiemp/', imptiemp),
-    
+
+    path('config/', indexsys),
+
 
 ]
