@@ -26,13 +26,46 @@
                         <h4 class="card-title">Tablas de producciones</h4>
                         <p class="card-text">
                         <ul>
-                            <li>cantidad de datos: </li>
-                            <li>fecha de inicio: </li>
-                            <li>fecha de fin: </li>
+                            <li><b>Cantidad de datos registrados:</b> {{prodSW|length}} </li>
+                            {%for prodFISW in prodFISW%}
+                            <li><b>Fecha de inicio:</b> {{prodFISW.fechaf}} </li>
+                            {%endfor%}
+                            {%for prodFFSW in prodFFSW%}
+                            <li><b>Fecha de fin:</b> {{prodFFSW.fechaf}}</li>
+                            {%endfor%}
                         </ul>
                         </p>
                         <div class="card-footer">
-                            <button class="btn btn-success btn-sm float-right">Inicializar</button>
+                            {% if prodSW|length > 0 %}
+                            <button class="btn btn-success btn-sm float-right" data-toggle="modal"
+                                data-target="#inicializa">Inicializar</button>
+                            {%else%}
+                            <button class="btn btn-success btn-sm float-right disabled">Inicializar</button>
+                            {%endif%}
+
+                            <div class="modal fade" id="inicializa" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Se eliminaran todos los registros de la tabla de producciones, desea
+                                            proceder?.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="/proddel" button type="button" class="btn btn-danger">Eliminar
+                                                registros</a>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -43,9 +76,48 @@
                     <div class="card-body">
                         <h4 class="card-title">Tablas de tiempo perdido</h4>
 
-                        <p class="card-text">Content</p>
+                        <p class="card-text">
+                        <ul>
+                            <li><b>Cantidad de datos registrados:</b> {{tiemSW|length}} </li>
+                            {%for tiemFISW in tiemFISW%}
+                            <li><b>Fecha de inicio:</b> {{tiemFISW.fechaI}} </li>
+                            {%endfor%}
+                            {%for tiemFFSW in tiemFFSW%}
+                            <li><b>Fecha de fin:</b> {{tiemFFSW.fechaI}}</li>
+                            {%endfor%}
+                        </ul>
+                        </p>
                         <div class="card-footer">
-                            <button class="btn btn-success btn-sm float-right">Inicializar</button>
+                            {% if tiemSW|length > 0 %}
+                            <button class="btn btn-success btn-sm float-right" data-toggle="modal"
+                                data-target="#initiempo">Inicializar</button>
+                            {%else%}
+                            <button class="btn btn-success btn-sm float-right disabled">Inicializar</button>
+                            {%endif%}
+
+                            <div class="modal fade" id="initiempo" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Se eliminaran todos los registros de la tabla de tiempo perdido, desea
+                                            proceder?.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="/tiemdel" button type="button" class="btn btn-danger">Eliminar
+                                                registros</a>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -53,29 +125,106 @@
         </div>
 
         <div class="row mt-4">
+
             <div class="col-6">
                 <div class="card" style="width:550px">
                     <div class="card-body">
-                        <h4 class="card-title">Tablas de ordenes de trabajo</h4>
-
-                        <p class="card-text">Content</p>
+                        <h4 class="card-title">Registro de ordenes de trabajo</h4>
+                        <p class="card-text">
+                        <ul>
+                            <li><b>Cantidad de datos registrados:</b> {{ordenesSW|length}} </li>
+                            {%for ordenFISW in ordenFISW%}
+                            <li><b>Fecha de inicio:</b> {{ordenFISW.fechaRep}} </li>
+                            {%endfor%}
+                            {%for ordenFFSW in ordenFFSW%}
+                            <li><b>Fecha de fin:</b> {{ordenFFSW.fechaRep}}</li>
+                            {%endfor%}
+                        </ul>
+                        </p>
                         <div class="card-footer">
-                            <button class="btn btn-success btn-sm float-right">Inicializar</button>
+                            {% if ordenesSW|length > 0 %}
+                            <button class="btn btn-success btn-sm float-right" data-toggle="modal"
+                                data-target="#iniorden">Inicializar</button>
+                            {%else%}
+                            <button class="btn btn-success btn-sm float-right disabled">Inicializar</button>
+                            {%endif%}
+
+                            <div class="modal fade" id="iniorden" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Se eliminaran todos los registros de la tabla de ordenes de trabajo, desea
+                                            proceder?.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="/ordendel" button type="button" class="btn btn-danger">Eliminar
+                                                registros</a>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+
             <div class="col-6">
-                <!--<div class="card" style="width:500px">
-                    <div class="card-header">
-                        <h4>Tablas de tiempo perdido</h4>
+                <div class="card" style="width:550px">
+                    <div class="card-body">
+                        <h4 class="card-title">Registro de vales de materiales</h4>
+                        <p class="card-text">
+                        <ul>
+                            <li><b>Cantidad de datos registrados:</b> {{valetSW|length}} </li>
+                            {%for valeFISW in valeFISW%}
+                            <li><b>Fecha de inicio:</b> {{valeFISW.fecha}} </li>
+                            {%endfor%}
+                            {%for valeFFSW in valeFFSW%}
+                            <li><b>Fecha de fin:</b> {{valeFFSW.fecha}}</li>
+                            {%endfor%}
+                        </ul>
+                        </p>
+                        <div class="card-footer">
+                            {% if valetSW|length > 0 %}
+                            <button class="btn btn-success btn-sm float-right" data-toggle="modal"
+                                data-target="#inivale">Inicializar</button>
+                            {%else%}
+                            <button class="btn btn-success btn-sm float-right disabled">Inicializar</button>
+                            {%endif%}
+
+                            <div class="modal fade" id="inivale" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Se eliminaran todos los registros de la tabla de vales de materiales, desea
+                                            proceder?.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="/valedel" button type="button" class="btn btn-danger">Eliminar
+                                                registros</a>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">Content</div>
-                    <div class="card-footer">
-                        <button class="btn btn-success btn-sm float-right">Blanquear</button>
-                    </div>
-                </div>-->
+                </div>
             </div>
         </div>
 
