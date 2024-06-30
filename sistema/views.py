@@ -4,6 +4,7 @@ from ordenes.models import orden
 from producciones.models import producciones
 from tiempoperdido.models import tiempo
 from vales.models import vale, materialv
+from mantenimiento.models import mantplan
 
 # Create your views here.
 
@@ -21,8 +22,10 @@ def config(request):
     valet = vale.objects.all()
     valeFI = vale.objects.all().order_by('fecha')[0:1]
     valeFF = vale.objects.all().order_by('-fecha')[0:1]
+    mantp = mantplan.objects.all()
+
     return render(request, "indexsys.html", {"prodFISW": prodFI, "prodFFSW": prodFF, "prodSW": prod, "ordenFISW": ordenFI, "ordenFFSW": ordenFF, "ordenesSW": ordenes, "contadorSW": barracont(), "ordenmSW": tareaM(), 'tiempopSW': tiempoP(),
-                                             "tiemSW": tiem, "tiemFISW": tiemFI, "tiemFFSW": tiemFF, "valetSW": valet, "valeFISW": valeFI, "valeFFSW": valeFF})
+                                             "tiemSW": tiem, "tiemFISW": tiemFI, "tiemFFSW": tiemFF, "valetSW": valet, "valeFISW": valeFI, "valeFFSW": valeFF, "mantpSW": mantp})
 
 
 def proddel(request):
@@ -43,4 +46,9 @@ def tiemdel(request):
 def valedel(request):
     vale.objects.all().delete()
     materialv.objects.all().delete()
+    return redirect(config)
+
+
+def mantpdel(request):
+    mantplan.objects.all().delete()
     return redirect(config)

@@ -23,7 +23,7 @@
             <div class="col-6">
                 <div class="card" style="width:550px">
                     <div class="card-body">
-                        <h4 class="card-title">Tablas de producciones</h4>
+                        <h4 class="card-title">Registro de producciones</h4>
                         <p class="card-text">
                         <ul>
                             <li><b>Cantidad de datos registrados:</b> {{prodSW|length}} </li>
@@ -37,7 +37,7 @@
                         </p>
                         <div class="card-footer">
                             {% if prodSW|length > 0 %}
-                            <button class="btn btn-success btn-sm float-right" data-toggle="modal"
+                            <button class="btn btn-danger btn-sm float-right" data-toggle="modal"
                                 data-target="#inicializa">Inicializar</button>
                             {%else%}
                             <button class="btn btn-success btn-sm float-right disabled">Inicializar</button>
@@ -74,7 +74,7 @@
             <div class="col-6">
                 <div class="card" style="width:550px">
                     <div class="card-body">
-                        <h4 class="card-title">Tablas de tiempo perdido</h4>
+                        <h4 class="card-title">Registro de tiempo perdido</h4>
 
                         <p class="card-text">
                         <ul>
@@ -89,7 +89,7 @@
                         </p>
                         <div class="card-footer">
                             {% if tiemSW|length > 0 %}
-                            <button class="btn btn-success btn-sm float-right" data-toggle="modal"
+                            <button class="btn btn-danger btn-sm float-right" data-toggle="modal"
                                 data-target="#initiempo">Inicializar</button>
                             {%else%}
                             <button class="btn btn-success btn-sm float-right disabled">Inicializar</button>
@@ -143,7 +143,7 @@
                         </p>
                         <div class="card-footer">
                             {% if ordenesSW|length > 0 %}
-                            <button class="btn btn-success btn-sm float-right" data-toggle="modal"
+                            <button class="btn btn-danger btn-sm float-right" data-toggle="modal"
                                 data-target="#iniorden">Inicializar</button>
                             {%else%}
                             <button class="btn btn-success btn-sm float-right disabled">Inicializar</button>
@@ -194,10 +194,10 @@
                         </p>
                         <div class="card-footer">
                             {% if valetSW|length > 0 %}
-                            <button class="btn btn-success btn-sm float-right" data-toggle="modal"
+                            <button class="btn btn-danger btn-sm float-right" data-toggle="modal"
                                 data-target="#inivale">Inicializar</button>
                             {%else%}
-                            <button class="btn btn-success btn-sm float-right disabled">Inicializar</button>
+                            <button class="btn btn-danger btn-sm float-right disabled">Inicializar</button>
                             {%endif%}
 
                             <div class="modal fade" id="inivale" tabindex="-1" role="dialog"
@@ -227,8 +227,53 @@
                 </div>
             </div>
         </div>
+        <div class="row mt-4">
+            <div class="col-6">
+                <div class="card" style="width:550px">
+                    <div class="card-body">
+                        <h4 class="card-title">Registro de plan de mantenimiento</h4>
+                        <p class="card-text">
+                        <ul>
+                            <li><b>Cantidad de datos registrados:</b> {{mantpSW|length}} </li>
+                        </ul>
+                        </p>
+                        <div class="card-footer">
+                            {% if mantpSW|length > 0 %}
+                            <button class="btn btn-danger btn-sm float-right" data-toggle="modal"
+                                data-target="#iniplanm">Inicializar</button>
+                            {%else%}
+                            <button class="btn btn-success btn-sm float-right disabled">Inicializar</button>
+                            {%endif%}
 
-    </div>
+                            <div class="modal fade" id="iniplanm" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Se eliminaran todos los registros de la tabla del plan de mantenimiento,
+                                            desea
+                                            proceder?.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="/mantpdel" button type="button" class="btn btn-danger">Eliminar
+                                                registros</a>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 
 </body>
