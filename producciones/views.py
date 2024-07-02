@@ -18,29 +18,32 @@ def indexprod(request, vista, dato):
     else:
         prolubica = producciones.objects.get(pk=dato)
         formprod = formulariopro(initial={'codigo': prolubica.codigo, 'unidad': prolubica.unidad, 'descripcion': prolubica.descripcion,
-                                 'cantidad': prolubica.cantidad, 'fechafab': prolubica.fechaf, "contadorSW": barracont(), "ordenmSW": tareaM()})
+                                 'cantidad': prolubica.cantidad, 'fechafab': prolubica.fechaf, 'lote':prolubica.lote})
     return render(request, "listaprod.html", {"form": formprod, "prosw": prolist, "vistasw": vista, "listpsw": prolist, "paginador": paginador, "dato": dato, "contadorSW": barracont(), "ordenmSW": tareaM(), 'tiempopSW': tiempoP()})
 
 
 def codprodadd(request):
     codigo = request.GET["codigo"]
+    lote = request.GET["lote"]
     descripcion = request.GET["descripcion"]
     unidad = request.GET["unidad"]
     cantidad = request.GET["cantidad"]
     fechaf = request.GET["fechafab"]
     prolist = producciones.objects.create(
-        codigo=codigo, descripcion=descripcion, unidad=unidad, cantidad=cantidad, fechaf=fechaf)
+        codigo=codigo, descripcion=descripcion, unidad=unidad, cantidad=cantidad, fechaf=fechaf, lote=lote)
     return redirect(indexprod, vista='index', dato=0)
 
 
 def codprodupdate(request, dato, page):
     codigo = request.GET["codigo"]
+    lote = request.GET["lote"]
     descripcion = request.GET["descripcion"]
     unidad = request.GET["unidad"]
     cantidad = request.GET["cantidad"]
     fechaf = request.GET["fechafab"]
     prolist = producciones.objects.get(pk=dato)
     prolist.codigo = codigo
+    prolist.lote = lote
     prolist.descripcion = descripcion
     prolist.unidad = unidad
     prolist.cantidad = cantidad
