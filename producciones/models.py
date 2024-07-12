@@ -9,11 +9,11 @@ class producciones(models.Model):
     unidad = models.CharField(max_length=5)
     cantidad = models.FloatField()
     fechaf = models.DateField()
+    mes = models.CharField(max_length=2)
 
 
 class materiales(models.Model):
-    idprod = models.ForeignKey(
-        producciones, on_delete=models.CASCADE, null=False, blank=False)
+    idprod = models.ForeignKey(producciones, on_delete=models.CASCADE, null=False, blank=False)
     novale = models.CharField(max_length=5)
     almacen = models.CharField(max_length=50)
     costo = models.CharField(max_length=50)

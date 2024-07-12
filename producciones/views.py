@@ -4,6 +4,9 @@ from vales.models import vale
 from django.core.paginator import Paginator
 from producciones.formulario import formulariopro, formulariomate
 from Offimant.views import barracont, tareaM, tiempoP
+from django.db.models import Sum, Count
+from datetime import datetime
+from datetime import date
 
 # Create your views here.
 
@@ -18,7 +21,7 @@ def indexprod(request, vista, dato):
     else:
         prolubica = producciones.objects.get(pk=dato)
         formprod = formulariopro(initial={'codigo': prolubica.codigo, 'unidad': prolubica.unidad, 'descripcion': prolubica.descripcion,
-                                 'cantidad': prolubica.cantidad, 'fechafab': prolubica.fechaf, 'lote':prolubica.lote})
+                                 'cantidad': prolubica.cantidad, 'fechafab': prolubica.fechaf, 'lote': prolubica.lote})
     return render(request, "listaprod.html", {"form": formprod, "prosw": prolist, "vistasw": vista, "listpsw": prolist, "paginador": paginador, "dato": dato, "contadorSW": barracont(), "ordenmSW": tareaM(), 'tiempopSW': tiempoP()})
 
 
@@ -29,8 +32,11 @@ def codprodadd(request):
     unidad = request.GET["unidad"]
     cantidad = request.GET["cantidad"]
     fechaf = request.GET["fechafab"]
+    fechar = request.GET["fechafab"]
+    fecha = datetime.strptime(fechar, "%Y-%m-%d")
+    mes = fecha.month
     prolist = producciones.objects.create(
-        codigo=codigo, descripcion=descripcion, unidad=unidad, cantidad=cantidad, fechaf=fechaf, lote=lote)
+        codigo=codigo, descripcion=descripcion, unidad=unidad, cantidad=cantidad, fechaf=fechaf, lote=lote, mes=mes)
     return redirect(indexprod, vista='index', dato=0)
 
 
@@ -41,6 +47,9 @@ def codprodupdate(request, dato, page):
     unidad = request.GET["unidad"]
     cantidad = request.GET["cantidad"]
     fechaf = request.GET["fechafab"]
+    fechar = request.GET["fechafab"]
+    fecha = datetime.strptime(fechar, "%Y-%m-%d")
+    mes = fecha.month
     prolist = producciones.objects.get(pk=dato)
     prolist.codigo = codigo
     prolist.lote = lote
@@ -48,6 +57,7 @@ def codprodupdate(request, dato, page):
     prolist.unidad = unidad
     prolist.cantidad = cantidad
     prolist.fechaf = fechaf
+    prolist.mes = mes
     prolist.save()
     return redirect("/indexprod/index/0/?page=%s" % page)
 
@@ -83,3 +93,31 @@ def codmatedel(request, dato, ubica, pagina):
     valelist = materiales.objects.get(pk=dato)
     valelist.delete()
     return redirect(indexmate, ubica, pagina)
+
+
+def mensual(request):
+    datosm = []
+    meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    for i in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]:
+        prod = producciones.objects.filter(mes=i).values('descripcion', 'unidad', 'mes').order_by('descripcion').annotate(can=Sum('cantidad'), cont=Count('lote'))
+        for item in prod:
+            datosm.append({
+                'mes': meses[int(i)-1],
+                'descripcion': item['descripcion'],
+                'unidad': item['unidad'],
+                'lotes': item['cont'],
+                'cantidad': item['can'],
+            })
+
+    # for i in meses:
+
+    return render(request, "mesprod.html", {"datosm": datosm, "contadorSW": barracont(), "ordenmSW": tareaM(), 'tiempopSW': tiempoP()})
+
+
+def campb(request):
+    prod = producciones.objects.all()
+    for prod in prod:
+        fecha = prod.fechaf
+        prod.mes = fecha.month
+        prod.save()
+    return redirect("/indexprod/index/0")

@@ -26,7 +26,7 @@ from codificadores.views import codcausas, codcausasadd, codcausasdel, codcausas
 from codificadores.views import codtraba, codtrabaadd, codtrabadel, codtrabaupdate
 from vales.views import codvales, codvalesadd, codvalesdel, codvalesupdate, codmaterial, codmaterialadd, codmaterialdel
 from vales.views import codmaterialorden, consolmat, consolspe
-from producciones.views import indexmate, codmateadd, codmatedel, indexprod, codproddel, codprodadd, codprodupdate
+from producciones.views import indexmate, codmateadd, codmatedel, indexprod, codproddel, codprodadd, codprodupdate, mensual, campb
 from mantenimiento.views import listmant, adicionarmant, mantadd, mantdel, mantupdate, estadomant, estadomantupdate
 from tiempoperdido.views import listadotiempo, tiempodel, tiempoadd, tiempoupdate, imptiemp
 from sistema.views import config, proddel, ordendel, tiemdel, valedel, mantpdel
@@ -104,7 +104,8 @@ urlpatterns = [
     path('codprodadd', codprodadd),
     path('codproddel/<dato>', codproddel),
     path('codprodupdate/<dato>/<page>', codprodupdate),
-
+    path('mesprod', mensual),
+    
     path('indexmate/<dato>/<pagina>', indexmate),
     path('codmateadd/<dato>/<pagina>', codmateadd),
     path('codmatedel/<dato>/<ubica>/<pagina>', codmatedel),
@@ -130,5 +131,7 @@ urlpatterns = [
     path('tiemdel', tiemdel),
     path('valedel', valedel),
     path('mantpdel', mantpdel),
+
+    path('campb', campb),
 
 ]

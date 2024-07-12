@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuracion de Sistemas</title>
+    {% load static %}
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+    <link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'popper.js' %}"></script>
+
+
+</head>
+
+<body>
+    {%include "barra.html"%}
+
+    <div class="container mt-4">
+        <!--{%for datosm in datosm%}
+        {{datosm.mes}} - {{datosm.descripcion}} - {{datosm.cantidad}}</p>
+        {%endfor%}-->
+        <div class="row">
+            <div class="col-4">
+                <div class="card" style="width:350px">
+                    <div class="card-body">
+                        <h4 class="card-title">Enero</h4>
+                        <p class="card-text">
+
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Producción</th>
+                                    <th>Lotes</th>
+                                    <th>Uni.</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for datosm in datosm%}
+                                {%if datosm.mes == "Enero" %}
+                                <tr>
+                                    <td class="col-9"><b>{{datosm.descripcion}}</b> :</td>
+                                    <td class="col-2 text-center">{{datosm.lotes}}</td>
+                                    <td class="col-2 text-center">{{datosm.unidad}}</td>
+                                    <td class="text-left">{{datosm.cantidad}}</td>
+                                </tr>
+                                {%endif%}
+                                {%endfor%}
+                            </tbody>
+                        </table>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card" style="width:350px">
+                    <div class="card-body">
+                        <h4 class="card-title">Febrero</h4>
+                        <p class="card-text">
+
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Producción</th>
+                                    <th>Lotes</th>
+                                    <th>Uni.</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for datosm in datosm%}
+                                {%if datosm.mes == "Febrero" %}
+                                <tr>
+                                    <td class="col-9"><b>{{datosm.descripcion}}</b> :</td>
+                                    <td class="col-2 text-center">{{datosm.lotes}}</td>
+                                    <td class="col-2 text-center">{{datosm.unidad}}</td>
+                                    <td class="text-left">{{datosm.cantidad}}</td>
+                                </tr>
+                                {%endif%}
+                                {%endfor%}
+                            </tbody>
+                        </table>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width:350px">
+                    <div class="card-body">
+                        <h4 class="card-title">Marzo</h4>
+                        <p class="card-text">
+
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Producción</th>
+                                    <th>Lotes</th>
+                                    <th>Uni.</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for datosm in datosm%}
+                                {%if datosm.mes == "Marzo" %}
+                                <tr>
+                                    <td class="col-9"><b>{{datosm.descripcion}}</b> :</td>
+                                    <td class="col-2 text-center">{{datosm.lotes}}</td>
+                                    <td class="col-2 text-center">{{datosm.unidad}}</td>
+                                    <td class="text-left">{{datosm.cantidad}}</td>
+                                </tr>
+                                {%endif%}
+                                {%endfor%}
+                            </tbody>
+                        </table>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row mt-4">
+
+            <div class="col-4">
+                <div class="card" style="width:350px">
+                    <div class="card-body">
+                        <h4 class="card-title">Abril</h4>
+                        <p class="card-text">
+
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Producción</th>
+                                    <th>Lotes</th>
+                                    <th>Uni.</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for datosm in datosm%}
+                                {%if datosm.mes == "Abril" %}
+                                <tr>
+                                    <td class="col-9"><b>{{datosm.descripcion}}</b> :</td>
+                                    <td class="col-2 text-center">{{datosm.lotes}}</td>
+                                    <td class="col-2 text-center">{{datosm.unidad}}</td>
+                                    <td class="text-left">{{datosm.cantidad}}</td>
+                                </tr>
+                                {%endif%}
+                                {%endfor%}
+                            </tbody>
+                        </table>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card" style="width:350px">
+                    <div class="card-body">
+                        <h4 class="card-title">Mayo</h4>
+                        <p class="card-text">
+
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Producción</th>
+                                    <th>Lotes</th>
+                                    <th>Uni.</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for datosm in datosm%}
+                                {%if datosm.mes == "Mayo" %}
+                                <tr>
+                                    <td class="col-9"><b>{{datosm.descripcion}}</b> :</td>
+                                    <td class="col-2 text-center">{{datosm.lotes}}</td>
+                                    <td class="col-2 text-center">{{datosm.unidad}}</td>
+                                    <td class="text-left">{{datosm.cantidad}}</td>
+                                </tr>
+                                {%endif%}
+                                {%endfor%}
+                            </tbody>
+                        </table>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card" style="width:350px">
+                    <div class="card-body">
+                        <h4 class="card-title">Junio</h4>
+                        <p class="card-text">
+
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Producción</th>
+                                    <th>Lotes</th>
+                                    <th>Uni.</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for datosm in datosm%}
+                                {%if datosm.mes == "Junio" %}
+                                <tr>
+                                    <td class="col-9"><b>{{datosm.descripcion}}</b></td>
+                                    <td class="col-2 text-center">{{datosm.lotes}}</td>
+                                    <td class="col-2 text-center">{{datosm.unidad}}</td>
+                                    <td class="text-left">{{datosm.cantidad}}</td>
+                                </tr>
+                                {%endif%}
+                                {%endfor%}
+                            </tbody>
+                        </table>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-4">
+            <div class="col-4">
+                <div class="card" style="width:350px">
+                    <div class="card-body">
+                        <h4 class="card-title">Julio</h4>
+                        <p class="card-text">
+
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Producción</th>
+                                    <th>Lotes</th>
+                                    <th>Uni.</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for datosm in datosm%}
+                                {%if datosm.mes == "Julio" %}
+                                <tr>
+                                    <td class="col-9"><b>{{datosm.descripcion}}</b> :</td>
+                                    <td class="col-2 text-center">{{datosm.lotes}}</td>
+                                    <td class="col-2 text-center">{{datosm.unidad}}</td>
+                                    <td class="text-left">{{datosm.cantidad}}</td>
+                                </tr>
+                                {%endif%}
+                                {%endfor%}
+                            </tbody>
+                        </table>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card" style="width:350px">
+                    <div class="card-body">
+                        <h4 class="card-title">Agosto</h4>
+                        <p class="card-text">
+
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Producción</th>
+                                    <th>Lotes</th>
+                                    <th>Uni.</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for datosm in datosm%}
+                                {%if datosm.mes == "Agosto" %}
+                                <tr>
+                                    <td class="col-9"><b>{{datosm.descripcion}}</b> :</td>
+                                    <td class="col-2 text-center">{{datosm.lotes}}</td>
+                                    <td class="col-2 text-center">{{datosm.unidad}}</td>
+                                    <td class="text-left">{{datosm.cantidad}}</td>
+                                </tr>
+                                {%endif%}
+                                {%endfor%}
+                            </tbody>
+                        </table>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card" style="width:350px">
+                    <div class="card-body">
+                        <h4 class="card-title">Septiembre</h4>
+                        <p class="card-text">
+
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Producción</th>
+                                    <th>Lotes</th>
+                                    <th>Uni.</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for datosm in datosm%}
+                                {%if datosm.mes == "Septiembre" %}
+                                <tr>
+                                    <td class="col-9"><b>{{datosm.descripcion}}</b> :</td>
+                                    <td class="col-2 text-center">{{datosm.lotes}}</td>
+                                    <td class="col-2 text-center">{{datosm.unidad}}</td>
+                                    <td class="text-left">{{datosm.cantidad}}</td>
+                                </tr>
+                                {%endif%}
+                                {%endfor%}
+                            </tbody>
+                        </table>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-4">
+                <div class="card" style="width:350px">
+                    <div class="card-body">
+                        <h4 class="card-title">Octubre</h4>
+                        <p class="card-text">
+
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Producción</th>
+                                    <th>Lotes</th>
+                                    <th>Uni.</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for datosm in datosm%}
+                                {%if datosm.mes == "Octubre" %}
+                                <tr>
+                                    <td class="col-9"><b>{{datosm.descripcion}}</b> :</td>
+                                    <td class="col-2 text-center">{{datosm.lotes}}</td>
+                                    <td class="col-2 text-center">{{datosm.unidad}}</td>
+                                    <td class="text-left">{{datosm.cantidad}}</td>
+                                </tr>
+                                {%endif%}
+                                {%endfor%}
+                            </tbody>
+                        </table>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card" style="width:350px">
+                    <div class="card-body">
+                        <h4 class="card-title">Noviembre</h4>
+                        <p class="card-text">
+
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Producción</th>
+                                    <th>Lotes</th>
+                                    <th>Uni.</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for datosm in datosm%}
+                                {%if datosm.mes == "Noviembre" %}
+                                <tr>
+                                    <td class="col-9"><b>{{datosm.descripcion}}</b> :</td>
+                                    <td class="col-2 text-center">{{datosm.lotes}}</td>
+                                    <td class="col-2 text-center">{{datosm.unidad}}</td>
+                                    <td class="text-left">{{datosm.cantidad}}</td>
+                                </tr>
+                                {%endif%}
+                                {%endfor%}
+                            </tbody>
+                        </table>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card" style="width:350px">
+                    <div class="card-body">
+                        <h4 class="card-title">Diciembre</h4>
+                        <p class="card-text">
+
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Producción</th>
+                                    <th>Lotes</th>
+                                    <th>Uni.</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for datosm in datosm%}
+                                {%if datosm.mes == "Diciembre" %}
+                                <tr>
+                                    <td class="col-9"><b>{{datosm.descripcion}}</b> :</td>
+                                    <td class="col-2 text-center">{{datosm.lotes}}</td>
+                                    <td class="col-2 text-center">{{datosm.unidad}}</td>
+                                    <td class="text-left">{{datosm.cantidad}}</td>
+                                </tr>
+                                {%endif%}
+                                {%endfor%}
+                            </tbody>
+                        </table>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
