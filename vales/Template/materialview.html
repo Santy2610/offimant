@@ -1,5 +1,5 @@
-<html>
-<title></title>
+<!DOCTYPE html>
+<title>Materiales</title>
 
 {% load static %}
 
@@ -7,7 +7,7 @@
 <link href="{% static 'icons/font/bootstrap-icons.css'%}" rel="stylesheet">
 <script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'jquery-3.2.1.js' %}"></script>
-<script src="{% static 'popper.js' %}"></script> 
+<script src="{% static 'popper.js' %}"></script>
 
 <body>
 
@@ -15,7 +15,7 @@
   <div class="container mt-1 ">
 
     {%include "barra.html"%}
-    
+
   </div>
   <div class="container mt-3">
 
@@ -28,14 +28,16 @@
       <div class="container">
         <div class="row">
           <div class="col-2">
-           {%if pagesw == '0' %}
-             <a href="/indexmate/{{retrosw}}/1" button type="button" class="btn btn-primary  float-right">Volver a vales</a>
-           {%else%} 
-             <a href="/ordenes/?page={{pagesw}}" button type="button" class="btn btn-primary  float-right">Volver a la orden</a>
-           {%endif%} 
+            {%if pagesw == '0' %}
+            <a href="/indexmate/{{retrosw}}/1" button type="button" class="btn btn-primary  float-right">Volver a
+              vales</a>
+            {%else%}
+            <a href="/ordenes/?page={{pagesw}}" button type="button" class="btn btn-primary  float-right">Volver a la
+              orden</a>
+            {%endif%}
           </div>
           <div class="col-5">
-            
+
           </div>
           <div class="col-4">
             <div class="row mt-1">
@@ -75,7 +77,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9"></div>
-            
+
           </div>
         </div>
 
@@ -88,7 +90,7 @@
                 <th class="col-sm-8">Descripción</th>
                 <th class="col-sm-1 text-center">Unidad</th>
                 <th class="col-sm-1 text-center">Cantidad</th>
-                
+
               </tr>
             </thead>
 
@@ -98,7 +100,7 @@
                 <td class="col-sm-6">{{materialsw.material}}</td>
                 <td class="col-sm-2 text-center">{{materialsw.unidad}}</td>
                 <td class="col-sm-3 text-center">{{materialsw.cantidad}}</td>
-                
+
               </tr>
               {%endfor%}
             </tbody>
