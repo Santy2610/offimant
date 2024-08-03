@@ -8,14 +8,14 @@ Sistema para el control:
 
 Diseñado en Django, JavaScritp como Backend y boostrap 4 en su frontend
 
-![alt text](image.png)
+![alt text](imagenes/image.png)
 
-![Control de tiempo perdido](image-1.png)
+![Control de tiempo perdido](imagenes/image-1.png)
 
-![Plan de mantenimineto anual](image-2.png)
+![Plan de mantenimineto anual](imagenes/image-2.png)
 
-![Resumen mensual de las producciones](image-5.png)
+![Resumen mensual de las producciones](imagenes/image-5.png)
 
-![Control de ordenes de trabajo](image-4.png)
+![Control de ordenes de trabajo](imagenes/image-4.png)
 
-![Captura de materiales](image-6.png)
+![Captura de materiales](imagenes/image-6.png)
