@@ -10,8 +10,12 @@ Diseñado en Django, JavaScritp como Backend y boostrap 4 en su frontend
 
 ![alt text](image.png)
 
-![alt text](image-1.png)
+![Control de tiempo perdido](image-1.png)
 
-![alt text](image-2.png)
+![Plan de mantenimineto anual](image-2.png)
 
-![alt text](image-3.png)
+![Resumen mensual de las producciones](image-5.png)
+
+![Control de ordenes de trabajo](image-4.png)
+
+![Captura de materiales](image-6.png)
