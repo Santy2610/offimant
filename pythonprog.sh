@@ -1,2 +1,2 @@
-firefox localhost:8000
+#!/bin/sh
 python3 manage.py runserver

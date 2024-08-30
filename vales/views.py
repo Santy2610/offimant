@@ -14,7 +14,7 @@ from Offimant.views import barracont, tareaM, tiempoP
 def codvales(request, vista, dato):
     listcentro = centrocosto.objects.all().order_by('descripcion')
     page = request.GET.get('page', 1)
-    valeslist = vale.objects.all().order_by('codigo')
+    valeslist = vale.objects.all().order_by('-codigo')
     paginador = Paginator(valeslist, 10)
     valeslist = paginador.page(page)
     if vista == 'index':
