@@ -8,7 +8,7 @@ from Offimant.views import barracont, tareaM, tiempoP
 
 def ordenes(request):
     page = request.GET.get('page', 1)
-    ordenlist = orden.objects.all().order_by('codigo')
+    ordenlist = orden.objects.all().order_by('-codigo')
     paginador = Paginator(ordenlist, 10)
     ordenlist = paginador.page(page)
     dato = "SED"

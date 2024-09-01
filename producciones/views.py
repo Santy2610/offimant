@@ -13,7 +13,7 @@ from datetime import date
 
 def indexprod(request, vista, dato):
     page = request.GET.get('page', 1)
-    prolist = producciones.objects.all().order_by('codigo')
+    prolist = producciones.objects.all().order_by('-codigo')
     paginador = Paginator(prolist, 10)
     prolist = paginador.page(page)
     if vista == 'index':
@@ -97,9 +97,11 @@ def codmatedel(request, dato, ubica, pagina):
 
 def mensual(request):
     datosm = []
-    meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+             "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
     for i in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]:
-        prod = producciones.objects.filter(mes=i).values('descripcion', 'unidad', 'mes').order_by('descripcion').annotate(can=Sum('cantidad'), cont=Count('lote'))
+        prod = producciones.objects.filter(mes=i).values('descripcion', 'unidad', 'mes').order_by(
+            'descripcion').annotate(can=Sum('cantidad'), cont=Count('lote'))
         for item in prod:
             datosm.append({
                 'mes': meses[int(i)-1],
